@@ -12,13 +12,14 @@ from nltk.tokenize import word_tokenize
 
 
 class TransformerTrainer:
-    def __init__(self, data_bin_path, save_dir, max_tokens=4096, lr=0.0005, dropout=0.1, max_epoch=50):
+    def __init__(self, data_bin_path, save_dir, model_type, max_tokens=2048, lr=0.0005, dropout=0.1, max_epoch=100):
         self.data_bin_path = data_bin_path
         self.save_dir = save_dir
         self.max_tokens = max_tokens
         self.lr = lr
         self.dropout = dropout
         self.max_epoch = max_epoch
+        self.model_type = model_type
         os.makedirs(save_dir, exist_ok=True)
 
     def train_model(self):
@@ -26,7 +27,7 @@ class TransformerTrainer:
         subprocess.run([
             "fairseq-train", self.data_bin_path,
             "--save-dir", self.save_dir,
-            "--arch", "transformer",
+            "--arch", f"{self.model_type}",
             "--share-decoder-input-output-embed",
             "--optimizer", "adam",
             "--adam-betas", "(0.9, 0.98)",
@@ -128,15 +129,17 @@ class TransformerTrainer:
 
 
 if __name__ == "__main__":
+    MODEL = 'transformer_tiny'
     trainer = TransformerTrainer(
         data_bin_path='../data/fairseq_data/data-bin',
-        save_dir='../models/transformer_model'
+        save_dir=f"../models/{MODEL}",
+        model_type=MODEL
     )
     trainer.train_model()
 
     # Plot losses
     trainer.plot_losses(os.path.join(trainer.save_dir, 'log_file.log'),
-                        os.path.abspath('../models/transformer_model/loss_plot.png'))
+                        os.path.abspath(f"../models/{MODEL}/loss_plot.png"))
 
     # Load model and evaluate
     model = trainer.load_model()
@@ -144,5 +147,5 @@ if __name__ == "__main__":
     src_file_path = '../data/processed/test.darija'
     tgt_file_path = '../data/processed/test.eng'
     results = trainer.evaluate_model(model, src_file_path, tgt_file_path,
-                                     os.path.abspath('../models/transformer_model/evaluation_metrics.json'))
+                                     os.path.abspath(f"../models/{MODEL}/evaluation_metrics.json"))
     print(results)
