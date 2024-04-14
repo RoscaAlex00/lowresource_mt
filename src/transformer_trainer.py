@@ -24,6 +24,8 @@ class TransformerTrainer:
 
     def train_model(self):
         # Train the transformer model
+
+        os.environ["CUDA_VISIBLE_DEVICES"] = "0"
         subprocess.run([
             "fairseq-train", self.data_bin_path,
             "--save-dir", self.save_dir,

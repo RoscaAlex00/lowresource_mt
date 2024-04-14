@@ -1,5 +1,8 @@
 import json
+import os
+
 from datasets import load_dataset, DatasetDict
+from nltk import word_tokenize
 from transformers import (
     AutoTokenizer,
     AutoModelForSeq2SeqLM,
@@ -8,8 +11,8 @@ from transformers import (
     DataCollatorForSeq2Seq
 )
 import numpy as np
-from nltk.translate.bleu_score import corpus_bleu
-from nltk.translate.meteor_score import single_meteor_score
+from sacrebleu import corpus_bleu
+from nltk.translate.meteor_score import single_meteor_score, meteor_score
 import nltk
 
 nltk.download('punkt')
@@ -21,12 +24,18 @@ class ModelEvaluator:
         self.model_name = model_name
         self.src_lang = src_lang
         self.tgt_lang = tgt_lang
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, src_lang=src_lang, tgt_lang=tgt_lang)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
     def load_and_prepare_data(self, file_path):
         raw_datasets = load_dataset('csv', data_files=file_path)
-        raw_datasets = raw_datasets['train'].train_test_split(test_size=0.1)
+        raw_datasets = raw_datasets.remove_columns('darija')
+        raw_datasets = raw_datasets['train'].train_test_split(test_size=0.1, seed=552)
+
+        raw_datasets['train'] = raw_datasets['train'].filter(
+            lambda example: example['src'] is not None and example['tgt'] is not None)
+        raw_datasets['test'] = raw_datasets['test'].filter(
+            lambda example: example['src'] is not None and example['tgt'] is not None)
         return raw_datasets
 
     def tokenize_function(self, examples):
@@ -41,22 +50,31 @@ class ModelEvaluator:
         tgt_sentences = [[sentence] for sentence in dataset['tgt']]
 
         predicted_sentences = []
+        i = 0
         for src in src_sentences:
-            inputs = self.tokenizer(src, return_tensors="pt", max_length=128, truncation=True)
-            translated_tokens = self.model.generate(**inputs,
-                                                    forced_bos_token_id=self.tokenizer.lang_code_to_id[self.tgt_lang],
-                                                    max_length=128)
+            inputs = self.tokenizer(src, return_tensors="pt", max_length=128, truncation=True).to('cuda')
+            model = self.model.to('cuda')
+            translated_tokens = model.generate(**inputs,
+                                               forced_bos_token_id=self.tokenizer.lang_code_to_id[self.tgt_lang],
+                                               max_length=128)
             translated_sentence = self.tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
             predicted_sentences.append(translated_sentence)
+            i += 1
+            if i == 10:
+                break
 
         # Calculate BLEU
-        bleu_score = corpus_bleu([[word_tokenize(sent) for sent in tgt] for tgt in tgt_sentences],
-                                 [word_tokenize(sent) for sent in predicted_sentences])
+        print(tgt_sentences)
+        print(predicted_sentences)
+        bleu_score = corpus_bleu(predicted_sentences, tgt_sentences[:10]).score
 
         # Calculate METEOR
-        meteor_scores = [single_meteor_score(ref, hyp) for ref_list, hyp in zip(tgt_sentences, predicted_sentences) for
-                         ref in ref_list]
-        avg_meteor = np.mean(meteor_scores)
+        predicted_tokens = [word_tokenize(sent) for sent in predicted_sentences]
+        tgt_tokens = [word_tokenize(sent) for sent in dataset['tgt']]
+
+        # Calculate METEOR
+        meteor_scores = [meteor_score([tgt], pred) for tgt, pred in zip(tgt_tokens, predicted_tokens)]
+        avg_meteor = sum(meteor_scores) / len(meteor_scores)
 
         return {
             'BLEU': bleu_score,
@@ -96,14 +114,15 @@ class ModelEvaluator:
 
 # Example usage
 if __name__ == "__main__":
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
         model_name='facebook/nllb-200-distilled-600M',
-        src_lang='eng',
-        tgt_lang='ary_arab'
+        src_lang='ary_Arab',
+        tgt_lang='eng_Latn'
     )
 
-    # Load your dataset, ensure it has 'src' and 'tgt' columns for source and target texts
-    dataset_path = 'path/to/your/dataset.csv'  # Adjust this path
+    dataset_path = '../data/sentences_nllb.csv'
     prepared_datasets = evaluator.load_and_prepare_data(dataset_path)
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'])
