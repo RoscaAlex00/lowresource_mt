@@ -131,7 +131,7 @@ class TransformerTrainer:
 
 
 if __name__ == "__main__":
-    MODEL = 'transformer_tiny'
+    MODEL = 'transformer'
     trainer = TransformerTrainer(
         data_bin_path='../data/fairseq_data/data-bin',
         save_dir=f"../models/{MODEL}",
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     # Load model and evaluate
     model = trainer.load_model()
     # Provide your src_sentences and tgt_sentences for evaluation
-    src_file_path = '../data/processed/test.darija'
+    src_file_path = '../data/processed/test.darija_ar'
     tgt_file_path = '../data/processed/test.eng'
     results = trainer.evaluate_model(model, src_file_path, tgt_file_path,
                                      os.path.abspath(f"../models/{MODEL}/evaluation_metrics.json"))

@@ -1,3 +1,4 @@
+import csv
 import json
 import os
 
@@ -36,6 +37,8 @@ class ModelEvaluator:
             lambda example: example['src'] is not None and example['tgt'] is not None)
         raw_datasets['test'] = raw_datasets['test'].filter(
             lambda example: example['src'] is not None and example['tgt'] is not None)
+
+        print(raw_datasets)
         return raw_datasets
 
     def tokenize_function(self, examples):
@@ -45,28 +48,33 @@ class ModelEvaluator:
         model_inputs["labels"] = labels["input_ids"]
         return model_inputs
 
-    def evaluate_model(self, dataset):
+    def evaluate_model(self, dataset, output_file):
         src_sentences = dataset['src']
-        tgt_sentences = [[sentence] for sentence in dataset['tgt']]
+        tgt_sentences = dataset['tgt']
 
         predicted_sentences = []
-        i = 0
-        for src in src_sentences:
-            inputs = self.tokenizer(src, return_tensors="pt", max_length=128, truncation=True).to('cuda')
-            model = self.model.to('cuda')
-            translated_tokens = model.generate(**inputs,
-                                               forced_bos_token_id=self.tokenizer.lang_code_to_id[self.tgt_lang],
-                                               max_length=128)
-            translated_sentence = self.tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
-            predicted_sentences.append(translated_sentence)
-            i += 1
-            if i == 10:
-                break
+
+        with open(output_file, 'w+', newline='', encoding='utf-8') as csvfile:
+            fieldnames = ['Original', 'Original Translation', 'Translated Sentence']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+
+            for src, tgt in zip(src_sentences, tgt_sentences):
+                inputs = self.tokenizer(src, return_tensors="pt", max_length=128, truncation=True).to('cuda')
+                model = self.model.to('cuda')
+                translated_tokens = model.generate(**inputs,
+                                                   forced_bos_token_id=self.tokenizer.lang_code_to_id[self.tgt_lang],
+                                                   max_length=128)
+                translated_sentence = self.tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
+                predicted_sentences.append(translated_sentence)
+
+                # Write to CSV
+                writer.writerow(
+                    {'Original': src, 'Original Translation': tgt, 'Translated Sentence': translated_sentence})
 
         # Calculate BLEU
-        print(tgt_sentences)
-        print(predicted_sentences)
-        bleu_score = corpus_bleu(predicted_sentences, tgt_sentences[:10]).score
+        tgt_sentences = [[sentence] for sentence in dataset['tgt']]
+        bleu_score = corpus_bleu(predicted_sentences, tgt_sentences).score
 
         # Calculate METEOR
         predicted_tokens = [word_tokenize(sent) for sent in predicted_sentences]
@@ -81,8 +89,9 @@ class ModelEvaluator:
             'METEOR': avg_meteor,
         }
 
-    def fine_tune_model(self, dataset, output_dir='./model'):
-        tokenized_datasets = dataset.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
+    def fine_tune_model(self, train_set, test_set, output_dir='../model_nllb/checkpoints'):
+        tokenized_train = train_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
+        tokenized_test = test_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
         data_collator = DataCollatorForSeq2Seq(self.tokenizer, model=self.model)
 
         training_args = Seq2SeqTrainingArguments(
@@ -94,27 +103,27 @@ class ModelEvaluator:
             per_device_eval_batch_size=8,
             weight_decay=0.01,
             save_total_limit=3,
-            num_train_epochs=3,
+            num_train_epochs=2,
             predict_with_generate=True
         )
 
         trainer = Seq2SeqTrainer(
             model=self.model,
             args=training_args,
-            train_dataset=tokenized_datasets["train"],
-            eval_dataset=tokenized_datasets["test"],
+            train_dataset=tokenized_train,
+            eval_dataset=tokenized_test,
             data_collator=data_collator,
             tokenizer=self.tokenizer
         )
 
         trainer.train()
-        self.model.save_pretrained(output_dir)
-        self.tokenizer.save_pretrained(output_dir)
+        # self.model.save_pretrained(output_dir)
+        # self.tokenizer.save_pretrained(output_dir)
 
 
 # Example usage
 if __name__ == "__main__":
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    # os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
         model_name='facebook/nllb-200-distilled-600M',
@@ -125,10 +134,11 @@ if __name__ == "__main__":
     dataset_path = '../data/sentences_nllb.csv'
     prepared_datasets = evaluator.load_and_prepare_data(dataset_path)
     print("Evaluating model before fine-tuning...")
-    pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'])
+    pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'], '../model_nllb/outputs/predictions_pre.csv')
     print(pre_tune_results)
     print("Fine-tuning the model")
-    evaluator.fine_tune_model(prepared_datasets['train'])
+    evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'])
     print("Evaluation after the fine-tuning...")
-    after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'])
+    after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
+                                                    '../model_nllb/outputs/predictions_epoch2.csv')
     print(after_tuning_results)

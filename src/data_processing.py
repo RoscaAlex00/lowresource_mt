@@ -26,8 +26,9 @@ class DataProcessor:
         if self.dataset is None:
             self.load_data()
 
-        self.dataset = self.dataset.dropna(subset=['darija', 'eng'])
-        self.dataset['darija'] = self.dataset['darija'].apply(self.preprocess_text)
+        self.dataset = self.dataset.dropna(subset=['darija_ar', 'eng'])
+        print(len(self.dataset))
+        self.dataset['darija_ar'] = self.dataset['darija_ar'].apply(self.preprocess_text)
         self.dataset['eng'] = self.dataset['eng'].apply(self.preprocess_text)
 
     def split_data(self, test_size=0.2, val_size=0.1):
@@ -45,18 +46,18 @@ class DataProcessor:
 
     def save_data(self):
         # Save the split data to files
-        self.save_to_file(self.train['darija'], f'{self.save_path}/train.darija')
+        self.save_to_file(self.train['darija_ar'], f'{self.save_path}/train.darija_ar')
         self.save_to_file(self.train['eng'], f'{self.save_path}/train.eng')
-        self.save_to_file(self.val['darija'], f'{self.save_path}/val.darija')
+        self.save_to_file(self.val['darija_ar'], f'{self.save_path}/val.darija_ar')
         self.save_to_file(self.val['eng'], f'{self.save_path}/val.eng')
-        self.save_to_file(self.test['darija'], f'{self.save_path}/test.darija')
+        self.save_to_file(self.test['darija_ar'], f'{self.save_path}/test.darija_ar')
         self.save_to_file(self.test['eng'], f'{self.save_path}/test.eng')
 
     def fairseq_preprocess(self):
         # Tokenization and Binarization for Fairseq
         subprocess.run([
             "fairseq-preprocess",
-            "--source-lang", "darija",
+            "--source-lang", "darija_ar",
             "--target-lang", "eng",
             "--trainpref", f"{self.save_path}/train",
             "--validpref", f"{self.save_path}/val",
