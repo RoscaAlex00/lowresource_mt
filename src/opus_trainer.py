@@ -26,43 +26,43 @@ class ModelEvaluator:
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
-    # def load_and_prepare_data(self, file_path):
-    #     raw_datasets = load_dataset('csv', data_files=file_path)
-    #     raw_datasets = raw_datasets.remove_columns('darija')
-    #     raw_datasets = raw_datasets['train'].train_test_split(test_size=0.1, seed=552)
-    #
-    #     raw_datasets['train'] = raw_datasets['train'].filter(
-    #         lambda example: example['src'] is not None and example['tgt'] is not None)
-    #     raw_datasets['test'] = raw_datasets['test'].filter(
-    #         lambda example: example['src'] is not None and example['tgt'] is not None)
-    #
-    #     print(raw_datasets)
-    #     return raw_datasets
+    def load_and_prepare_data(self, file_path):
+        raw_datasets = load_dataset('csv', data_files=file_path)
+        raw_datasets = raw_datasets.remove_columns('darija')
+        raw_datasets = raw_datasets['train'].train_test_split(test_size=0.1, seed=552)
 
-    def load_and_prepare_data(self, original_file_path, additional_file_path):
-        original_datasets = load_dataset('csv', data_files=original_file_path)
-        additional_datasets = load_dataset('csv', data_files=additional_file_path)
-        print(additional_datasets['train'][0])
-
-        # Remove unnecessary columns
-        original_datasets = original_datasets.remove_columns('darija')
-
-        # Split the original dataset
-        split_datasets = original_datasets['train'].train_test_split(test_size=0.15, seed=552)
-        train_dataset = split_datasets['train']
-        test_dataset = split_datasets['test']
-
-        # Concatenate the additional data to the training dataset
-        additional_train_dataset = additional_datasets['train']
-        combined_train_dataset = concatenate_datasets([train_dataset, additional_train_dataset])
-
-        # Filter out examples without source or target from train and test sets
-        combined_train_dataset = combined_train_dataset.filter(
+        raw_datasets['train'] = raw_datasets['train'].filter(
             lambda example: example['src'] is not None and example['tgt'] is not None)
-        test_dataset = test_dataset.filter(lambda example: example['src'] is not None and example['tgt'] is not None)
+        raw_datasets['test'] = raw_datasets['test'].filter(
+            lambda example: example['src'] is not None and example['tgt'] is not None)
 
-        print(f"Train set: {len(combined_train_dataset)}, Test set: {len(test_dataset)}")
-        return {'train': combined_train_dataset, 'test': test_dataset}
+        print(raw_datasets)
+        return raw_datasets
+
+    # def load_and_prepare_data(self, original_file_path, additional_file_path):
+    #     original_datasets = load_dataset('csv', data_files=original_file_path)
+    #     additional_datasets = load_dataset('csv', data_files=additional_file_path)
+    #     print(additional_datasets['train'][0])
+    #
+    #     # Remove unnecessary columns
+    #     original_datasets = original_datasets.remove_columns('darija')
+    #
+    #     # Split the original dataset
+    #     split_datasets = original_datasets['train'].train_test_split(test_size=0.15, seed=552)
+    #     train_dataset = split_datasets['train']
+    #     test_dataset = split_datasets['test']
+    #
+    #     # Concatenate the additional data to the training dataset
+    #     additional_train_dataset = additional_datasets['train']
+    #     combined_train_dataset = concatenate_datasets([train_dataset, additional_train_dataset])
+    #
+    #     # Filter out examples without source or target from train and test sets
+    #     combined_train_dataset = combined_train_dataset.filter(
+    #         lambda example: example['src'] is not None and example['tgt'] is not None)
+    #     test_dataset = test_dataset.filter(lambda example: example['src'] is not None and example['tgt'] is not None)
+    #
+    #     print(f"Train set: {len(combined_train_dataset)}, Test set: {len(test_dataset)}")
+    #     return {'train': combined_train_dataset, 'test': test_dataset}
 
     def tokenize_function(self, examples):
         model_inputs = self.tokenizer(examples['src'], padding="max_length", truncation=True, max_length=128)
@@ -128,8 +128,8 @@ class ModelEvaluator:
             per_device_train_batch_size=16,
             per_device_eval_batch_size=16,
             weight_decay=0.01,
-            save_total_limit=3,
-            num_train_epochs=5,
+            save_total_limit=0,
+            num_train_epochs=3,
             predict_with_generate=True
         )
 
@@ -156,7 +156,8 @@ if __name__ == "__main__":
     )
 
     dataset_path = '../data/sentences_nllb.csv'
-    prepared_datasets = evaluator.load_and_prepare_data(dataset_path, '../data/back_translated_sentences.csv')
+    prepared_datasets = evaluator.load_and_prepare_data(dataset_path)
+    # prepared_datasets = evaluator.load_and_prepare_data(dataset_path, '../data/back_translated_sentences.csv')
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'], '../model_opus/outputs/predictions_pre.csv')
     print(pre_tune_results)
