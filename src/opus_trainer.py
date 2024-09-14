@@ -2,7 +2,7 @@ import csv
 import json
 import os
 
-from datasets import load_dataset, DatasetDict, concatenate_datasets
+from datasets import load_dataset, DatasetDict, concatenate_datasets, Dataset
 from nltk import word_tokenize
 from transformers import (
     AutoTokenizer,
@@ -38,6 +38,34 @@ class ModelEvaluator:
 
         print(raw_datasets)
         return raw_datasets
+
+    def load_extra_data(self, english_file, arabic_file):
+        # Read the English and Arabic sentence files
+        with open(english_file, 'r', encoding='utf-8') as en_file:
+            english_sentences = en_file.readlines()
+
+        with open(arabic_file, 'r', encoding='utf-8') as ar_file:
+            arabic_sentences = ar_file.readlines()
+
+        # Ensure both files have the same number of sentences
+        assert len(english_sentences) == len(arabic_sentences), "Sentence counts don't match!"
+
+        # Combine them into a list of dictionaries
+        combined_data = [{'src': ar_sentence.strip(), 'tgt': en_sentence.strip()}
+                         for ar_sentence, en_sentence in zip(arabic_sentences, english_sentences)]
+
+        # Convert to a Hugging Face Dataset
+        extra_dataset = Dataset.from_list(combined_data)
+
+        return extra_dataset
+
+    def merge_datasets(self, base_dataset, extra_dataset):
+        # Merge extra_dataset into base_dataset's training data using concatenate_datasets
+        combined_train_data = concatenate_datasets([base_dataset['train'], extra_dataset])
+
+        # Update base dataset's train split
+        base_dataset['train'] = combined_train_data
+        return base_dataset
 
     # def load_and_prepare_data(self, original_file_path, additional_file_path):
     #     original_datasets = load_dataset('csv', data_files=original_file_path)
@@ -129,7 +157,7 @@ class ModelEvaluator:
             per_device_eval_batch_size=16,
             weight_decay=0.01,
             save_total_limit=0,
-            num_train_epochs=3,
+            num_train_epochs=5,
             predict_with_generate=True
         )
 
@@ -156,8 +184,19 @@ if __name__ == "__main__":
     )
 
     dataset_path = '../data/sentences_nllb.csv'
-    prepared_datasets = evaluator.load_and_prepare_data(dataset_path)
+    # Load regular data
+    # prepared_datasets = evaluator.load_and_prepare_data(dataset_path)
+    # Load regular + back_translated data
     # prepared_datasets = evaluator.load_and_prepare_data(dataset_path, '../data/back_translated_sentences.csv')
+
+    # Load regular + AraBench data
+    regular_data = evaluator.load_and_prepare_data(dataset_path)
+    bible_en_path = '../data/AraBench/madar.dev.mgr.0.ma.en'
+    bible_ar_path = '../data/AraBench/madar.dev.mgr.0.ma.ar'
+
+    bible_data = evaluator.load_extra_data(bible_en_path, bible_ar_path)
+    
+    prepared_datasets = evaluator.merge_datasets(regular_data, bible_data)
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'], '../model_opus/outputs/predictions_pre.csv')
     print(pre_tune_results)
