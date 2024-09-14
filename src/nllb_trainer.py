@@ -17,6 +17,8 @@ from sacrebleu import corpus_bleu, corpus_chrf
 from nltk.translate.meteor_score import single_meteor_score, meteor_score
 import nltk
 
+from src import utils
+
 nltk.download('punkt')
 nltk.download('wordnet')
 
@@ -45,75 +47,6 @@ class ModelEvaluator:
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, src_lang=src_lang, tgt_lang=tgt_lang)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
-    # def load_and_prepare_data(self, file_path):
-    #     # Load the dataset from a CSV file
-    #     raw_datasets = load_dataset('csv', data_files=file_path)
-    #
-    #     # Remove unnecessary columns
-    #     raw_datasets = raw_datasets.remove_columns('darija')
-    #
-    #     # Split the dataset into train and test sets
-    #     split_datasets = raw_datasets['train'].train_test_split(test_size=0.2, seed=559)
-    #     train_dataset = split_datasets['train']
-    #     test_dataset = split_datasets['test']
-    #
-    #     # Further split the train dataset into train and validation sets
-    #     validation_split = test_dataset.train_test_split(test_size=0.25,
-    #                                                       seed=552)  # 10% of the original train set for validation
-    #     test_dataset = validation_split['train']
-    #     validation_dataset = validation_split['test']
-    #
-    #     # Filter out examples without source or target from train, validation, and test sets
-    #     train_dataset = train_dataset.filter(lambda example: example['src'] is not None and example['tgt'] is not None)
-    #     validation_dataset = validation_dataset.filter(
-    #         lambda example: example['src'] is not None and example['tgt'] is not None)
-    #     test_dataset = test_dataset.filter(lambda example: example['src'] is not None and example['tgt'] is not None)
-    #
-    #     # Print dataset shapes
-    #     print(
-    #         f"Train set: {len(train_dataset)}, Validation set: {len(validation_dataset)}, Test set: {len(test_dataset)}")
-    #
-    #     # Return a dictionary of the datasets
-    #     return {'train': train_dataset, 'validation': validation_dataset, 'test': test_dataset}
-
-    # def load_and_prepare_data(self, file_path):
-    #     raw_datasets = load_dataset('csv', data_files=file_path)
-    #     raw_datasets = raw_datasets.remove_columns('darija')
-    #     raw_datasets = raw_datasets['train'].train_test_split(test_size=0.15, seed=552)
-    #
-    #     raw_datasets['train'] = raw_datasets['train'].filter(
-    #         lambda example: example['src'] is not None and example['tgt'] is not None)
-    #     raw_datasets['test'] = raw_datasets['test'].filter(
-    #         lambda example: example['src'] is not None and example['tgt'] is not None)
-    #
-    #     print(raw_datasets)
-    #     return raw_datasets
-
-    def load_and_prepare_data(self, original_file_path, additional_file_path):
-        original_datasets = load_dataset('csv', data_files=original_file_path)
-        additional_datasets = load_dataset('csv', data_files=additional_file_path)
-        print(additional_datasets['train'][0])
-
-        # Remove unnecessary columns
-        original_datasets = original_datasets.remove_columns('darija')
-
-        # Split the original dataset
-        split_datasets = original_datasets['train'].train_test_split(test_size=0.15, seed=552)
-        train_dataset = split_datasets['train']
-        test_dataset = split_datasets['test']
-
-        # Concatenate the additional data to the training dataset
-        additional_train_dataset = additional_datasets['train']
-        combined_train_dataset = concatenate_datasets([train_dataset, additional_train_dataset])
-
-        # Filter out examples without source or target from train and test sets
-        combined_train_dataset = combined_train_dataset.filter(
-            lambda example: example['src'] is not None and example['tgt'] is not None)
-        test_dataset = test_dataset.filter(lambda example: example['src'] is not None and example['tgt'] is not None)
-
-        print(f"Train set: {len(combined_train_dataset)}, Test set: {len(test_dataset)}")
-        return {'train': combined_train_dataset, 'test': test_dataset}
-
     def tokenize_function(self, examples):
         model_inputs = self.tokenizer(examples['src'], padding="max_length", truncation=True, max_length=128)
         with self.tokenizer.as_target_tokenizer():
@@ -122,7 +55,7 @@ class ModelEvaluator:
         return model_inputs
 
     def translate_and_save(self, dataset, output_file):
-        src_sentences = dataset['train']['src'] + dataset['test']['src'] # Adjust the column name if necessary
+        src_sentences = dataset['train']['src'] + dataset['test']['src']  # Adjust the column name if necessary
         translations = []
 
         # Open file to write translations
@@ -191,7 +124,7 @@ class ModelEvaluator:
             'chrF': chrf_score
         }
 
-    def fine_tune_model(self, train_set, test_set, output_dir='../model_nllb/checkpoints'):
+    def fine_tune_model(self, train_set, test_set, output_dir='../results/model_nllb/checkpoints'):
         tokenized_train = train_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
         tokenized_test = test_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
         data_collator = DataCollatorForSeq2Seq(self.tokenizer, model=self.model)
@@ -234,16 +167,17 @@ if __name__ == "__main__":
     )
 
     dataset_path = '../data/sentences_nllb.csv'
-    prepared_datasets = evaluator.load_and_prepare_data(dataset_path, '../data/back_translated_sentences.csv')
+    prepared_datasets = utils.load_backtranslation_data(dataset_path, '../data/back_translated_sentences.csv')
     print("Evaluating model before fine-tuning...")
-    pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'], '../model_nllb/outputs/predictions_pre.csv')
+    pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'],
+                                                '../results/model_nllb/outputs/predictions_pre.csv')
     print(pre_tune_results)
     print("Fine-tuning the model")
     evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'])
     plot_training_loss(evaluator.trainer)
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
-                                                    '../model_nllb/outputs/predictions_epoch2.csv')
+                                                    '../results/model_nllb/outputs/predictions_epoch2.csv')
     print(after_tuning_results)
 
     # translation_output_file = '../data/translated_sentences.csv'

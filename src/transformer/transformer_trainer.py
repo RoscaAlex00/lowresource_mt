@@ -133,21 +133,21 @@ class TransformerTrainer:
 if __name__ == "__main__":
     MODEL = 'transformer'
     trainer = TransformerTrainer(
-        data_bin_path='../data/fairseq_data/data-bin',
-        save_dir=f"../models/{MODEL}",
+        data_bin_path='../../data/fairseq_data/data-bin',
+        save_dir=f"../results/models/{MODEL}",
         model_type=MODEL
     )
     trainer.train_model()
 
     # Plot losses
     trainer.plot_losses(os.path.join(trainer.save_dir, 'log_file.log'),
-                        os.path.abspath(f"../models/{MODEL}/loss_plot.png"))
+                        os.path.abspath(f"../results/models/{MODEL}/loss_plot.png"))
 
     # Load model and evaluate
     model = trainer.load_model()
     # Provide your src_sentences and tgt_sentences for evaluation
-    src_file_path = '../data/processed/test.darija_ar'
-    tgt_file_path = '../data/processed/test.eng'
+    src_file_path = '../../data/processed/test.darija_ar'
+    tgt_file_path = '../../data/processed/test.eng'
     results = trainer.evaluate_model(model, src_file_path, tgt_file_path,
-                                     os.path.abspath(f"../models/{MODEL}/evaluation_metrics.json"))
+                                     os.path.abspath(f"../results/models/{MODEL}/evaluation_metrics.json"))
     print(results)

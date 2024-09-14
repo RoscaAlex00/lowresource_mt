@@ -68,8 +68,8 @@ class DataProcessor:
 
 
 if __name__ == "__main__":
-    processor = DataProcessor(file_path='../data/sentences.csv', save_path='../data/processed',
-                              fairseq_bin_path='../data/fairseq_data')
+    processor = DataProcessor(file_path='../../data/sentences.csv', save_path='../../data/processed',
+                              fairseq_bin_path='../../data/fairseq_data')
     processor.preprocess()
     processor.split_data()
     processor.save_data()

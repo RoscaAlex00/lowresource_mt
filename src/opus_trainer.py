@@ -16,6 +16,8 @@ from sacrebleu import corpus_bleu, corpus_chrf
 from nltk.translate.meteor_score import single_meteor_score, meteor_score
 import nltk
 
+from src import utils
+
 nltk.download('punkt')
 nltk.download('wordnet')
 
@@ -25,72 +27,6 @@ class ModelEvaluator:
         self.model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-
-    def load_and_prepare_data(self, file_path):
-        raw_datasets = load_dataset('csv', data_files=file_path)
-        raw_datasets = raw_datasets.remove_columns('darija')
-        raw_datasets = raw_datasets['train'].train_test_split(test_size=0.1, seed=552)
-
-        raw_datasets['train'] = raw_datasets['train'].filter(
-            lambda example: example['src'] is not None and example['tgt'] is not None)
-        raw_datasets['test'] = raw_datasets['test'].filter(
-            lambda example: example['src'] is not None and example['tgt'] is not None)
-
-        print(raw_datasets)
-        return raw_datasets
-
-    def load_extra_data(self, english_file, arabic_file):
-        # Read the English and Arabic sentence files
-        with open(english_file, 'r', encoding='utf-8') as en_file:
-            english_sentences = en_file.readlines()
-
-        with open(arabic_file, 'r', encoding='utf-8') as ar_file:
-            arabic_sentences = ar_file.readlines()
-
-        # Ensure both files have the same number of sentences
-        assert len(english_sentences) == len(arabic_sentences), "Sentence counts don't match!"
-
-        # Combine them into a list of dictionaries
-        combined_data = [{'src': ar_sentence.strip(), 'tgt': en_sentence.strip()}
-                         for ar_sentence, en_sentence in zip(arabic_sentences, english_sentences)]
-
-        # Convert to a Hugging Face Dataset
-        extra_dataset = Dataset.from_list(combined_data)
-
-        return extra_dataset
-
-    def merge_datasets(self, base_dataset, extra_dataset):
-        # Merge extra_dataset into base_dataset's training data using concatenate_datasets
-        combined_train_data = concatenate_datasets([base_dataset['train'], extra_dataset])
-
-        # Update base dataset's train split
-        base_dataset['train'] = combined_train_data
-        return base_dataset
-
-    # def load_and_prepare_data(self, original_file_path, additional_file_path):
-    #     original_datasets = load_dataset('csv', data_files=original_file_path)
-    #     additional_datasets = load_dataset('csv', data_files=additional_file_path)
-    #     print(additional_datasets['train'][0])
-    #
-    #     # Remove unnecessary columns
-    #     original_datasets = original_datasets.remove_columns('darija')
-    #
-    #     # Split the original dataset
-    #     split_datasets = original_datasets['train'].train_test_split(test_size=0.15, seed=552)
-    #     train_dataset = split_datasets['train']
-    #     test_dataset = split_datasets['test']
-    #
-    #     # Concatenate the additional data to the training dataset
-    #     additional_train_dataset = additional_datasets['train']
-    #     combined_train_dataset = concatenate_datasets([train_dataset, additional_train_dataset])
-    #
-    #     # Filter out examples without source or target from train and test sets
-    #     combined_train_dataset = combined_train_dataset.filter(
-    #         lambda example: example['src'] is not None and example['tgt'] is not None)
-    #     test_dataset = test_dataset.filter(lambda example: example['src'] is not None and example['tgt'] is not None)
-    #
-    #     print(f"Train set: {len(combined_train_dataset)}, Test set: {len(test_dataset)}")
-    #     return {'train': combined_train_dataset, 'test': test_dataset}
 
     def tokenize_function(self, examples):
         model_inputs = self.tokenizer(examples['src'], padding="max_length", truncation=True, max_length=128)
@@ -143,7 +79,7 @@ class ModelEvaluator:
             'chrF': chrf_score
         }
 
-    def fine_tune_model(self, train_set, test_set, output_dir='../model_opus/checkpoints'):
+    def fine_tune_model(self, train_set, test_set, output_dir='../results/model_opus/checkpoints'):
         tokenized_train = train_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
         tokenized_test = test_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
         data_collator = DataCollatorForSeq2Seq(self.tokenizer, model=self.model)
@@ -185,25 +121,26 @@ if __name__ == "__main__":
 
     dataset_path = '../data/sentences_nllb.csv'
     # Load regular data
-    # prepared_datasets = evaluator.load_and_prepare_data(dataset_path)
+    # prepared_datasets = utils.load_and_prepare_data(dataset_path)
     # Load regular + back_translated data
-    # prepared_datasets = evaluator.load_and_prepare_data(dataset_path, '../data/back_translated_sentences.csv')
+    # prepared_datasets = utils.load_and_prepare_data(dataset_path, '../data/back_translated_sentences.csv')
 
     # Load regular + AraBench data
-    regular_data = evaluator.load_and_prepare_data(dataset_path)
+    regular_data = utils.load_and_prepare_data(dataset_path)
     bible_en_path = '../data/AraBench/madar.dev.mgr.0.ma.en'
     bible_ar_path = '../data/AraBench/madar.dev.mgr.0.ma.ar'
 
-    bible_data = evaluator.load_extra_data(bible_en_path, bible_ar_path)
-    
-    prepared_datasets = evaluator.merge_datasets(regular_data, bible_data)
+    bible_data = utils.load_arabench_data(bible_en_path, bible_ar_path)
+
+    prepared_datasets = utils.merge_datasets(regular_data, bible_data)
     print("Evaluating model before fine-tuning...")
-    pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'], '../model_opus/outputs/predictions_pre.csv')
+    pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'],
+                                                '../results/model_opus/outputs/predictions_pre.csv')
     print(pre_tune_results)
     print("Fine-tuning the model")
     evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'])
 
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
-                                                    '../model_opus/outputs/predictions_epoch5.csv')
+                                                    '../results/model_opus/outputs/predictions_epoch5.csv')
     print(after_tuning_results)
