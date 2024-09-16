@@ -116,23 +116,23 @@ if __name__ == "__main__":
     # os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
-        model_name='Helsinki-NLP/opus-mt-ar-en',
+        model_name='Helsinki-NLP/opus-mt-en-ar',
     )
 
-    dataset_path = '../data/sentences_nllb.csv'
+    dataset_path = '../data/sentences_nllb_reversed.csv'
     # Load regular data
-    # prepared_datasets = utils.load_and_prepare_data(dataset_path)
+    prepared_datasets = utils.load_and_prepare_data(dataset_path)
     # Load regular + back_translated data
     # prepared_datasets = utils.load_and_prepare_data(dataset_path, '../data/back_translated_sentences.csv')
 
     # Load regular + AraBench data
-    regular_data = utils.load_and_prepare_data(dataset_path)
-    bible_en_path = '../data/AraBench/madar.dev.mgr.0.ma.en'
-    bible_ar_path = '../data/AraBench/madar.dev.mgr.0.ma.ar'
-
-    bible_data = utils.load_arabench_data(bible_en_path, bible_ar_path)
-
-    prepared_datasets = utils.merge_datasets(regular_data, bible_data)
+    # regular_data = utils.load_and_prepare_data(dataset_path)
+    # bible_en_path = '../data/AraBench/madar.dev.mgr.0.ma.en'
+    # bible_ar_path = '../data/AraBench/madar.dev.mgr.0.ma.ar'
+    #
+    # bible_data = utils.load_arabench_data(bible_en_path, bible_ar_path)
+    #
+    # prepared_datasets = utils.merge_datasets(regular_data, bible_data)
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'],
                                                 '../results/model_opus/outputs/predictions_pre.csv')

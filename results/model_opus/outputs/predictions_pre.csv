@@ -1,26 +1,1313 @@
 Original,Original Translation,Translated Sentence
-كنّا مساحبين شي عام هادي دابا,we've been dating for nearly a year now,"We were dragging in a public order, Hadi Dabba."
-بحال هاكدا,like this,Hackda's on his way.
-ناري علا روينا,What a disaster,I'm gonna take care of this.
-فاش نقدر نعاونك?,how can I help you?,A rat who can help you?
-والاكين ماكايبانش عندو صيلا بلحاضير,but it does not feel very relevant to the present,And Alakin Makaipanch when he's a prayer with a present.
-وصلاتني لكوموند,my order has arrived,I'm connected to Commond.
-هادشي ماكايدخولش لعقل,It's absurd,Hadshi Makajdulsh is in the mind.
-كانقتارح ناكلو لفرماج بل فورشيطا,I suggest we eat the cheese with the fork,"It was Naklo's fighter for Pharmage, but foreshita."
-أنا قيسّيس,I am a priest,I'm a priest.
-أحسان طير ديال لما عندي هووا لوز,My favourite water bird is the swan.,Why do I have a hoo-luz?
-ڭالييّا نطّاصل بيه,he told me to call him,Let's get to him.
-ماعمرك مادرتي ليوڭا ?,have you ever tried yoga?,"How old are you, Madrity Leo?"
-غادي ناخود لحوت,i'll have fish,Gadi Nakhud Lawt
-شكون ربح,who won,Succubus wins.
-تشباك سابعان.,Fingers crossed.,Seven-year-olds.
-عزاوي,man,Azawi.
-شعل الضو,Turn on the light,Light the light.
-هاد لكلب ضرييف,this dog is friendly,Hud's for a puppy dog.
-واش بغيتي لباربا معاهوم تاهيا,"Do you want beets with them, too?","Uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh, uh,"
-"وف, لبيأ ديال خدماتاك ماكاتبانش ليا موفريحا أُ موشجّيعا","My goodness, your work environment doesn't sound very happy and uplifting","And, for the sake of Dyal, your services, Makatpanch Leah, are encouraged."
-"واخا هاكاك, يقدار يساباب بزاف ديال دوهون","It could make a lot of fat, though.","And a brother, Hackak, is able to sneak up on Zav Dial Duhon."
-خاسّ نكمل هاد لكتاب,i have to finish reading this book,Let's go through with a book.
-توّلتي بزّاف,you took too much time,You got a fake.
-"بسارحا, شي مارات كانتساءل منين كاياخدو دراري سغار تادريب فهاد لواقت","honestly, sometimes i wonder where you kids get your training nowadays","Farrah, Shi Marat was wondering where Kaikhdu Drari Sgar Tadrip Fahd Luwat"
-حطّ داكشي اللارض,put that down,Ducky landed the floor.
+we've been dating for nearly a year now,كنّا مساحبين شي عام هادي دابا,نحن نتواعد منذ ما يقرب من عام الآن
+like this,بحال هاكدا,مثل هذا
+What a disaster,ناري علا روينا,ما هي الكارثة
+how can I help you?,فاش نقدر نعاونك?,كيف يمكنني مساعدتك؟
+but it does not feel very relevant to the present,والاكين ماكايبانش عندو صيلا بلحاضير,غير أنها لا تشعر بأنها ذات صلة وثيقة بالحاضر
+my order has arrived,وصلاتني لكوموند,لقد وصل أمري
+It's absurd,هادشي ماكايدخولش لعقل,إنه أمر لا يُعقل
+I suggest we eat the cheese with the fork,كانقتارح ناكلو لفرماج بل فورشيطا,أقترح أن نأكل الجبنة مع الشوكة
+I am a priest,أنا قيسّيس,أنا كاهن
+My favourite water bird is the swan.,أحسان طير ديال لما عندي هووا لوز,طير مائي المفضل هو البجعة
+he told me to call him,ڭالييّا نطّاصل بيه,طلب مني أن أدعوه
+have you ever tried yoga?,ماعمرك مادرتي ليوڭا ?,هل جربت اليوغا من قبل؟
+i'll have fish,غادي ناخود لحوت,أنا سَيكونُ عِنْدَهُ سمكُ
+who won,شكون ربح,الفائز الذي فاز
+Fingers crossed.,تشباك سابعان.,لقد عبرت الإصبع.
+man,عزاوي,رجل
+Turn on the light,شعل الضو,أدر على ضوء الضوء
+this dog is friendly,هاد لكلب ضرييف,هذا الكلب هو ودود
+"Do you want beets with them, too?",واش بغيتي لباربا معاهوم تاهيا,هل تريد البنطلون معهم أيضاً؟
+"My goodness, your work environment doesn't sound very happy and uplifting","وف, لبيأ ديال خدماتاك ماكاتبانش ليا موفريحا أُ موشجّيعا",يا إلهي، بيئة عملك لا تبدو سعيدة ومرتفعة
+"It could make a lot of fat, though.","واخا هاكاك, يقدار يساباب بزاف ديال دوهون",يمكن أن تجعل الكثير من الدهون، على الرغم من ذلك.
+i have to finish reading this book,خاسّ نكمل هاد لكتاب,يجب أن أنهي قراءة هذا الكتاب
+you took too much time,توّلتي بزّاف,لقد أخذت الكثير من الوقت
+"honestly, sometimes i wonder where you kids get your training nowadays","بسارحا, شي مارات كانتساءل منين كاياخدو دراري سغار تادريب فهاد لواقت",بصراحة، في بعض الأحيان أتساءل من أين تحصلون على تدريبكم في هذه الأيام
+put that down,حطّ داكشي اللارض,وضع هذا أسفل
+I'll call the school and let them know I'm gonna be a little late,غادي ندوور لمدراسا أُ نڭوليهوم راه غادي نتعطل شوييا,سأتصل بالمدرسة وأخبرهم أنني سأتأخر قليلاً
+the team's defense held strong against the opponent's attacks,ديفاع كان واجد و واقف قدام لهوجوم ديال لفرقا لاخرا,الدفاع عن الفريق كان قوياً ضد هجمات الخصم
+He talks very fast,كايهضر بزّربا,إنه يتحدث بسرعة كبيرة جداً
+"With pleasure, I like berries very much.","مرحبا, عزيز عليا التوت بزّاف.",بكل سرور، أحب التوت كثيراً
+what is your best childhood memory?,شنو أحسّن ديكرا عندك من سخور ?,ما هي أفضل ذاكرة طفولتك؟
+In a word,فكلما وحدا,في كلمة واحدة
+it's much more interesting than your history of genealogist and treasure,"هادشي أكتار إتارا ليهتيمام من تاريخك فعيلم ل أنساب أُ لكانز""",أكثر إثارة للاهتمام من تاريخك في علم الجينات والكنز
+underground,تحت لارض,1 ف-5، 1 ف-4، 1 ف-3، 1 خ ع (ر أ)، 1 خ ع (رأ)، 1 خ ع (رأ)، 1 خ ع (ر أ)
+We appear to have stopped moving.,تايبان أنّاهو وڭفنا.,يبدو أننا توقفنا عن التحرك
+i want to go to,بغيت نمشي ل,أريد أن أذهب إلى
+I remember,كانعقل,أنا أتذكر
+I'm learning how to cook,كانتعلّم نطيّب,أنا أتعلم كيف أطبخ
+What's this?,أش هادا?,ما هذا؟
+Is there an emergency button?,واش كاين بوطون ديال تاواريء?,هل هناك زر طوارئ؟
+I don't mind,ماعندي سوق,أنا لا أمانع
+I'm putting on some make up,كاندير لماكياج,أنا أضع بعض المكياج
+"But with good stuff, you can eat better.","والاكين معا حوايج زوينا,تاقدار تاكول حسان",لكن مع الأشياء الجيدة يمكنك أن تأكل بشكل أفضل
+I don't have boys,ماعنديش لولاد,ليس لدي أولاد
+What about food?,أُ لماكلا?,ماذا عن الطعام؟
+"I'd like to keep it quite small, say for around 30 people","بغيت نخليه صغير, نڭولو شي 30 واهد",أود أن أبقيها صغيرة جداً، لنقل حوالي 30 شخصاً
+what happened?,أش وقاع?,ماذا حدث؟
+What did you get in your bithday?,شنو جاك فعيد ميلادك?,ما الذي حصلتِ عليه في يومكِ؟
+He did as he was told,دار داكشي لي طقال ليه,لقد فعل ما قيل له
+i've never eaten hamburger,ماعرني كليت لساندويش,لم يسبق لي أن أكلت همبرغر
+what is the most awkward situation you ever found yourself in?,شنو هو أكتار ماوقيف موحريج تحتيتي فيه ?,ما هو الوضع الأكثر حرجاً الذي وجدت نفسك فيه؟
+I will live alone,غانسكن البوحدي,سأعيش وحيدًا
+Okay for a massage and a rum,واخا ل ماسّاڭ أُ روم,لـ a التدليك و a تَرْم
+It's up to you,هادشي خليتو ليك,والأمر متروك لك
+"Yes, my comrades are blocked","وايه, عشراني مبلوكايين",نعم، رُفَعَيّ مَسْعُودونَ
+"He's good, isn't he?","لاباس عليه, أولا لا?",إنه جيد، أليس كذلك؟
+"Oh, yeah, tell me about it","أه, أه, ڭولييا عليها",نعم، نعم، قل لي عن ذلك
+You can't judge a book by it's cover,مايمكنش تحكم علا كتاب من لغلاف ديالو,لا يمكنك الحكم على كتاب من غلافه
+absolutely,ڭاع,)أ( لا ينطبق
+Tom is not at the café,ماكاينش طوم فلقهوا,توم ليس في المقهى
+Please don't worry,عافاك ماتخافش,من فضلك لا تقلق
+"When I listen to you and I talk to you, it's for your psychological balance, because it's my job.","فاش كانتصنّط ليك أُ كانهدر معاك, راه علا قبل أتّاوازون أنّافسي ديالك, حيت هادي خدمتي.",عندما أستمع إليك و أتحدث إليك إنه من أجل توازنك النفسي لأنه عملي
+It really takes time,كايّاخود لواقت بزّاف,إنها حقاً تأخذ وقتاً
+But I could really use some help wearing it and set it up,والاكين إمكان ليا بصاح نستاعمل شوييا تلموساعادا ف باش نلبّسو أُنصاوبو,لكن يمكنني حقاً أن أستفيد من بعض المساعدة في إرتدائها و ترتيبها
+And the nurses keep disturbing me every time I nod off,أُلفرمليات كايبرزتوني فكول مرّا كايديني فيها نعاس,والممرضات ما زالت تضايقني في كل مرة أومئ قبالة
+forever,إلا لأباد,إلى الأبد
+this music is bad,هاد لموصيقا عييّانا,هذه هي هذه الموسيقى سيئة
+isn't it!,أولّا!,هذا ليس هو!
+I haven't eaten anything all day,ماكليت والو نهار كامل,لم أكل أي شيء طوال اليوم
+What's going on?,أش واقع?,ما الذي يحدث؟
+"If you want to buy a bottle of wine and drink it secretly, buy a nice bottle","إلا بغيتي تشري قارعا ديال شراب أُ تشرابها بتخبيا, شري قارعا زوينا",إذا أردت أن تشتري زجاجة نبيذ وتشربها سراً، فاشتري زجاجة جميلة
+they're building a birdhouse,كايبنيو واحد لا كاڭ,هم يبنون بيتاً للطيور
+Why are you staring at me?,مالك كاتحنزز فييّا?,لماذا تحدق بي؟
+She is used to cooking,هووّا مولف يطيّب,هي تُستعمل للطبخ
+I am not as young as I used to be,مابقيتش شاب كيف كنت شحال هادا,أنا لست في شبابي كما اعتدت أن أكون
+I'd like to buy something,بغيت نشري شي حاجة,أود أن أشتري شيئاً
+There are activities too.,كاينين حتا ل أنسهيطا.,وهناك أنشطة أيضا.
+"let's have a cozy night in, just the two of us, with our favorite comfort food",يالّاه ندوزو شي ليلا ناديا خير أنا وياك معا لماكلا لي كانموتو عليها,لنحظى بليلة مريحة في، فقط نحن الاثنين، مع طعامنا المريح المفضل
+I love sailors too,أنا كايعاجبوني لباحارا حتا هوما,أحب البحارة أيضاً
+He's lovely,هوا فنيكيش,انه جميل
+i had a lovely time,داوازت معاك واقت زوين,كان لدي وقت جميل
+You are frozen,تبلوكيتي,أنت مجمد
+how do you unwind before bed?,كيفاش تاتجبّد قبل نعاس?,كيف ترتاح قبل النوم؟
+the clothes are in the wardrobe,لحوايج فلماريو,"""الملابس في الخزانة"""
+I want ot visit Morocco,بغيت نمشي لل مغريب,أريد زيارة المغرب
+I've never done this before,ماعمارني دارت هادشي قبل,لم أفعل هذا من قبل
+I wake up early in the morning,كانفيق فصّباح بكري,أستيقظ مبكراً في الصباح
+the bank is closed,لبنكا سادّا,قفل المصرف
+bother,تبرزيط,لا يُنفّف
+I think I remember that the food is not very good.,كاندن أنّي تفاكارت بيلا لماكلا مازويناش بزاف.,أعتقد أني أتذكر أن الطعام ليس جيداً جداً
+Can we lunch together?,واش نتغدّاو مجموعين?,هل يمكننا أن نتناول الغداء معاً؟
+"Oooh I love cookies, yes please.","ووه كايعجبوني ل كوكيز, أيه عافاك.",أحب البسكويت، نعم من فضلك.
+Good evening,مسا لخير,"""سـيـع سـيـع سـيـع سـيـع سـيـع سـاء"""
+where are you,أ فينك,أين أنت
+the dog owner gives a bone to his dog every day,مول لكلب كيعتيه عدما كولا نهار,مالك الكلب يعطي عظمة لكل كلبه كل يوم
+Do you have any other ideas that come to mind?,واش عندك شي أفكار خرين جاوك ف راسك?,هل لديك أي أفكار أخرى تأتي إلى ذهنك؟
+Who are they?,شكوناهوما?,من هم؟
+My 'friend' hahahaha,'ساحبي' هاهاهاها,"""صديقي"" هاهاهاها"
+we don't have this type,ماكاينش عندنا هاد النوع,ليس لدينا هذا النوع
+he did say something not particularly nice,ڭال شي حاجة مازويناش بزاف,لقد قال شيئاً ليس لطيفاً جداً
+It's a shame,حشوما,إنه عار عار
+I'm not a great fan because they are rather boring.,أنا ماشي من لموعجابين لكبار حيت موميلّا,أنا لست معجباً كبيراً لأنها مملة نوعاً ما
+i'm cleaning out my closet,كانقي لمارييو ديالي,أنا أُنظّفُ خارج خزانتي
+july,شهر سبعا,يُوجّه إلى
+"Yeah, you're right.","وايه, عندك صحّ.",نعم، أنت على حق.
+my eyes are burning,عينيا كيحرقوني,# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+"Good luck, boss!",حاضّ ساعيد أ شف!,حظاً موفقاً، أيها الرئيس!
+any plans for the weekend?,شي بلان لهاد لويكند ?,أي خطط لعطلة نهاية الأسبوع؟
+Have you got 200 dhs?,واش عنداك 200 دهس,هل لديك 200 درهم؟
+"Go on, have fun!","سير, تبرّع معا راسك!",هيّا، استمتعوا بوقتكم!
+"No, I am just passing through","لا, أنا غير دايز",لا، أنا مجرد مرور عبر
+"There is no ocean below us, only Pakistan","ماكاين التا بحر تحت منّا, هير پاكيستان",ليس هناك محيط تحتنا، فقط باكستان
+Congratulations,مبروك,التهانئ المباركة
+We might be mugged!,يقادرو يسارقونا,قد نكون قد تعرضنا للسرقة!
+Five dirhams,خمسا تدراهم,خمسة دفعات
+I don't think it is a good idea to ask for expensive champagne,ماكانضنش فيكرا مزيانا أنّاك طلاب شامپاڭن غاليا,لا أعتقد أنها فكرة جيدة أن تطلب شمبانيا غالية
+her grandmother gave her the bracelet,جداتها عتاتها هاد لبراسلت,أعطتها جدتها السوار
+Not bad,مابيهش,ليس سيئاً
+Go straight,سير نيشان,سِيّاً مستقيماً
+"if you could choose a new name, which one would it be?",شنو سميا لي تبغي تسمي راسّك ?,إذا كنت تستطيع اختيار اسم جديد، أي واحد سيكون؟
+Do you want some water?,واش بغيتي لما?,هل تريد بعض الماء؟
+Are there chickens there too?,واش كاين دجاج تماك تاهوا?,هل هناك دجاج هناك أيضاً؟
+we have,عندنا,نحن مُنّا
+it will be very windy,خايكون ريح بزّاف,« فتكون » بالتاء والياء « عطرا ».
+did you rent a house?,واش كريتي دار?,هل إستأجرت منزلاً؟
+"Yes, please.","أيه, مرحبا.",نعم، من فضلك.
+"But there's still chocolate, you want some?","والاكين مازال كاين شوكلات, بغيتي شوييا?",ولكن لا تزال هناك شوكولاتة، هل تريد البعض؟
+road trips are fun until you realize how uncomfortable car seats can be,سفر فتونوبيل ولا لكار كيبان نادي تاكاتحسّ شحال ماشي موريحا لڭلسّا,الرحلات البرية هي مرحة حتى تدرك كيف يمكن أن تكون مقاعد السيارات غير مريحة
+I spent a lot of money,خسرت بزّاف ديال لفلوس,لقد أنفقت الكثير من المال
+Where is the cupboard,فيناهووّا لماريو,أين هي الخزانة
+"What do you think, sir?",أش بان ليك أسيدي?,ما رأيك يا سيدي؟
+I don't carry a phone.,ماهازّش معايا تيليفون.,أنا لا أحمل هاتفاً
+But you must respect that new deadline,والاكين خسّك تحتارم هاد لوقت الجديد,لكن يجب أن تحترم ذلك الموعد الجديد
+I don't eat rice,ماكانّاكولش الروز,أنا لا آكل أرز
+where is the nearest chemist's shop?,كاين شي فارماسيان قريب من هنا?,أين هو أقرب متجر كيميائي؟
+It's true that security issues have gone up,بساه لماشاكيل لأمنييا رتافعات,صحيح أن قضايا الأمن الأمني قد تصاعدت
+you're beautiful,نتا زوين,أنتِ جميلة جداً
+why they so infuriate us,علاش كايعصّبونا بحال هاكّا,« فجعلوا لنا من عبادهم يربون منا منا من عبادهم يربون منا فينا فينا من عبادهم ، يهمونا منا ، يهمونا ، يهمونا ، يهمونا ، يهمونا ، فينا فينا فيهم لطينا ، فهم لنا منا ، فجعلوا لنا منا كثيرًا كثيرًا كثيرًا كثيرًا كثيرًا كثيرًا كثيرًا كثيرًا كثيرًا ، هم لنا من عبادنا ، من عبادهم ؛ من عبادهم ؛ من عبادهم ؛ من عبادهم ؛ من
+"No, I just wanted to ask what beers do you have",لا بغيت غير نساوال علا أنواع لبيرا ليعنداك,لا، أردت فقط أن أسأل ما الذي لديك من بيرز
+I thought it was today,كان يسحاب لييا ليوم,إعتقدت أنه كان اليوم
+there is very little likelihood of an old civilisation occurring on Mars,كاينا حتيماليا صغيرا بزاف ديال أناهو تكون حاضارا فل مرّيخ,هناك احتمال ضئيل جداً لحضارة قديمة تحدث على المريخ
+"But you can talk to your physics teacher, if you're interested.","والاكين تقدار تهضار معا أُستادك ديال پهيسيقو, إلا كانتي مهتام",ولكن يمكنك التحدث إلى معلم الفيزياء الخاص بك، إذا كنت مهتما.
+I don't drink alcohol,ماكانشربش الشراب,أنا لا أشرب الكحول
+If you wouldn't mind,إلا ماكانش عندك مانيع,إذا كنت لا تمانع
+I don't know yet,مازال ماعرفتش,أنا لا أعرف حتى الآن
+"i'd rather not, thanks","كانفدل مانقبلش, شوكران",أفضل ألا لا، شكراً
+you're not always in a bad mood,نتا ماشي ديما فميزاج خايب,أنت لست دائماً في مزاج سيء
+you are annoying,نتا موبرزيط,أنتِ مزعجة
+I will go and grab them for you,غانمشي نجيبهوم ليك,سوف أذهب و أجلبها لك
+I told you,ڭلتها ليك,لقد قلت لك
+"Okay, I'm with you","لايسخر, أنا معاك",حسناً، أنا معك
+Good luck.,لايسّر.,حظاً موفقاً وحظاً موفقاً حظاً موفقاً.
+Yes I've seen them. They will be a nightmare.,أه شفتهوم. غايكونو كابوس.,أجل، لقد رأيتهم سيكونون كابوساً
+We have a plan,عندنا خوطّا,لدينا خطة
+In the meantime,ف نافس لواقت,في الوقت الحالي
+He covered his face and wept,غطّا وجهو و بكا,« غطى وجهه » أي وجهه « وغشى » غطى وجهه في بطنه ، وغشى في بطنه في بطنه.
+I will be back,هاني جاي,سوف أعود
+I like to take challenges,عزيز علييّا التاحادّييات,أحب أن أواجه تحديات
+I don't like music,ماكاتعجبنيش لموصيقا,أنا لا أحب الموسيقى
+I'm full,شبعت,أنا مكتملة
+Why?,علاش?,لماذا؟ لماذا؟
+The washing machine is not working,لماكينا دصّابون ماخدّاماش,الغسالة لا تعمل
+I'm good.,أنا مزيان.,أنا بخير حال
+Probably not.,موحالش.,من غير المحتمل أن لا يكون.
+"That's sweet, but you know what it's like at my age","هاداشي زوين, والاكين راك عارف كيفاش كايكون هادشي فلعمر ديالي",هذا حل حل حلو، لكنك تعرف كيف يبدو الأمر في عمري
+I suppose it takes all day!,كاندان غاياخود نهار كامل!,أفترض أنه يأخذ كل يوم!
+I went to the zoo,مشيت لحاديقات لحاياوانات,ذهبت إلى الحديقة
+It's too shady in the forest for my liking,راه فيه ضال بزاف فلغابا بناسبا لييا,هو جداً غامض جداً في الغابة لأحبّه
+"But, you know, sugar isn't very good for dogs.","والاكين, راك عارف, السكار راه مامزيانش بزاف اللكلاب.",ولكن، كما تعلمون، السكر ليس جيدا جدا للكلاب.
+He yawned,هووّا تفوّه,هو يَثْبَثُ
+we're hearing a lot about it right now,تانسمعو عليه بزّاف دابا,نحن نسمع الكثير عنه الآن
+sorry - just before going to bed,سماح لييا - قبال مانمشي نعس,قبل الذهاب إلى الفراش
+it suits you,جا معاك,هو يَحْسُكَ
+october,أُكتوبر,مَرْ مَرْ مَرْ مَرْ
+how do you stay motivated?,كيفاش كاتبقا موتيڤي ?,كيف لك أن تبقى دافعاً؟
+give me a call,دوّر ليا,اتصل بي
+I live in Italy,كانعيش ف الطاليان,أعيش في إيطاليا
+it is dispiriting,راه موحبيت,« مُتَبَّر » مُبْتَد
+"No, thanks.","اللا, شوكران.",لا، لا، شكراً.
+Moha and Fatima have two daughters and a son,موها أُ فاتيما عندهوم جوج بنات أُ درّي,عند كل من ولدين وبنتين وبنت ابن وولد:
+How much money do you have?,شحال ت لفلوس عندك?,كم من المال لديك؟
+minute,دقيقا,1 ف-5، 1 ف-4، 1 ف-3، 1 خ م، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1 م و، 1
+friday,الجمعا,يوم الجمعة
+It's a country I know very little about,هيا داولا ماكانعرافش عليها بزاف,إنها بلد أعرف القليل عنها
+the library was quiet until we got here,كانت لمكتابا خاويا تا جينا,كانت المكتبة هادئة حتى وصلنا إلى هنا
+he loves playing soccer,كايعجبو يلعب كورا,هو يَحبُّ لعب كرة القدم
+how do I get there,كيغاندير باش نوصل تمّا,كيف يمكنني أن أصل إلى هناك
+i've been waiting for you for two hours,هادي ساعتاين و أنا كانتسناك,لقد كنت أنتظرك منذ ساعتين
+Yes I'll do that,أه غادي نديرها,نعم سأفعل ذلك
+day-to-day,نهار علا نهار,من يوم إلى يوم
+give me her money,عطيني فلوسها,"""تعطيني مالها"""
+the most important thing,أهامّ حاجا,أهم شيء مهم
+I'll be there at that time,غادي نكون تمّاك فداك لوقت,سأكون هناك في ذلك الوقت
+what happened between you and him?,مالك معاه?,ماذا حدث بينك وبينه؟
+I always have some leftover bread and I like to come here and enjoy the quiet.,عندي ديما شوييا ديال لخوبز ليكايبقا أُعزيز عليا نجي لهنا أُ نتماتاع بلهودوء.,لدي دائماً بعض الخبز المتبقي وأحب أن آتي إلى هنا و أستمتع بالهدوء
+3yyeT 3liha,كالّ هر,3 طير 3
+A cup of hot milk,كاس ديال لحليب سخون,كوب من الحليب
+This one may be historic,هادي تقدر تكون تاريخيا,هذا قد يكون تاريخي
+Where is the school?,فين جات لمدراسّا?,أين المدرسة؟
+We got five hours till tonight's dinner,عندنا خامسا ديال سوايع حتا لعشا ديال ليلا,لدينا خمس ساعات حتى عشاء الليلة
+But my teacher back in school used to spend all her time knitting in class and would never explain anything properly.,والاكين ل أُستادا ديالي ديك لوقت كانت كادووّز لوقتا ديالها كامل كاتخييّت فلقيسم أُ ماعمرها شرحات لينا شي حاجا,لكن معلمتي في المدرسة كانت تقضي كل وقتها في الخياطة في الصف ولن تشرح أي شيء بشكل صحيح
+It doesn't matter,ماكايهمّش,لا يهم
+And the map.,أُ لخاريطا.,والخريطة.
+"Sorry, we don't serve this dish till noon","سماحليا, حنا ماكانقادمو هاد طاباق حتا ل دوهر",آسف، نحن لا نقدم هذا الطبق حتى الظهر
+I like to walk around here,كايعجبني نتمشا فهاد ناواحي,أحب أن أتجول هنا
+Or is it a technique for her to come and buy us some meat?,أُلا هيا هي شي طاريقا ديالها باش تجي أُتشري لينا شويا تلّحم?,أم هي تقنية لها لتأتي وتشتري لنا بعض اللحم؟
+i added his name to the book,زدت سيتو لكتاب,أضفت اسمه إلى الكتاب
+Where are going to Europe?,فين غاتمشي ف أروپّا?,"إلى أين سيذهبون إلى ""أوروبا""؟"
+no need to...,ماشي دارور ...,...لا حاجة لـ
+I'm off,أنا غادي فحالي,أَنا مِنْ
+"morning, at eight o'clock",سباح معا تمانيا,في الساعة الثامنة صباحاً، في الساعة الثامنة
+Is the job too much for you?,واش لخدما كتيرا عليك?,هل الوظيفة أكثر من اللازم بالنسبة لك؟
+He went to the museum,مشا ل متحف,ذهب إلى المتحف
+I won't let that happen again.,ماغانخلّيش هادشي إتعاود عاوتاني.,لن أدع هذا يحدث مرة أخرى
+please,الله إخلّيك,أولاً - مقدّماً
+I wonder why hasn't it been properly fixed yet,كانتساءل علاش ماقادوهش بشكال مازيان حتا لدابا,اتسائل لماذا لم يتم اصلاحها بشكل صحيح حتى الان
+We met in Switzerland,تلاقينا ف سويسرا,التقينا في سويسرا
+But the environment is a very exciting and very important discipline for our future,والاكين لبيأ ماجال موتير لإهتيمام أُ موهيم لموستاقبالنا,ولكن البيئة هي انضباط مثير جداً و بالغ الأهمية لمستقبلنا
+Do you have an appointment?,واش عندك شي ماوعيد?,هل لديك موعد؟
+twenty minutes of oral presentation with slides,عشرين دقيقا ديال لعارد ليغادي شافاوي معا لس سليدس,20 دقيقة من العرض الشفوي مع الشرائح
+I like turtles a lot!,كايعاجبوني لفكارن بزاف,أحب السلاحف كثيراً!
+he overthinks,كايخمّم بزّاف,« فوق كل » أي : : : أكثر من كل أكثر من كل زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : زيادة : : زيادة : زيادة : زيادة : : زيادة : زيادة : : زيادة : : زيادة : زيادة : : زيادة : : زيادة : : زيادة : زيادة : : زيادة : : زيادة : : زيادة : : زيادة : : زيادة : زيادة : زيادة : : زيادة : زيادة : : زيادة : : زيادة : : زيادة : : زيادة : زيادة
+month,شهر,نوع كل شهر
+Did you go outside last night?,واش خرجتي لبارح بلّيل?,هل خرجت من الخارج ليلة أمس؟
+If you want us to walk tomorrow,إلا بغيتينا نتمشّاو غدّا,إذا كنت تريدنا أن نسير غداً
+"Ok, shaken or stirred?","واخا, منخوض ولا ماقلوب?",حسناً، هل تهتز أم تهتز؟
+I owe you one,كانتّسالك وحدا,أنا مدين لك بواحدة
+awesome.,مزيانا.,-مُرْجَلَعَةً. -مُرْجَلِعَةً. -مُرْجَلِعَةً.
+He got a good grade,جاب نوقطا مزيانا,حصل على درجة جيدة
+available,موجود,يمكن الحصول على
+past,اللي فات,أولا - لمحة عامة
+like this,هاكّا,مثل هذا
+Do whatever you want,دير اللي بغيتي,افعل ما شئت
+"The ringing stopped, and I don't think anyone's gonna answer us.","كايصوني حتّا وڭف, أُ ماتانضنّش شي واهد غايجاوبنا.",توقف الرنين ولا أعتقد أن أحداً سيجيبنا
+I'm looking for the post office,كانقلّب علا لبوسطا,أنا أبحث عن مكتب البريد
+"You're shaking, are you okay?","كاترعّد, ياك شي باسّ ماكاين?",أنت تهتز، هل أنت بخير؟
+remember when we'd challenge each other at singing?,عقلتي ملي كنا كانتحداو بعديياتنا فلخنا,أتذكرين عندما كنا نتحدى بعضنا البعض في الغناء؟
+each time,كولا مرّا,كل وقت
+I like sweet food,كاتعجبني لماكلا لحلووّا,أحب الطعام
+Or a good beer?,أُلا شي بيرّا مزيانا?,أو بيرة جيدة؟
+is that enough?,واش هادشي كافي?,هل هذا كافي؟
+I'm a chef,أنا طبّاخ,أَنا a طاهياً
+write your question,كتب سوألك,كتابة سؤالك
+Now can you start prepping the potatoes,دابا تقدر توجّد بطاطا,الآن يمكنك البدء بتجهيز البطاطا
+Flying for the first time is a bit of a special occasion,طاياران لأوال مرا راه موناسابا خاصّا,الطيران لأول مرة هو قليلاً من مناسبة خاصة
+Don't you want to do some laps?,مابغيتيش دير شي دورات?,ألا تريد أن تقوم ببعض الحضن؟
+I'm ordering cocktails,أنا غانطلب كوكتايلات,أَطْلبُ مِنْ المُطْرَفَاتِ
+What's yours?,أُشنو سميتاك نتا?,ما هو اسمك؟
+excessive,فايت لقياس,(بآلاف دولارات الولايات المتحدة)
+turn right,دور علا الليمن,اندور يمينا
+And get me an apple,أُ جيب ليا شي تفّاحا,واحصل لي على تفاح
+when did this happen,إمتا وقع هادشي,« متى متى هذا » متى متى هذا الذي حدث حدث حدث حدث حدث هذا حدث حدث حدث حدث هذا حدث حدث هذا حدث حدث حدث هذا حدث حدث هذا حدث حدث هذا حدث حدث حدث هذا حدث حدث هذا حدث حدث هذا حدث حدث حدث حدث هذا حدث حدث هذا حدث حدث هذا حدث حدث هذا حدث حدث حدث هذا حدث حدث هذا حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث هذا حدث هذا حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث هذا حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث هذا حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث حدث
+Let's go tomorrow,سافي نمشيو غدّا,دعنا نذهب غداً
+I love it when they give free food!,كايعجبني منين كايعتيونا ماكلا فابور,أَحبُّه عندما يَعطونَ غذاءَ حرَّ!
+take this road,شد هاد تريق,هذا الطريق
+i'm visiting my grandmother,أنمشي نشوف جداتي,أنا أزور جدّتي
+Do you think it might spoil the evening?,واش كايبالّيك بلّي إقدّ إريّب لعشييا?,هل تعتقد أنه قد يفسد المساء؟
+I can't remember,ماعقلتش,لا أستطيع أن أتذكر
+remember when we thought getting a driver's license was the ultimate freedom?,عقلتي فاش كان كيسحاب لينا إلا جبنا ل پرميس سافي أنعيشو لحوريا ?,أتذكرين عندما فكرنا أن الحصول على رخصة قيادة هي الحرية المطلقة؟
+"Excuse me, what did you say?","سمح ليا, شنو ڭلتي?",اعذريني، ماذا قلتِ؟
+your room is on the second floor,لبيت ديالك كاين ف الطبقا التانيا,غرفة نومك في الطابق الثاني
+are you going to help her?,واش غاي تعاونها?,هل ستساعدها؟
+"You want me to knock on doors, or do you have specific people in mind?",بغيتيني نداق لبيبان أُلا عانداك شي أشخاس فعاقلاك?,أتريدني أن أطرق على الأبواب أم أن لديك أشخاص محددين في بالك؟
+Just let the time show you,غير خلّي زمان يورّي ليك,فقط دع الوقت يريك
+I can't wait to find out what's behind this wall,كانتسنّا هير إمتا نعرف أش مورا هاد لحيط,لا أطيق صبراً لأكتشف ما وراء هذا الجدار
+don't forget,عنداك تنسا,لا يَنْسِسُ
+"It works, too",راه كايليق تاهووا,إنه يعمل، أيضاً
+"The kids are fine, thank you","دراري بيخير, شوكران",الأطفال بخير شكراً لك
+We're safe!,حنا ف أمان!,نحن آمنون!
+"Yes, it'll be for the cocktail.","أياه, غادي إكون علا حساب لكوكتل.",نعم، سيكون من أجل الكوكتيل.
+"Hi, I'm having coffee with an orange juice, please.",أهلان بغيت لقاهوا معا عاسير ليمون عافاك,مرحباً، أنا أتناول القهوة مع عصير برتقال، من فضلك.
+do you like listening to music while studying?,كيعجبك تسمع لأخاني ملي كاتكونو كاتقرا ?,هل تحب الإستماع إلى الموسيقى أثناء الدراسة؟
+"I could sing a funny English song about dead bodies, the worms go in and the worms go out","نقدر نغاني أُغنييا مودحيكا علا جوتات مايتين, الدود كايدخل أُ كايخرج",يمكنني أن أغني أغنية إنجليزيّة مضحكة عن الجثث الميتة، تدخل الديدان وتخرج الديدان
+It's lovely here,زويون هنا,انها جميلة هنا
+I could watch you make a fire!,نقدر نتفرج فيك كاتشعل لعافيا,أنا يُمْكِنُ أَنْ أُراقبَك تَجْعلُ a نار!
+We could blackmail them into singing,إمكان لينا نبتازوهوم باش إغنّيو لينا,يمكننا أن نجعلهم يغنون
+The staff seems very pleasant indeed,بان لييا فاريق لعامال دراياف بزاف بصّح,يبدو أن الطاقم يبدو ساراً جداً في الواقع
+i have two twin siblings,عندي جوج خوت توام,لدي شقيقين توأمين
+5 seconds without being shouted at,5 تاواني بلا ميتغاوات عليهوم,5ثانية دون أن يُصرخ في
+"Yes, I do.","أيه, كاينا.",نعم، أفعل.
+Coffee and orange juice.,قهيوا أُ عاصير ديال الليمون.,قهوة وعصير برتقال
+I knew it!,كنت عارفها!,كنت أعرف ذلك!
+All I said was that it's going to be busy tonight,اللي ڭلت هوا أنّاهو غايكون مزاحم ليوما,كل ما قلته أنه سيكون مشغولاً الليلة
+Is it possible to repeat?,واش مومكين تعاود?,هل من الممكن تكرارها؟
+Well he could come along tonight and deal with Rex!,إوا إمكن ليه إجي هاد الليلا أُ إتعامل معا رش!,حسناً، يمكنه أن يأتي الليلة ويتعامل مع (ريكس)!
+Put the flesh in the blender,دير لوب ف لخلاط,وضع اللحم في الخل
+"with only 100dhs left in you bank account, I hope so for you too","معا ديك 100 درهم اللي بقات ليك فل كومپت بوحدها, تانا هادشي اللي تانتمنّا ليك",مع فقط 100 dhchs تركت في حسابك المصرفي، وآمل ذلك بالنسبة لك أيضا
+Could you say you're getting back from Los Angeles and your plane's been delayed?,"واش تقدار تڭول بيلا غادي ترجاع من لوس أنڭلس, ولا طيارتاك تعاتلات?",هل يمكنك القول أنك ستعود من لوس أنجلوس وطائرتك تأخرت؟
+What is your name?,شنو سميتك?,ما اسمك؟
+april,شهر ربعا,)أ(
+"Uh, all right, if you want!","وه, مزيان, ألا بغيتي!",حسناً، إن أردت!
+kid,بارهوش,ألف من فئة
+when is this?,معاياش هادشّي?,متى هذا؟
+there's only one thing for it,كاينا حاجا واحدا ليه,هناك فقط شيء واحد له
+"I have to leave now, because the next class starts in one minute!","خاسني نامشي دابا, حيت لحيصا الجايا غادي تبدا من دابا دقيقا",يجب أن أغادر الآن، لأن الصف التالي يبدأ بعد دقيقة واحدة!
+"The weather is so good, I hope it's not too bad!","لجاو مزيان بزاف, كانتمنا مايكونش خاياب بزاف!",الطقس جيد جداً أتمنى أن لا يكون سيئاً جداً
+I am spent,أنا تساليت,أنا مُنْجَز
+Why would I be ashamed?,علاش غادي نحشم?,لماذا أكون خجلاً؟
+Do you do cocktails here?,كاتساوب كوكتيلات هنا?,هَلْ تَعمَلُ الكوكتيل هنا؟
+Well I could have one then,واخا ناقدار ناخود واحدا,حسناً، يمكنني أن أحصل على واحد ثم
+I fell down the stairs,تحت فدّروج,سقطت من على الدرج
+underground,تاحت لارض,1 ف-5، 1 ف-4، 1 ف-3، 1 خ ع (ر أ)، 1 خ ع (رأ)، 1 خ ع (رأ)، 1 خ ع (ر أ)
+you first,نتا اللوّل,أولاً -
+may,شهر خامسا,ما قد يكون:
+love is sacred,لحوبّ موقادّاس,"""المقدسات"" ""المقدسات"""
+please could you just sear the beef in a pan and put it on to slow roast,"عافاك, واش تقدار تحامار لحام لبڭار فلماقلا أُ تحاطو ف إتحمّر بشويا",هل يمكنك فقط أن تضع اللحم البقري في مقلاة وتضعه على لبطيء الشواء
+Could you start chopping the vegetables please,واخا تبدا تقطّع لخضرا عافاك,هل يمكنك البدء بتقطيع الخضر رجاءً
+mary will visit her aunt tomorrow,ماري غادي تزور خالتها خدا,(ماري) ستزور عمتها غداً
+Tell him that I need to talk to him,ڭولّيه راه خسّني نهدر معاه,قل له أني بحاجة للتحدث معه
+"Yes, let's get it opened","أه, خلينا نفتحوها",نعم، دعونا نفتحه
+"No, no, I was asking you who was spying on the door",لا لا كانت كانساولاك شكون ليكان كايتجاساس فل لباب,لا، لا، لا، أنا كُنْتُ أَسْألُك الذي كَانَ يَتجسّسُ على البابِ
+It's a shame I've got the aisle seat.,ليل أسّاف كان عندي لكورسي لي ف ل كولور.,من العار أني حصلت على مقعد في الممر
+Is it raining?,واش كاتصبّ شتا?,هل هي تمطر؟
+I wouldn't have thought.,ماكنتش نفكّر فيها.,لم أكن لأفكر في ذلك
+Would you like a receipt?,واش بغيتي التيكي ?,هل تريد إيصالاً؟
+she's as white as a sheet,راها بيا بحال شي ليزار,إنها بيضاء كالورقة
+He thinks we don't want to go,كايسحاب ليه مابغيناش نمشيو,يعتقد أننا لا نريد الذهاب
+He is from Africa,هووّا من إفريقيا,هو من أفريقيا
+Honey is good for you,لعسل مزيان ليك,"""العزيز جيد لك"""
+Could you clarify that?,واش تقدر توضّح هادشّي?,هل يمكنك توضيح ذلك؟
+He broke the glass,هرّس ل كاس,لقد كسر الزجاج
+good morning,لايسعد الصاباح,سـيـاح سـيـاح سـيـاح سـيـاح سـأ
+this food won't cook itself,هاد لماكلا ماغاديش إطياب راسّو براسو,هذا الطعام لن يطبخ نفسه
+I have many,عندي بزّاف,لديّ الكثير
+the tall man has just written a letter,راجل تويل يالّاه كتب واحد ريسّالا,الرجل الطويل قد كتب للتو رسالة
+The train was late and I got soaking wet.,التران كنا معطّل أُ عرڭت.,كان القطار متأخراً وكنت مبللاً جداً
+I need to go,خسّني نمشي,عليّ أن أذهب
+what's your favorite type of game?,أشمن نوع ديال لألعاب كايعجبك ?,ما نوع لعبتك المفضل؟
+"We could try, my dear!","إمكن لينا نحاولو, عازيزاتي!",يمكننا أن نحاول يا عزيزي!
+I'm just an employee among others in this department,أنا غير موواضاف من بين واحدين خرين فهاد لقيسم,أنا مجرد موظف من بين آخرين في هذا القسم
+I look great in climbing,كانبان واعر فتاسلوق,أَبْدو عظيماً في التسلق
+He went fishing,مشا كايصيّد,كان يصطاد
+I thought the clothes were cheaper,كان كايسحابني لحوايج رخاص,ظننت أن الملابس أرخص
+I don't know,لاوعلم,لا أعرف
+Have you managed to calm down for lunch?,واش قدارتي تهدّء فوقيتّ لغدا?,هل تمكنت من التهدئة للغداء؟
+She doesn't tolerate mediocrity.,ماكاتّسامحش معا لبسالا,هي لا تَتسامحُ المتوسطَ.
+your things are all here,لماساإل ديالك كولّها هنا,كل ما تقوم به من أمورك كلها هنا
+half an hour,نسّاعا,نصف ساعة في الساعة
+stop,زڭا,توقّف
+The milk has turned sour,لحليب ولا حامض,وقد تحول الحليب إلى سوراء
+None of my business,ماشي شوغلي,لا شيء من أعمالي
+this is just a theory,هادي هي ناضارييا,هذه مجرد نظرية
+Have I ever seen you around that pond?,واش فايت شافتاك حدا ديك لبيركا?,هل رأيتك من قبل حول تلك البركة؟
+or will someone notice soon enough?,أُلا شي واحد غادي إلاحض قاريبان?,أم سيلاحظ شخص ما قريباً بما فيه الكفاية؟
+Can I have a beer?,واش نقدار ناخاد بيرا?,هل يمكنني الحصول على بيرة؟
+Whose house is this?,ديالمن هاد الدار?,لمن هذا المنزل؟
+this just gets worse and worse,هادشي غير كايزيد ياخياب,هذا فقط يُصبحُ أسوأ وأسوأ
+i am late,أنا معاتال,أَنا متأخّرُ
+Best joke ever,أحسان نوكتا,* أكثر من أي وقت مضى *
+i succeeding at getting my driving license,جبت لپرميس,في الحصول على رخصة قيادتي
+That's a good idea,هادي فيكرا مزيانا,هذه فكرة جيدة
+but maybe we can try moving forward in the same direction,والاكين إمكان لينا نحاولو نمشيو لقدام ف نافس لإتيجاه,ولكن ربما يمكننا أن نحاول المضي قدماً في نفس الاتجاه
+march,شهر تلاتا,مسير مسير
+"He needs to get used to bad weather, we are planning to move to Essaouira after all!","خاسّو يولّف لجوو لخايب, راه ناويين نرحلو ل صويرا أصلان!",يجب أن يعتاد على الطقس السيء نحن نخطط للإنتقال إلى (إيساويرا) بعد كل شيء
+shame on you,الله إعطيك ماتاكول,# عليك عار عليك # # # # # # # عليك # # # # #
+What did you get?,أشنو خديتي?,على ماذا حصلت؟
+i'm meeting a friend for lunch,خانتلاقا معا ساحبي باش نتخداو,أُقابلُ a صديق للغداءِ
+And you're right.,أُ عندك الصح,وأنت على حق.
+what's your favorite color ?,شنو لون لموفادال ديالك,ما هو لونك المفضل؟
+But maybe they'll be up for a bit of karaoke later,والاكين يقادرو يكونو ماستاعدين لشي كاراوك من باعد,لكن ربما سيكونوا مستيقظين قليلاً من الكاريوكي لاحقاً
+I am learning japanese,أنا كانتعلّم ليابانييّا,أنا أتعلم اللغة اليابانية
+Or a blackberry pie to finish?,أُلا شي فاتيرا ديال التوت باش نكملو?,أو بفطيرة من التوت الأسود لتنهيها؟
+I don't know what you mean,ماعرافتش أش كاتقساد,أنا لا أعرف ماذا تعني
+"if you were told to go to any country you want, what would you choose ?",إلا ڭالوليك تمشي ل أي بلاد بغيتي أشمن وحدا تختار ?,إذا طُلب منك أن تذهب إلى أي بلد تريد، ماذا ستختار؟
+can you believe how much we've grown since those old family photos?,كيبان ليك شحال كبرنا من لوقت لي خدينا فيها هاد تساور ?,هل يمكنك أن تصدق كم كبرنا منذ تلك الصور العائلية القديمة؟
+When can I talk to you?,فوقاش نقدر نهضر معاك?,متى يمكنني التحدث معك؟
+april,أبريل,)أ(
+"The city, I see it the rest of the year!","لمدينا, كانشوفها لعام كامل!",المدينة، أراها بقية السنة!
+i can't believe how quickly this year is flying by!,مايمكنش كيفاش تار لوقت هاد لعام ?,لا أستطيع أن أصدق كيف بسرعة هذا العام هو الطيران من قبل!
+Every muslim is fasting during Ramadan,كول موسليم كايصوم ف رمدان,كل مسلم يصوم خلال شهر رمضان
+what is the best vacation you have ever taken?,شناهيا أحسّان عوتلا دوزتي ف حياتك ?,ما هي أفضل عطلة أخذتها؟
+what's your favorite ice cream flavor?,أشناهووا أحسّن ماداق عندك ديال ڭلاس ?,ما هي نكهة الآيس كريم المفضلة لديك؟
+First the train was late so when it came it was full and there were no seats left,"أوالان, تعاتال تران, أُ منين وسال كان عامار أُ ماكانوش بلايس خاويين",في البداية كان القطار متأخراً جداً عندما جاء كان ممتلئاً ولم يكن هناك مقاعد متبقية
+He brushes his teeth,هووّا كايحك سنانو,يُنظّفُ أسنانَه
+"Oh yes, I remember that!","أيه, عاقل علا هادشي!",أجل، أتذكر ذلك!
+I don't have it,ماعنديش,أنا لا أملكه
+He arranged the books on the desk,رتّب لكتوبا فوق لبورو,لقد رتب الكتب على المكتب
+Have you finished studying?,واش كمّلتي لقرايا?,هل أنهيت دراستك؟
+how about our burger platter,أُ مال ل بورڭر,ماذا عن برغرنا؟
+it's him who starts,هووّا اللي بدا,إنه هو من يبدأ
+Are you new here?,واش نتا جديد هنا?,هل أنت جديد هنا؟
+I regret it,أنا نادم علا هادشي,أنا آسف لذلك
+maybe next time,مومكين لمرا جايا,ربّما في المرة القادمة
+"It's weird, isn't it?","فشكيل, أولّا?",هذا غريب، أليس كذلك؟
+Do you feel she herself is under pressure from her director?,واش كايبالّيك أنّاها هيا تحت الضاغط من لمودير ديالها?,هل تشعر أنها نفسها تحت الضغط من مديرها؟
+The elevator's down again.,لماسعاد خاسر مرا خرا,المصعد أسفل مرة أخرى.
+the dood is big,لباب كبير,« إن الدود كبير ».
+absurd,ماعندو معنا,لا يمكن أن يكون سخيفاً وسليماً
+The person next to me was sick,داك لي حدايا كان مريض,الشخص الذي كان بجانبي كان مريضاً
+how can you say this?,كيفسه كاتقدر تڭول هادسهي?,كيف يمكنك قول هذا؟
+Don't you have a book or crossword puzzles?,ماعندكش شي كتاب ولا شي شاباكا?,أليس لديك كتاب أو ألغاز الكلمات المتقاطعة؟
+"If you get me a sandwich, I'll play a game after","إلا جابتي لييا ساندويش, غادي نلعاب معاك لوعبا من بعد",إذا حصلت لي على شطيرة سألعب لعبة بعد
+I'm cleaning my room,أنا كانساوب بيتي,أنا أغسل حجرتي
+"yes, i'll bring it to you right away","واخا, أنا غادي نجيبو ليك دابا",نعم، سأحضرها لك حالاً
+I promise.,كانواعدك.,أعدك.
+It's important that I test your concern,راه داروري نختابر لقالاق ديالك,من المهم أن أختبر قلقك
+I don't even know what it is.,ڭاع ماعرفت التا أشناهيا.,أنا لا أعرف حتى ما هو عليه.
+Do you sell batteries?,واش كاتبيع ل باتّريات?,هل تبيع البطاريات؟
+I am hopeful that you can help me,كانءمل تقدار تعاوني,أنا على أمل أنك تستطيع مساعدتي
+You have to be calm down,خاصّك تهدّن,عليك أن تكون هادئاً
+It's getting dark.,بدا كايطيح ضلام.,هو يَحْصلُ على الظلامِ.
+I'm gonna go get my science fiction book.,غادي نامشي ناخود لكتاب ديال لخايال لعيلمي ديالي,سأذهب لأحصل على كتاب الخيال العلمي الخاص بي
+What is this exciting book you're reading?,أشناهووا هاد لكتاب لاوعر ليكاتقرا?,ما هذا الكتاب المثير الذي تقرأه؟
+sure,أكيد,تأكيــد تأكيــد
+I hope they don't notice anything wrong,نأملو مايلاحدوش حتا شي خاتاء,آمل ألا يلاحظوا أي شيء خاطئ
+We'll have a garlic butter,غادي يكون عندنا زابدا ديال توما,سيكون لدينا زبزز
+Where are you traveling this summer?,فين غاتصافر هاد الصيف?,إلى أين ستسافرين هذا الصيف؟
+september,شوتانبير,في الفترة من 1 أيلول/
+Excuse me.,سمح ليا.,-التمست مني.
+My job,خدمتي,وظيفتي ووظيفتي
+it's really hot,وا سخون لحال نيت,انها حقاً حارة
+good recovery,مايكون باس,تعافي جيد من الاستعادة
+people,عيباد الله,
+do you have brothers or sisters?,عندك شي خوك ولا ختك ?,هل لديك أخوة أو أخوات؟
+what are the most important historical events of this country?,أشناهوما أهام أحدات تاريخييا ديال هاد لبلاد,ما هي أهم الأحداث التاريخية في هذا البلد؟
+I set aside a good dowry for her,خليت ليها صداق مهوّر,وضعت جانباً مهراً جيداً لها
+It's uo to you,اللي بغيتي,إنه (أوو) بالنسبة لك
+Maybe you can use a computer translator to help you?,جرّبتي تستعمل شي پروڭرام ديال ترجاما فل پيسّي باش يعاون?,لَرُبَّمَا أنت يُمْكِنُ أَنْ تَستعملَ a مترجمة حاسوبِ لمُسَاعَدَتك؟
+Great--I did it!,بيخير--درتها!,لقد فعلتها!
+although she said she might be late,واخا ڭالت بيلا تقدر تعطّال,رغم أنها قالت أنها قد تكون متأخرة
+I like the idea of James Bond characters.,عجباتني فيكرات جامس بوند.,أحب فكرة شخصيات جيمس بوند
+I'm gonna throw up,غادي نتقايّا,أنا سأتقيأ
+I'm sorry,سمح لييّا,أنا آسف
+What school did you go to?,أشمن مدراسا لاش كاتمشي?,ما هي المدرسة التي ذهبت إليها؟
+They're poisoned!,راه مسمومين,إنهم مسموعين!
+I'm going to ask him to come out and play a little!,دابا نطلبو إجي يعزاف شوييا!,سأطلب منه الخروج واللعب قليلاً!
+"No, I'm afraid not",لا لا معنديش,لا، أخشى أن لا
+"Ah, that's it","أه, هييا هاديك",هذا كل ما في الأمر
+I'm busy next Friday,أنا مشغول الجمعا الجايّا,أنا مشغول يوم الجمعة القادم
+"Next week, on Thursday","السيمانا الجايا, نهار لخميس",في الأسبوع المقبل، في يوم الخميس
+I understand there was a movie star,فهمت كان تمّا ناجم سينيماإ,أنا أفهم أنه كان هناك نجم سين
+"We have to be aware of what the real problems are, and aren't","خاسنا نعارفو لماشاكيل ديال بساح لي كاينين, أُلي ماكاينينش",علينا أن نكون مدركين لماهية المشاكل الحقيقية و ليست
+"Yes, I love all kinds of animals too","أه, كانبغي ڭاع لحاياوانات تا أنا",نعم، أحب كل أنواع الحيوانات أيضاً
+useless,ماعندوش قيما,عديم
+"Yes, the more aggressive ducks get more food","أه, لباطّ لعودواني أكتار كاياخود خوبز كتر",نعم، كلما زادت البطات العدوانية تحصل على المزيد من الغذاء
+"Poor thing, spending her life in the middle of old, frustrated and old.","مسيكينا, دووز حياتها وسط الشورّاف, محرومين أُ شرّاف.",شيء مسكين، تقضي حياتها في وسط قديم، مُحبِط و قديم.
+Are you ready for this?,واش مستاعدّ لهادشّي?,هل أنت مستعد لهذا؟
+How old is your brother?,شحال فعمر خوك?,كم عمر أخيك؟
+Chickens?,دجاج?,-الدجاج؟
+Are you blaming me for this?,واش كاتعاتبني أنا علا هادشي?,هل تلومني على هذا؟
+what is the most outrageous lie you told a child?,شناهيا أكبار كدبا كدبتي علا شي دري سخير ?,ما هي أكثر الكذبة شجباً التي أخبرتها لطفل؟
+Thank you! you shoudn't have,شوكران! علاش كلّفتي راصك,شكراً لك، أنت لا تَكُونُ عِنْدَكَ
+you offered to help me with the organization,"راه كني ڭلتي ليا غاتعاونّي فتانضيم""",عرض عليك مساعدتي في المنظمة
+I want to lean darija,بغيت نتعلّم الداريجا,أريد أن أُقلل من (داريجا)
+Is it far from here?,واش بعيد من هنا?,هل هو بعيد عن هنا؟
+october,شهر عشرا,مَرْ مَرْ مَرْ مَرْ
+You're the boss!,نتا هوا شف!,أنت الرئيس!
+We're blocked,حنا محبوسين,نحن مُسْجَلُون
+Did he finally take the time to sign up for the Gym?,واش خدا لواقت فلخار باش إتساجال ف لا سالّ?,هل أخذ أخيراً الوقت ليسجل في النادي؟
+"I could go talk to him, but I'm afraid","إمكان ليا نمشي ندوي معاه, والاكين خفت",أنا يمكن أن أذهب للتحدث معه، ولكن أنا خائفة
+"Ok, I think I understand sort of","واخا, كانضن فهامت شوييا",حسناً، أعتقد أني أفهم نوعاً من
+do you know how to cook,واش كاتعرف تطيّب,هل تعرف كيف تطبخ
+Did you bring anything to make a fire with?,واش جبتي شي حاجة باش نشعلو لعافيا?,هل أحضرت أي شيء لإشعال النار به؟
+Just because we are old does not mean we have lost all sense of taste,غير حيت حنا كبار فلعمر ماكايعنيش أنّاهو مابقاش عندنا داوق,فقط لأننا كبرنا في السن لا يعني أننا فقدنا كل حاسة الذوق
+Europe is in crisis,أروپّا ف أزما,أوروبا في أزمة
+"I only have my book, and I'm almost done.","عندي غي كتابي, أُ قرّبت نساليه",ليس لدي سوى كتابي، وأنا على وشك الانتهاء.
+Have you had a bad day?,واش دوّزتي نهار خايب?,هل مررت بيوم سيء؟
+as I promised you,كيفما واعدتك,كما وعدتك
+No explanations at all?,مافسروش ڭاع?,لا تفسيرات على الإطلاق؟
+the first half saw several close chances for both teams,لشوت لول كان فيه موحاوالات لفراقي بزوج,النصف الأول رأى عدة فرص قريبة لكلا الفريقين
+my eyesight has decreased,نقص ليا الشوف,# # # # # # # # # # # # # # # # # # #
+this will be a proper english meal,غادي تكون هادي واجبا إنجليزييا موناسيبا,هذا سيكون طعامًا لائقًا له ، وطعامًا وافًا وًا وًًا وًا وًا وًا وًا وًا وًا و ً و                                                                :
+it's pouring outside,شتا خيت من سما\,انه يتدفق خارج
+As scheduled.,كيما كان موقارار,مُجُدّد في الموعد المقرّر.
+We call you when the cocktails are ready,غادي نسونيو عليك منين إكونو كوككتايلس واجدين,نناديك عندما تكون المُقَفَّلات جاهزة
+I agree with you,متّافق معاك,أنا أتفق معك
+husband,مول دار,الزوج
+what's the solution?,شنو هووّا لحلّ?,ما هو الحل؟
+"Here's your bill, it comes to 15 dhs","هاهييا فاتورا ديالك, واسلات 15 دهس",ها هي فاتورتك، تصل إلى 15 د.س
+Do you like her?,واش نتا عزيزا عليك?,هل تحبها؟
+"that's cool, playing music is a wonderful skill",مسيان تعلم تلعب موسيقا ماهارا زوينا,هذا رائع، اللعب بالموسيقى هي مهارة رائعة
+So what are you talking about?,إوا علاش كاتهضرو?,إذاً ما الذي تتحدث عنه؟
+I didn't feel at home,ماحاسيتش براسي فدّار,لم أكن أشعر في المنزل
+i'm training for a marathon,كاندرب لواحد لماراتهون,أنا أتدرب لـ a ماراثون
+A hike perhaps?,إمكان نتمشاو?,ربّما نزهة؟
+"You know him personally, so you favor him","كاتعرفو شخصيّان, داكشي علاش كاتفضّلو",أنت تعرفينه شخصياً لذا تفضلينه
+quickly,الشان الطان,#..
+How long have you been in Qasbat tadla?,شحال هادا باش نتا ف قصبات تادلا?,منذ متى وأنت في (كاسبات تادلا)؟
+They might notice if I bring my laptop to the exam.,راه غادي يعيقو بيا إلا جبت معايا ل پيسّي اللمتيحان,قد يلاحظون إذا أحضرت حاسوبي المحمول إلى الإمتحان
+What kind of party do you think it should be?,أشمن نوع ديال لحافلا ليخسها تكون?,أي نوع من الحفلات تعتقد أنه يجب أن يكون؟
+"Yes, I was able to have lunch","أه, راه قدرت ناكول لغدا",نعم، أنا كُنْتُ قادر على أَنْ يكونَ عِنْدي غداء
+we broke up,تفارقنا,نحن نُقَسَّمُ
+I can't stand you anymore,ماقدارتش نتحمّلاك كتر من هادشي,لا أستطيع أن أتحملك بعد الآن
+Well he couldn't really have fired me for that,واخا هووا ماكانش إقدار إجرّي عليا علا هادشي,حسناً لا يمكنه حقاً أن يطردني بسبب ذلك
+the pan is hot,لمقلا سخونا,"""المقالة حارة"""
+I'm writing a book about cats at the moment,كانكتاب كتاب علا لمشاش حاليان,أنا أكتب كتاباً عن هذه اللحظة
+I'm boiling water,كانغلّي لما,أَنا أَفْكُلُ ماءً
+It's not what I expected,ماشي داكشّي لي توقّعت,ليس ما توقعته
+sunday,لحد,لا شيء
+don't sleep too much,ماتنعسش بزّاف,لا تَنْمُ كثيراً
+And the light is absolutely splendid.,أُ الدو راإع بزّاف.,والضوء رائع جداً
+if you just trusted all of us to do our jobs we would be so much more effective,كون هير تيّقتينا كولّنا أنانا غانديرو خدامينا غانكونو فعّالين كتر,إذا وثقت بنا جميعاً للقيام بوظائفنا سنكون أكثر فعالية بكثير
+did you save any money?,واش جمعتي شي فلوس?,هل ادخرت أي مال؟
+It was only a matter of time.,كانت هي مسألات وقت.,لقد كانت مسألة وقت فقط
+the food is just mushy,لماكلا رطبا,« والطعام » أي الطعام « هو » أي ما هو إلا كل شيء « عطر ».
+I write poems,كانكتب الشيعر,أنا أكتب القص
+we have,عندنا,نحن مُنّا
+this is it,هادا هووّا,هذا هو
+Not that you work too hard,ماكايعنيش بلي كاتخدام بزاف,ليس أنك تعمل بجد
+Oh thanks.,أُه شوكران.,شكراً.
+brilliant!,موتاألّيق,رائع!
+He is crying,كايبكي,هو يبكي
+with us,مانا,معنا
+Ah.,أه,أح..........................................................
+ I'm also a dancer,كاندير حتّا الراقص,أنا أيضاً راقصة
+at least not a form of life we'd recognise,علّ أقالّ ماشي شي ناوع من لحايات لي نقدرو نعرفو,على الأقل على الأقل ليس شكلاً من أشكال الحياة التي نعترف بها
+enough,باراكا,*..
+"I say, I refuse to cook garlic!","ڭالت ليك, أنا مابغيتش نطيّب توما!",أقول، أرفض أن أطبخ الثوم!
+everything is ready,كولشي واجد,كلّ شيء كُلّ شيء كُلّ كُلّ كُلّ كُلّ كُلّ كُلّ كُلّ كُلّ مُعَدّ
+I have a habit of sleeping alot,عندي عادا ديال النعاس بزّاف,لدي عادة في النوم في كثير من الأحيان
+"Yeah, it's the food chain.","أه, سيلسيلا لغيداإا.",أجل، إنها السلسلة الغذائية.
+do it always,بقا تديرو ديما,# تفعل ذلك دائماً # # # # #
+like this,هوكّا,مثل هذا
+What were you thinking of?,فاش كنتي كاتفكّر?,بماذا كنت تفكر؟
+He was bitten by a poisonous snake,عضّو حنش مسموم,تم عضه من قبل ثعبان سام
+OMG! the wall is moving,ناري! لحيط كايتحرّك,يا إلهي! إنّ الجدارَ يَتحرّكُ
+"morning, at half past 8","سباه, معا تمانيا أُ ناس",صباحا ، في النصف الثامن ، ٨
+Yeah sure.,أه داروري.,-أجل متأكّد بالتأكيد. -أجل متأكّد متأكّد بالتأكيد.
+I was late for work because of the strikes.,تعطّلت علا لخدما بسباب ل إضرابات.,لقد تأخرت عن العمل بسبب الإضرابات
+Right I'll get going.,بصّح غادي نامشي,الحق الحق أنا سوف الحصول على الذهاب.
+It's not so easy,هادشي ماساهلش بزّاف,انها ليست بهذه السهولة
+But I hear noises,والاكين سماعت شي سضاع,لكنني أسمع أصواتاً
+he stole my wallet,شفر لييّا لبزطام,لقد سرق محفظتي
+she's studying for her exams,كاتقرا علا قبل متيحاناتها,هي تدرس لامتحاناتها
+Change the subject,ڭلب ستّا تسعود,
+please write it down,لايخلّيك كتبها,ا_ _ _ _ _ _ _ _ _ _ _ _
+I live my life,كانعيش حياتي,أنا أعيش حياتي
+I didn't drink coffee today,ماشربتش لقهوا ليوم,لم أشرب القهوه اليوم
+every evening,كولّا ليلا,كُلّ مَسْك كُكُ كُلْ
+we'll end up on people's lives,غاينتاهي بينا لماتاف فحايات بنادم,سينتهي بنا المطاف بحياة الناس
+Hope you weren't too annoyed by that,كانتمانا ماتكونش مقالاق من هادشي,آمل أنك لم تكن منزعجاً جداً من ذلك
+I wish the same for you,عوقباليك,أتمنى لك نفس الشيء بالنسبة لك
+producing computers and iPads are very polluted,إنتاج پك أُ إپاد تاهوا مولاويت بزاف,الحواسيب المنتجة وأجهزة الآيباد شديدة التلوث
+i'm not sure if i wanna go or not,مامتءكدش واش باغي نخروج ولا لا,لست متأكداً إن كنت أريد الذهاب أم لا
+He reminded me of that party we had last year,فكّرني ف لحفلا لي دوّزنا لعام ليفات,ذكرني بالحفلة التي أقمناها في العام الماضي
+it's near the supermarket,حدا سوپرمارشي,بالقرب من المحل التجاري
+Mouad is watching a movie,موعاد كايتفرّج ف فيلم,(مؤود) يشاهد فيلماً
+repeat please,عاود عافاك,& تكرار ما يكرّر
+It's okay,هانيا,هو يُؤخّرُ
+You have a good pronounciation,عندك نوطق زوين,عِنْدَكَ a تَعْلُك جيد جيد a
+her grandmother gave her the bracelet,جداتها عتاتها واحد لبراسلت,أعطتها جدتها السوار
+Why is that?,علاش هادشي?,لماذا هذا؟
+I live near the sea,كانسكن حدا لبحر,أعيش بالقرب من البحر
+I am thirsty,فيا لعطش,* أنا الظمان *
+Have you left any wine or have you finished the bottle?,واش خليتي شوييا ديال نابيد ولا كمّلتي لقارعا?,هل تركت أي نبيذ أم أنهيت الزجاجة؟
+"I'll talk to the colleagues, maybe one of them will have something to celebrate soon.","غادي نهدار معا سحابي تلخدما, ياقدار يكون عند شي واحاد شي حاجا ياحتافال بيها",سأتحدث مع الزملاء، ربما واحد منهم سيكون لديه شيء للاحتفال قريبا.
+"You haven't eaten it, have you?","ماكليتيهش, ياك?",أنت لم تأكله، أليس كذلك؟
+That's fair,هادشي معقول,هذا هو العدل
+It's your pet!,هووا لحاياوان ديالك!,إنه حيوانك!
+Are they the same?,واش هوما كيفكيف?,هل هما متشابهان؟
+"It should allow us to join the river, and the river runs towards the village","غايخسّ تخلّينا نوسلو لواد, أُ راه لواد دايز من ل ڤيلاج",يجب أن يسمح لنا أن ننضم إلى النهر، والنهر يركض نحو القرية
+"i've been trying to drink more water, but i cant get off coffee","شحال و أنا كانجرب نشرب كتر ديال لما, والاكين ماقدرتش نحييد لقهوا",كنت أحاول شرب المزيد من الماء لكن لا أستطيع النزول من القهوة
+unprecedented,غاير ماسبوق,(ب((((((((((((((((((()((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+I don't want it,مابغيتوش,أنا لا أريده
+What do you have on the pressure?,أش عانداك علا ضاغط?,ماذا لديك على الضغط؟
+"What about you, boss?",أُنتا أ سيدي?,ماذا عنك يا رئيس؟
+what's your take on self care?,كيفاش كاتهالّا فراسّك ?,ما هو رأيك في الرعاية الذاتية؟
+with other students,معا طالابا خرين,مع طلاب آخرين
+"No, I'm not.","لا, أنا ماشي بيخير.",لا، لست كذلك
+I've got some marshmallows in my bag,عاندي شوييا ديال حالوا خاتميا فشكارا ديالي,لدي بعض الحلوى في حقيبتي
+it was like we were in our own little world,تفول بحالا كنا فعالمنا بوحدنا,كما كنا في عالمنا الصغير
+You deserve it.,كاتستاحقّها.,تستحقينه.
+a bit,شويكّيك,بعض قليلاً
+It's a rugby team that celebrates its victory,راه فاريق ديال ريڭبي كايحتافلو برباح ديالهوم,إنه فريق راجبي الذي يحتفل بنصره
+"Certainly, sir.",أيه أ مولاي,بالتأكيد، يا سيدي.
+I came in by car today to avoid the buses.,جيت ف طوموبيل ليوما باش نتفادا طوبيسات.,جئت بالسيارة اليوم لتجنب الحافلات
+She's older than me,هيا كبر منّي,إنها أكبر مني
+Third time pays for all,التالتا تابتا,"""الثال الثالث يدفع للجميع"""
+The nurses seem to be queueing up!,كايابن ليا بلي لفارمليات كايديرو صافّ!,يبدو أن الممرضات يصطفن
+tom had big money problems,توم كان مءزم,كان لديه مشاكل مالية كبيرة
+I've been all over Europe,كنت ف أروپّا كاملا,لقد كنت في جميع أنحاء أوروبا
+You are a junior sous chef and you had better remember it,نتا غي طبّاخ سغر أُحسّن ليك تفكرها,أنتِ طاهية طاهية صغيرة و من الأفضل أن تتذكريها
+Then I promise to leave you alone and we will go for a shorter walk tomorrow.,أُ من بعد كانواعدك أنخلّيك علا راحتك أُ نمشيو غدّا نتمشّاو غير شويا.,ثمّ أَعِدُ بأنّني سَأَتْركُك لوحدك ونحن سَنَذْهبُ لa مشي أقصر غداً.
+I'm not the only one,راه أنا ماشي بوحدي,أنا لست الوحيد
+Salt is crucial for cooking,لملحا ضارورييّا ف الطياب,الملح ضروري للطبخ
+you should help yourself,عاون راسّك,يجب أن تساعد نفسك
+Wake up!,فيق!,استيقظ استيقظ استيقظ!
+i swear,برابّي,يُقَسَّف
+Do you like the book?,عجبك لكتاب?,هل أعجبك الكتاب؟
+"Hello, can I get you something?",أهلان نجيب ليك شي حاجة?,مرحباً، هل أحضر لك شيئاً؟
+"No, I saw the whole thing.","لا, راه شفت كولشي.",لا، رأيت كل شيء.
+Did he wash his face?,واش غسل وجهو?,هل غسل وجهه؟
+bold,جبها,سيجرة
+He is planing a new trip,هووّا كايخطط ل تسافيرا جديدا,انه يخطط لرحلة جديدة
+you have,عندك,- - - - - - - - - - - - - - - - - - - -
+suddenly,علا غافلا,فجأة فجأة
+do not worry,هانيا,لا يَقْلَقُ
+Absolutely.,ب طابيعت لحال.,تماماً تماماً
+blow my mind,هربت,(د) أن يُقدَّم في عقلي
+He's been gossiping about you,كان شاد فيك الناميما,لقد كان يثرثر عنك
+clock,ماڭانا,1 ف-4، 1 ف-3، 1 خ م، 1 م و، 1 م و، 1 م و، 1 م أ م و، 1 م أ م
+gastric,ديال لمعدا,- - - - - - - - - -
+And I've decided to go all by myself to get away from it all.,أُ قرّرت نمشي بوحدي باش نبعّد علا كولشي.,وقررت أن أذهب لوحدي لأبتعد عن كل شيء
+what's the name of your daughter?,شنو سميت بنتك?,ما اسم ابنتك؟
+The upside with an operation is that you sleep during!,اللي مزيان فلعاماليا هووا أنّاك كاتكون ناعس فيها!,الجانب العلوي من العملية هو أنك تنام أثناءها!
+they made crispy chicken,سوبو واحد دجاج مقرمش,جعلوا دجاجاً
+I think I'm losing my mind!,كايبالّيا بديت كانحماق!,أعتقد أنني أفقد عقلي!
+I get off of work at 6,كانخرج من لخدما معا 6,أَنْزلُ مِنْ العملِ في 6
+What do you suggest?,أشنو كاتقتارح?,ماذا تقترح؟
+He is disturbing me,كايبرزطني,هو يُزعجُني
+it would be great,غايكون مبارّاع,سيكون عظيماً
+sports activities improve cardiovascular health and blood circulation,رييادا كاتحسّن لحالا لقلب و شارايين,الأنشطة الرياضية لتحسين صحة القلب والأوعية الدموية
+february,فيبراير,أُجراء
+great job,واعر,العمل الوظيفـي الحافـي
+it is cold today,بارد لحال ليوم,هو بارد اليوم
+what is wrong,أش كاين,ما هو الخطأ
+You don't say!,ماتڭولهاش,أنت لا تقول!
+the sunsets here are always breathtaking,لخوروب هنا واعر,المغارس هنا دائماً ما تكون دائماً
+I am traveling to Turkey,غانسافر ل توركيا,أسافر إلى تركيا
+"even if they are, people should be more sympathetic","واخا إكونو, الناس خاسهوم إكون فيهوم شويا ت تاعاطوف",حتى لو كانوا كذلك، يجب على الناس أن يكونوا أكثر تعاطفاً
+I'd rather go out and enjoy the water and freshen up,كانفادال ناخراج أُ نتمتّاع بلما أُ النتاعش,أفضّل أن أخرج وأستمتع بالماء و أستحم
+this song is beautiful,هاد لأوغنييا زوينا,هذه الاغنية جميلة
+You are dumb,نتا مكلّخ,أنت أغبياء
+if you just trusted all of us to do our jobs we would be so much more effective,إلا كنتي كاتيق بينا كاملين أنّانا نديرو لخدما ديالنا غادي نكونو حسان عاماليان,إذا وثقت بنا جميعاً للقيام بوظائفنا سنكون أكثر فعالية بكثير
+How many?,شحال من واحد?,كم عددهم؟
+"delays, what's that all about?","تءخير, أشنو هادشي تاني?",ما سبب كل هذا؟
+well done,صاحا,تم القيام بعمل جيد جداً
+it's time to watch tv,هادي لوقيتا باش نتفرج فتلفازا,حان وقت مشاهدة التلفاز
+it is not so easy as you think,هادشي ماشي سال كيفما كايبان ليك,« ليس الأمر بالسهولة كما تتفكرون » أي ما تتفكرون من أمر الآخرة ، أي : ما هو سهل كما تتفكرون من أمر الآخرة ، أي ما يسير كما تتفكرون من أمر الله ، أي ما يسير كما تتفكرون من أمر الله ، أي ما يسير كما تتفكرون من أمره : أي ما يسير الأمر : أي ما يسير كما تتفكرون : أي ما يسير الأمر كما تتفكرون : أي ما يسير كما تتفكرون : أي ما يسير كما تتفكرون : : أي ما هو يسير كما تتفكرون : : أي ما هو يسير كما تشرك في الدنيا سهلً
+she can,فيها,(ب) يمكن أن
+it doesn't matter,ماشي موشكيل,لا يهم
+It will take us hours to get back the way we come,غادي ياخاد لينا بزاف ديال لواقت باش نرجعو من تريق ليجينا منها,سوف يستغرق منا ساعات للعودة إلى الطريق الذي نأتي به
+I am definitely forgetting work,أنا بتاءكيد كانسا لخادما,أَنا بالتأكيد أَنْجِزُ عملَ
+"actually, you know what?","فلواقيع, عرافتي شنو?",في الواقع، أتعلم ماذا؟
+Oh that would be lovely.,أُه هادشي غادي إكون غزال.,ذلك سيكون رائعاً
+whatsoever,ڭاع,نوع نوع
+But they're just ducks.,والاكين راهوم هي بطّات.,لكنهم مجرد بطات.
+I don't have hope,ماعنديش أمال,لا أملك أملاً
+one hundred per cent,ميا فلميا,النسبة المئوية المئوية
+He slept well,نعس مزيان,#يَنَمُ جيداً #
+You wear your heart on your sleeve,اللي ف قلبك علا لسانك,تضعين قلبكِ على أكمامكِ
+"Yes, absolutely",أه بتاءكيد,نعم، مُطلقاً
+I also have grandchildren,تانا عندي أحفاد,لدي أيضاً أحفاد
+I love gold,كايعجبني الدهب,# أحبّ الذهب # # # # # # # # # # #
+Then I'll leave you and I'll meet you at the end of the afternoon,إدان غادي نخاليك أُ غادي نتلاقاك فلاخار تلعشييا,ثم سأتركك و سأقابلك في نهاية فترة بعد الظهر
+feasts,عواشر,مُحَجَز
+"And the drinks, too",و لماشروبات حتا هوما,والمشروبات، أيضاً
+What did he say?,شنو قال?,ماذا قال؟
+And I had to explain the rest of the day.,أُ كان خسّني نفسّر لكمالا ت النهار.,وكان علي أن أشرح بقية اليوم
+where can i weight my groceries?,فين نقدر نعبر تقديا ديالي ?,أين يمكنني وزن البقالة؟
+You're full of ideas today!,عندك بزّاف ديال ل أفكار ليوما!,أنت مليء بالأفكار اليوم!
+"Goodbye, sir.",فيدلاه نعاماس,إلى اللقاء، يا سيدي.
+After he'd finished flapping his arms around,من باعد ماكمّل إحريك فيدّيه,بعد أن انتهى من وضع ذراعيه في الأرجاء
+Oh dear that will be a problem,أ ميمتي هادشي غايخلق موشكيل,# تلك ستكون مشكلة # # سوف تكون مشكلة مشكلة # #
+good evening,لايسعد لماسا,سُرَيَسَيَسُ سُرَّاءً سَيَّاً وَيُوَدَّهُ سُرَّةً وَيُسَيَّةً سُسْسَيَّةً وَيُوَّةً سَسَيَّةً
+he has straight her,عندو شعر رطب,له الحق لها
+You crossed my mind,تحتي فبالي,لقد عبرت عن رأيي
+a friend in need is a friend indeed,الساديق وقت الديق,الصديق الذي يحتاج إليه هو صديق حقاً
+Or are you just saying that to make fun of me?,أُلّا تاتڭول داكشي هير باش تضحك عليا?,أم أنك تقول هذا فقط لتسخر مني؟
+All I'm asking for is half of your salary for the next twenty years,كانتلاب مانك غير ناس ديال الصالير ديالك ف عيشرين عام الجايا,كل ما أطلبه هو نصف راتبك للسنوات العشرين القادمة
+A wooden one I suppose...,شي واهد خاشابي كانضنّ...,واحد خشبي أفترض...
+are you still sick?,واش باقي مريض?,هل ما زلت مريضاً؟
+that's my fault,أنا لي خلت,هذا خطئي
+I am in the mood for a documentory movie,تشهّيت نتفرّج ف فيلم واتاإقي,أنا في مزاج جيد لفيلم وثائقي
+please can you give me some change?,واش مومكين تسارفي لييا عافاك?,هل يمكنك إعطائي بعض الفكة؟
+weekend,ويكند,1 ف-5، 1 ف-4، 1 ف-3، 1 خ م، 1 م و، 1 م و، 1 م أ م و، 1 م و، 1 م أ م و، 1 م و، 1 م أ م و، 1 م أ م
+What would you like to be in control of?,أشنو بغيتي تحاكام فيه,ماذا تريد أن تكون في السيطرة على؟
+turn right at the crossroads,فاش توسل ل رونپون دور علا ليمن,انعطف يميناً عند مفت
+"Well, since you are here you will do as I say","واخا, بيما أناك هنا غادي دير داكشي لي كانڭول ليك",حسناً، بما أنك هنا ستفعل ما أقوله لك
+how many sisters do you have?,شحال من خواتات عندك?,كم عدد الإخوات لديك؟
+Your house is very nice,داركوم زوينا بزّاف,منزلك لطيف جداً
+I really dont like flying at all,أنا بساح ماكانحملش طاياران ڭاع,أنا حقاً لا أحب الطيران على الإطلاق
+They are dating,مصاحبين,انهم يواعدون
+Are you afraid of cats?,واش كاتخاف من لقطوط?,هل أنت خائف من القطط؟
+that's too much,هادشي فايت لقياس,هذا كثير جداً جداً
+But what if the lawyer can't help us,إوا أُ ألا كان لموحامي ماغادّش إعاونّا,لكن ماذا لو لم يتمكن المحامي من مساعدتنا
+I am a philosophy teacher,أنا أُستاد ديال لفالسافا,أنا معلم فلسفة
+the paper is white,لورقا بيضا,والورقة بيضاء اللون
+you want some?,بغيتي شويا?,هل تريد البعض منها؟
+It would be like a rickshaw!,غادي يكون بحال كاروسا,سيكون مثل (ريك ستور)!
+It may rain tomorrow,بحال والو الطيح الشتا غدّا,قد تُمطر غداً
+quarter past,أُ ربع,الرابع من السنة السابقة
+do me a favour,دير فييّا واحد لپليزير,اصنع لي معروفاً
+Do you have any sugar?,عانداك شي سكّار?,هل لديك أي سكر؟
+i'm adopting this cat,أنربي هاد لمشيشا,أنا أتبنى هذه القطة
+My father has been there.,لواليد كان هنا.,أبي كان هناك.
+goodbye,بسلاما,ثالثاً إلى اللقاء
+He was mad at you?,كان مقلّق عليك?,هل كان غاضباً منك؟
+how is your book going to help me calm down,كيفاش كتابك غايعاونّي نتهدّن,كيف سيساعدني كتابك على الهدوء
+what does your average weekend look like?,كيفاش كادوز ويكند عادي ?,كيف يبدو متوسط نهاية الأسبوع الخاص بك؟
+I thought I'd work tonight at home,كنت ناوي نخدام هاد الليلا ف دار,ظننت أني سأعمل في المنزل
+Could you ask some pineapple instead of the grenadine perhaps?,واش تاقدار طلاب شوييا ديال أناناس بلاست ڭرنادين إمكن?,هل يمكنك أن تسأل عن بعض الأناناس بدلاً من الأغرينادين ربما؟
+I read books,كانقرا كتوبا,قرأت كتباً
+It's spitting,السما كاتنقّط,انه يبصق
+I have to say that the pay isn't great here,أيخسني نڭول بلي لخلسا مامزياناش هنا,يجب أن أقول أن الدفع ليس كبيراً هنا
+tax evasion,تاهرّوب داريبي,مُرْحِلَة
+she was scared by the earthquake,تخلعات معا زلزال,كانت خائفة من الزلزال
+He needs to get used to bad weather,خاسّو يوالّف علا لجاو لخايب,يحتاج أن يعتاد على الطقس السيء
+We will need to rely on my phone,غادي نحتاجو نعاولو علا تيليفوني,نحن بحاجة إلى الاعتماد على هاتفي
+Walk carefully,سير بشوييّا,(تابع)
+this T.V is nice,هاد التلفازا زوينا,هذا T.V هو لطيف
+the towel is clean,لفوطا نقييّا,« المطهرة المطهرة مطهرة » مطهر ، مطهر ، مطهر ، مطهر م : مطهر ، مطهر ، مطهر م : مطهر ، م كل كل م : مطهر ، م كل كل م : : : كل م : : : : : كل م : : : كل م : : : : كل م : : : كل م : : : : : كل م : : : : كل م : : : كل م : : كل م : : : كل م : : : : كل م : : : كل م : : : : كل كل م : كل كل م
+i apologize for...,كانعتادر علا...,...أعتذر لـ
+He had a meeting,كان عندو جتيماع,كان لديه إجتماع
+It's not too expensive in general,راه ماغالياش بزاف عاداتان,انها ليست غالية جدا بشكل عام
+"Yes, it's not too good right now...","وايه, ل أُمور ماشي عالا مايورام هاد الساعا...",نعم، هو لَيسَ جيدَ جداً الآن...
+where is the food?,فين هييّا لماكلا?,أين الطعام؟
+the table is short,تطبلا قصيرا?,الجدول قصير
+What about you?,أُ نتا?,ماذا عنك؟ ماذا عنك؟
+"They're different sizes, colors and flavor",هوما مختالفين فلقدّ أُ فلّون أُ فلماداق,إنها مختلفة الأحجام والألوان والنكهة
+Someone left his scarf,شي واحد خلّا الشال ديالو,شخص ما ترك وشاحه
+what is the coolest thing you ever made?,شناهيا أحسّان حاجا درتيها ف حياتك ?,ما هو أروع شيء صنعته؟
+really!,بصّاح!,حقاً! حقاً!
+Have you seen her before?,واش شفتيها من قبال,هل رأيتها من قبل؟
+I did some travelling and there was so much to see,دارت شي تسافيرات أُ كان بزاف مايتشاف,لقد قمت ببعض السفر وكان هناك الكثير لأراه
+i dont see well i should change my eyeglasses,ماكانشوفش مسيان خاسّني نبدل ندادر,أنا لا أَرى جيداً أنا يَجِبُ أَنْ أُغيّرَ عيونَي
+Is this the first time you've been on a plane?,واش هادي هيا لمرا لولا لي كاتكون فيها ف تيارا?,هل هذه هي المرة الأولى التي تكون فيها على متن طائرة؟
+20 points,20 نوقطا,20 نقطة
+I have a cat,عندي قطّا,لدي قطة
+the electricity went out,دضو مقتوع,« فخرجت » انقطعت « م
+have you ever faced a problem you thought was invincible ?,عمرك تحتي ف شي موشكيل لي ڭلتي عمرك تخرج منو ?,هل سبق لك أن واجهت مشكلة كنت تعتقد أنها لا تقهر ؟
+Are they still raw?,واش باقيين خضرين?,هل هم ما زالوا خام؟
+it's next to,راه حدا,ومن التالي إلى:
+Same as yesterday,بحال لبارح,(أ) ما يعادل ما كان عليه بالأمس
+I walked away a little bit,مشيت بعيد شوييا,لقد ابتعدت قليلاً
+I'm trying to have a relaxing time here and I'd prefer not to be disturbed.,كانحاول ندوز واقت موريح هنا أُ كانفضّل مانتبارزاطش,أنا أحاول أن أحظى بوقت مريح هنا وأفضّل أن لا أكون منزعجاً
+in fact,راه,في الواقع
+impressive,ضارب الشعا,مرفــق
+I don't exercise,ماكانديرش السپّور,أنا لا أمارس التمارين
+They are very kind,هوما درايفين بزاف,هم مُطَبَّقُونَ مِنْ نوع
+he died yesterday,مات لبارح,لقد مات بالبارصة
+We could arrange this for a weekend of May,إمكان نبارمجوها فل ويكند الجاي ديال ماي,نحن يمكن أن نرتب هذا لعطلة نهاية أسبوع مايو
+i hope you'll forgive me for...,كانتمنا تسمح ليا علا...,...آمل أن تسامحني على
+take off your shoes,حيّد صبّاتك,يُقلعُ أحذيتكَ
+weekly,كولّا سيمانا,)ب(
+I miss my grandmother,توحّشت جدّا,أَسْأُ إفتقدتُ جدّتي
+What do you think we should do?,أشنو كايبالّيك أيخاسنا نديرو?,ماذا تعتقد أننا يجب أن نفعل؟
+he braided his hair,دفر شعرو,شَدَدَدَدَدَ شعره
+I'd prefer a stubborn spirit in an open space.,كانفادل روح عانيدا ف فاضاء لمافتوح,أفضل روحاً عنيدة في فضاء مفتوح
+"Besides, a child came and insulted me!","زيد عليها, واهد لبرهوش جا أُ سبّني!",إلى جانب ذلك، جاء طفل وأهانني!
+Fair enough.,معقولا.,بما فيه الكفاية بما فيه الكفاية.
+I'm in the school,أنا كاين فلمدراسا,أنا في المدرسة
+Which ruins?,أشمن اتار?,أي أنقاض؟
+what songs do you enjoy listening to with friends?,إنا أخاني كيعجبك تسمع ليهوم معا سحابك ?,ما هي الاغاني التي تستمتع بالاستماع اليها مع الاصدقاء ؟
+the best thing,أحسان حاجا,أفضل شيء
+He is not an engeneer,هووّا ماشي موهنديس,هو ليس بظ مَن خلق مِن خلقه ، ولا مَن مشرك ، وهو مَن لا خلق ولا كثيرًا ، وهو سبحانه لا خلق ولا كثيرًا ، وهو لا خلق ولا كثيرًا ، وهو لا خلق ولا كثيرًا كثيرًا ولا كثيرًا لا كثيرًا. إنه سبحانه لا خلق ولا كثيرًا كثيرًا لا خلقه ولا كثيرًا كثيرًا لا كثيرًا كثيرًا لا خلقه ولا كثيرًا كثيرًا ، هو لا م خلقًا كثيرًا لا خلقًا ولا كثيرًا بعده م
+I have a few walks around the nursing home.,عندي شوييا ديال تامشييا حدا دار لموسينّين.,لدي القليل من المشى حول دار رعاية المسنين
+cows give us milk,لبڭر كيعتيونا لحليب,إعطاءنا لبناً
+I usually only eat croissant on special occasions,أنا أساسان كاناكول كارواسا فلموناسابت لخاسا سافي,عادة ما آكل فقط كرواسون في مناسبات خاصة
+They must be growing up fast,غادي إكونو كبرو دغيا,لا بد أنهم يكبرون بسرعة
+But aren't you tired?,والاكين واش ماعييتيش?,لكن ألست متعباً؟
+"Do listen, you might enjoy it.","تسنّط ليه, أيقدر يعجبك.",استمعي، قد تستمتعين به.
+I'll ring the bell to get someone to get you a coffee.,غادي ندق لجاراس باش يجي شي واحد يجيب ليك لقهوا.,أنا سَأَدْقُّ الجرسَ للحُصُول على شخص ما للحُصُول عليك a قهوة.
+"All right, good day to you.","مزيان, نهارك مبروك.",كل الحق، يوم جيد لك.
+There was a poor girl there called Anya who we wouldn't leave alone,كانت واحد لبنيا سغيرا سميتها أنيا ماكنّاش كانتخليوها بوحدها,كانت هناك فتاة فقيرة هناك تدعى (آنيا) التي لم نكن لنتركها وشأننا
+A Thai restaurant,ماطعام تايلاندي,مطعم تايلاندي
+which book?,إنا كتاب?,أي كتاب؟
+We have a deal ... bon appetite!,التافقنا ... بصحّا!,لدينا اتفاق... شهية!
+What rare species are you looking for?,أشنهوما لأنواع الناديرا ليكاتقلاب عليها?,ما هي الأنواع النادرة التي تبحث عنها؟
+chill out.,رتاح.,يُهدّدُ مُهَدّدَاً.
+And what did your boss say?,أُ أش ڭال راإس ديالك فلخدما?,وماذا قال رئيسك؟
+I met him yesterday,تلاقيتو لبارح,لقد إلتقيت به أمس
+My grandmother passed away last year,جدّا توفّات لعام اللي فات,جدتي توفيت العام الماضي
+What do they study?,أش كايقراو?,ماذا يدرسون؟
+"A coffee with sugar, thank you","قاهوا ب سكّار, شوكران",قهوة مع السكر، شكراً لك
+does your family practice any unusual traditions?,عاإلتك عندهوم شي عادات و توقوسّ فشكل ?,هل تمارس عائلتك اية تقاليد غير عادية ؟
+the students sent a present to their teacher,تلامد عتاو كادو لوستادتهوم,« ورسل الط » أي القرآن « على مدرسهم » أي على معدهم من قبله من الكتب التي أرسله من قبل قبله من ذر الأول قبله من ذر الأول آية إلى معدهم من ذرهم ، وزهه كما أنزله على مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع مع
+baby,بزقول,(الطفل)
+why do you punish me?,علاش كاتعاقبني?,لماذا تعاقبني؟
+Sorry so slow but I m on my phone,سماح لييا معاتال والاكين أنا ف تيليفون,آسف جداً على بطء بطيء جداً لكن أنا على هاتفِي
+that thin girl is drinking milk now,هاديك درييا لمسلوتا كاتشرب لحليب دابا,تلك الفتاة النحيلة التي تشرب حليباً الآن
+I had a good time,دوّزت وقت زوين,كان لدي وقت ممتع
+I'm sure,أنا متءكّد,أنا متأكد
+I don't think so.,ماكاندنش,لا أعتقد ذلك
+"On top of that, there will be cake in this review internship.","أُ فوڭ هادشي, غادي تكون لحلوا ف هاد ستاڭ",إضافة إلى ذلك، سيكون هناك كعكة في هذا الاستعراض التدريب الداخلي.
+i'm convinced that our family gatherings are like comedy shows,أنا مقتانعا بلي عاإلتنا فاش كيتجمعو كيوليو بحا شي فرقا دياك مسراح,أنا مقتنع بأن تجمعات عائلتنا مثل العروض الكوميدية
+"A disappointment, a failure?","خايبات أمال, فاشال?",خيبة أمل، فشل؟
+no one can move this box,تا واحد مايقدر إحرك هاد ل بوتا,لا أحد يستطيع تحريك هذا الصندوق
+I remind you that class is required.,كاندكرك أنّا هاد لحيصّا ضاروريا.,أنا أذكرك بأن الصف مطلوب
+I'll take pictures,غانتّصوّر,سألتقط صوراً
+I have have just eaten lunch,يالّاه تغدّيت,لقد تناولت للتو طعاماً
+"I'm getting a little bored, aren't you?","جاني لمالال, أُ نتا?",أنا أشعر بالقليل من الملل، أليس كذلك؟
+That's a fishy story,هاد لقيصّا فشيشكل,هذه قصّة مريبة
+the whole ball of wax,حبّ أُ تبن,كُلّ كُ كُلّ كُلّ كُلّ كُلّ مِنْ
+Have a wonderful holiday!,عوتلا ساعيدا!,تمتعوا بعيدًا رائعًا!
+He made a chicken sandwich,سايب سوندويش ديال الدجاج,لقد جعل منه دجاجاً
+Cover you head with a scarf,غطّي راصك ب الشال,"""تُغطي رأسك بوشاً"""
+I thought you were taking the compass...,حساب ليا راه خديتي معاك لباوصالا...,ظننتك ستأخذين البوصلة...
+I like him,عجبني,أنا أحبّه
+twenty minutes,تولوتساعا,الـ 24 دقيقة
+What did you say?,شنو ڭلتي?,ماذا قلت؟
+You mean after your meeting,كاتقصد مورا جتيماعاك,تعني بعد اجتماعك
+i will draw a portrait of you,أنرسمك,سأرسم صورة لك
+"Excuse me, north of Asfi.","سماح لييا, شامال ديال أسفي",اعذريني، شمال (آصفي)
+Do we have to write this down?,واش خصنا نكتبو هادشّي?,هل يجب ان نكتب هذا؟
+I don't have many friends except Rachid...,ماعنديش بزّاف ديال ل أصديقاء من غير راشيد...,ليس لدي العديد من الاصدقاء ماعدا رشيد
+day,نهار,اليوم
+i'm entering a reading competition,أنشارك ف موساباقا ديال لقيراأ,أنا أدخل في منافسة القراءة
+I've been here for two days,كنت هنا شي يوماين هادي,أنا هنا منذ يومين
+Has your brother been to Paris?,واش كان خوك ف پاريس?,هل كان أخوك في باريس؟
+the school is far from my house,لمدراسا بعيدا علا داري,المدرسة بعيدة جداً عن منزلي
+Ok,أُك,سِك
+My luggage is missing,لباڭاج ديالي ناقس,امتعتي مفقودة
+Where is he going?,فين غادي هووّا?,إلى أين يذهب؟
+I have pimples,عندي لحبوب,عِنْدي عِنْدَي عِنْدَي عوالق
+Would you ask him to come here?,واخا تڭولّيه إجي لهنا?,هل تطلب منه أن يأتي إلى هنا؟
+"Careful, there's roots everywhere","ردّو لبال, راه كاينين الجدورا فينمّا مشيتي",حاذر، هناك جذور في كل مكان
+we are so many,حنا بزّاف,نحن كثيرون جداً
+beside us,حدانا,من جانبنا
+I'll ask him!,غادي نساولو!,أنا سَأَسْألُه!
+Don't take it out in me,ماتخويش فييّا لأعصاب ديالك,لا تخرجه في داخلي
+I don't know why I did it.,أُلاه ماعرفت علاش درتها.,أنا لا أعرف لماذا فعلت ذلك.
+unusual,غاير عادي,غير عادية
+What kind of fruit do you prefer?,أشمن ديسّير بغيتي?,ما نوع الفاكهة التي تفضلها؟
+do you have change for  ?,واش عندك سرف ديال?,« أم » بل « لديك تبديل » بدل بدل من بدله.
+I'm not upset,أنا ڭاع مامقلاق,أنا لست منزعجاً
+"Personally, I will do pineapple slices with Armagnac",أنا شاخسييان غادي ندير شاراإح ديال أنانس أُ أرماڭناك,شخصياً، سأقوم بعمل شرائح الأناناس مع الأرمانيك
+another day,شي نهار أخور,- - - - - - - - - - - - - - -
+have you ever participated in a marathon?,ماعمرك ماشركتي فشي ماراتهون ?,هل سبق لك أن شاركت في سباق ماراثون؟
+Uh... it depends on you...,أُه...لأمر كايعتامد عليك,...يعتمد عليك...
+What does that mean?,أش كايعني داكشي?,ماذا يعني ذلك؟
+How about iPads instead of paper note books?,أُ أش بان ليك ف أجهيزا ديال إپاد بلاست موداكيرا ديال لوراق,ماذا عن الآيباد بدلاً من الكتب الورقية؟
+Hi,سالام,مرحباً
+"Yes, we can add olive oil with beets.",أه نقادرو نزيدو زيت زيتون معا لباربا,نعم، يمكننا إضافة زيت الزيتون مع البنجر.
+Casual wear,حوايج ماشي راسمييّين,ارتداء الملابس الشسوية
+I love my job,كانبغي خدمتي,أحب عملي
+Where did you learn it?,فين تعلّمتيها?,أين تعلمتها؟
+the price seemed reasonable for the quality of the product,تامان كان هووا هاداك معا لقواليت ديال لپرودويت,السعر الذي بدا معقولاً لنوعية المنتج
+Now he spends a lot of time home,دابا كايدووّز بزّاف تلوقت فدّار,الآن يقضي الكثير من الوقت في المنزل
+it's great to help others,مزيان تعاون الناس,من العظيم مساعدة الآخرين
+for me,علا قبلي,من أجلي
+It was chocolate laxative!,راه كان شوكولات كايدير سهال!,لقد كانت شوكولاتة ملطفة
+You think I'm going crazy?,كايبالّيك أنا كانحماق?,هل تعتقد أني سأجن؟
+Face the music,واجه لواقيع,واجهة الواجهة الموسيقى
+I always forget to drink water,ديما كانّسا نشرب لما,# دائماً أنسى أن أشرب الماء # # # # # # # # # # # # #
+There's that new Italian place,كاين داك لبلاسا تاليانييا جديدا,هناك ذلك المكان الإيطالي الجديد
+And making sure that we look after it,أُ نتأكاد بيلا كانحافضو عليها,و التأكد من أننا ننظر إليه
+Only once I've finished my drink!,فاقاط مورا مانسالي من شرابي,مرة واحدة فقط لقد أنهيت شرابي!
+"Ah yes, she would be good fun",أه غادي تكون مومتيعا,"نعم, نعم, ستكون ممتعة جداً"
+And by some miracle it never broke down with me in it again.,"أُ بحال شي موعجيزا, ماعمرو خسر أُ أنا فيه باقي",وبمعجزة ما لم تنهار أبداً وأنا بداخلها مجدداً
+What?,شناهوا?,ماذا؟ ماذا؟
+I'll be back in a minute,دقيقا هاني جاي,سأعود خلال دقيقة
+he doesn't listen to me,ماكايسمعش لييّا,لا يستمع إليّ
+what is your favorite way to spend an afternoon?,كيفاش كيعجبك دوز لعشيات ديالك ?,ما هي طريقتك المفضلة لقضاء فترة ما بعد الظهر؟
+Thursday,نهار لخميس,واو خُفشششششششش
+See you tomorrow!,نشوفاك غدا,نراكم غدا!
+I can give Amina a shout to get the chair,يمكن نعييت علا أمينا باش تجيب لكورسي,أستطيع أن أعطي (أمينة) صرخة للحصول على الكرسي
+I miss your laugh,توحّشت الضحكا ديالك,أَشْأُ أَسْأُ ضحكَكَ
+you couldn't help it,ماكانش ب إديك,أنت لا تستطيع أن تساعده
+I need a belt,خصّني صمطا,أحتاج إلى حزام
+I have curly hair,عندي شعر مكريپّي,لدي شعر مجهري
+What a pair we are!,أش هاد زوج حنا!,يا لنا من زوجاً منا!
+They are glued together,تلصّقو معا بعضييّاتهوم,هم ملتصقون معاً
+a sea of clouds to drown in,بحر ديال سحاب نغرقو فيه,بحر من السحب للغرق في
+Can you hand me the calculator?,واخا تعطيني ل كالكولاتريس ?,هل يمكنك أن تعطيني الآلة الحاسبة؟
+Today is history,ليوما تاريخي,اليوم هو التاريخ
+The smoke made him sneeze,الدخّان جاب ليه لعطصا,« فجعله الدخان » أي الدخن « عسر العسد » من النار ، فجعله تد
+did the ducks use to live in the stables?,واش كان لبات كايعيش فلإسطابلات?,هل استخدمت البطات للعيش في الإسطبلات؟
+I don't know why,ماعرافتش علاش,لا أعرف لماذا
+Your are very good at inventing special dishes,نتا واعار بزاف ف ختيراع أطباق خاصّا,أنت جيد جداً في اختراع أطباق خاصة
+I saw your brother yesterday!,شافت خوك لبارح!,لقد رأيت شقيقك بالأمس!
+you're everything to me,نتا/نتي كولشي بنيسبا ليا,أنت كل شيء بالنسبة لي
+"Okay, you convinced me",صافي قنعتيني,حسناً، لقد أقنعتني
+it would make me feel happier,غادي يخاليني نحاس بساعادا,سيجعلني اشعر بالسعادة
+"However, I doubt that the hawks are interested in turtles","واخا هكاك, كانشاكّ أنّا سوقور كايعجبوهوم لفكارن",ومع ذلك، أشك في أن الصقور مهتمون بالسلاحف
+I live in....,أنا كانسكن ف...,أنا أعيش في..
+fake bag,ساك مزوّر,مُسِكِسِكِسِ مِن
+Do you know any good sorcerers?,واش كاتعراف شي سحارا مزيانين?,هل تعرف أي سحرة جيدين؟
+It's not too far,مابعيدش بزّاف,ليس بعيداً جداً
+You don't need to call me sir.,ماتحتاجش تعيّت ليا مولاي.,لست بحاجة لأن تتصل بي يا سيدي
+What should I do?,أش خسّ ندير?,ماذا يجب أن أفعل؟
+"Yes, it's for work","أه, راه ت لخدما",نعم، إنه من أجل العمل
+Many people live in Asia,بزّاف ديال الناس كايعيشو ف أسيا,العديد من الناس يعيشون في آسيا
+You're welcome,بلا جميل,على الرحب و الترحيب
+I can't really find my purse with my eyes closed...,مايمكنش ليا نلقا بزطامي ب عينيا مسدودين...,لا أستطيع أن أجد محفظتي حقاً وعيني مغمضتان...
+One of my friends is being bullied because he wears glasses,واحد من سحابي كايتعراد لتانامور حيت كايلبس نضاضر,أحد أصدقائي يتم تخويفه لأنه يرتدي نظارات
+you're going to need something hearty to soak up all that beer,غادي تاحتاج شي حاجا شاهييا باش تماص ڭاع ديك لبيرا,ستحتاجين إلى شيء من القلب لتشربي كل تلك البيرة
+And I even trained to learn how to not be afraid of flying!,حتا تدارابت علا كيفاش مانخافش من طاياران,حتى أنني تدربت على تعلم كيفية عدم الخوف من الطيران!
+I'm very excited to see her,أنا ماتحامسا بزاف نشوفها,أنا متحمس جدا لرؤيتها
+"For tonight's meal, we're waiting for 10 people","فلعشا تليوم, حنا معوّلين علا 10 ديال الناس",لوجبة الليلة نحن ننتظر 10 أشخاص
+You are smart,نتا دكي,أنت ذكي جداً
+i found the cafe closed,لقيت لقاوها سادا,وجدت المقهى مغلقاً
+I'm just being silly,أنا غير كانتبارهاش,أَنا فقط أَنا فقط أَكُونُ أَسْهُلُ
+It's the best I've ever seen,هادي أحسان حاجا شفتها,هذا أفضل ما رأيته في حياتي
+"But I can revise outside, there is not a lot of point being stuck in here","والاكين راه يمكن ليا نراجع برّا, ماكاينش لاش نبقا حاصلا هنا.",لكن يمكنني أن أراجع خارج خارج، ليس هناك الكثير من النقطة أن تكون عالقة هنا
+what is the homework?,شنو تامارين لي عندنا ?,ما هو الواجب المنزلي؟
+in my opinion,ف ناضاري,في رأيي
+How many times?,شحال من مرّا ?,كم عدد المرات؟
+"my body says yes, but my heart say no","لجيسّم ديالي كيڭول أه, ولك عقلي لا",جسدي يقول نعم، لكن قلبي يقول لا
+"When I was little, I hated my cousin, in the country, who sometimes put turtles on her back.","فاش كانت سغير, كراهت بنت عمّي, كانت كادّير فكارن فوق ضهارها",عندما كنت صغيراً، كرهت قريبتي، في البلاد، التي تضع أحياناً السلاحف على ظهرها.
+Discriminating against alcoholics!,تامييز ضدّ مودمينين ديال لكوحول!,تُميّز ضدّ المدمنين على الكحول!
+Why can't we just stay here a bit?,علاش غير مانبقاوش شوييا هنا?,لماذا لا يمكننا البقاء هنا قليلاً؟
+Your boss invites you to the theater?,لمودير ديالك هوا ليعراد عليك لماسراح?,رئيسك يدعوك إلى المسرح؟
+have you tried photography?,ماعمرك ماجربتي تسوار,هل جربت التصوير؟
+future,موستقبال,في المستقبل في المستقبل
+he is unknown,هووّا مامعروفش,هو غير معروف
+Have you read it?,واش قريتيها?,هل قرأته؟
+You got to be kidding me?,باينا كاضحك معايا?,لا بد أنك تمزح معي؟
+I haven't studied this,ماقريتش هادشّي,لم أدرس هذا
+Almost.,تقريبان.,تقريباً. تقريباً.
+so I live in a small hut in the forest with my books,هادشي علاش كانعيش ف كوخ سغير فلغابا معا كتوبي,لذا أعيش في كوخ صغير في الغابة مع كتبي
+go straight ahead,سير نيشان,متقدّمًا إلى الأمام متقدّمًا إلى الأمام
+How about we say that tomorrow we go on an excursion,أش بالّيك نڭولو ڭاع غدّا نمشيو لشي تفجيجا,ما رأيك أن نقول أن غداً سنذهب في رحلة
+What are you worried about?,علاش نتا مدرونڭي,ما الذي أنت قلق بشأنه؟
+what?!,كيفاش?,ماذا؟
+No I am thinking of ditching it.,لا أنا كانفكّر باش نتخلّا عليه.,لا أنا أفكر في التخلص منه.
+My parents just thought I had gone off in a strop,واليديا كايسحاب ليهوم مشيت زعفان,والديّ ظنّا أنّي خرجتُ في مرّة
+He has no idea,ماعندو حتّا فيكرا,ليس لديه أي فكرة
+Happy birthday,عيد ميلاد ساعيد,عيد ميلاد سعيد
+But you cut your finger!,والاكين قتاعتي صبعك,لكنّك جرحت إصبعك!
+Last month,شهر لي فات,السنة الماضية
+So it was better,داكشي علاش كان حسان,لذا فقد كان أفضل
+every Friday,كولّا جمعا,كل جمع كل يوم كل جمع كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل يوم كل جمع
+give me,عطيني,يعطيني
+he'll be eaten by rats,غادي ياكلوه ل فيران,سيُؤكل بواسطة الجرذان
+"It makes me think of a bar I know, who's got a lot of charm","كايخلي نفكار فواحاد لحانا كانعرفها, زوينا بزاف",يجعلني أفكر في حانة أعرفها، من لديه الكثير من السحر
+do you enjoy going to the theater?,كايعجبك تمشي لمسرح ?,هل تستمتع بالذهاب إلى المسرح؟
+I forget.,نسيت.,لقد نسيت.
+spills the beans,فرڭع رمّانا,# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+i'm convinced that my cat is plotting to take over the world,أنا متءكدا بلي لموش ديالي كيختت باش إحتل لعالام,أنا مقتنع بأن قطتي تخطط للسيطرة على العالم
+he has never spoken arabic,ماعمرو تكلّم لعربييا,« لم ينطق » لم يقل « من بعد قولا » أي لم يقل : لم يقل قولا. « لم يقل قولا » أي لم يقل : لم يقل : لم يقل : لم يقل : لم يقل : لم يقل : لم يقل : لم يقل : لم يقل : لم يقل : لم يقل : لم لا لم لم يقل : لم يقل : لا لا لا لم لم لم لا لم لم لا لا لم لم لم لم لم لم لم لم لم لم لم لم قال : أي لم لم يقل : لا لم لم لم لم لم لم لم يقل : أي : لم يقل : لم لم يقل : لا لم يقل : : لا
+"Can't you ask me now, I might not be here at the next class",مايمكنش ليك تسوولني دابا? موحال نكون هنا فل حيصّا الجايّا,لا يمكنك أن تسألني الآن، قد لا أكون هنا في الصف التالي
+I don't have many,ماعنديش بزّاف,ليس لدي الكثير
+harry up,سربي,يَصْلَف
+Then we must not disappoint them.,أُمان باعد أيخاسنا مانخايبوش ليهوم لءمال ديالهوم.,ثم يجب ألا نخيب آمالهم.
+Is that a small orange juice?,واش هادا عاصير ديال ليمون سغير?,هل هذا عصير برتقال صغير؟
+Does your phone have one?,واش تيليفونك فيه وحدا?,هل لهاتفك واحد؟
+what's your intelectual level ?,شنو لموستاوا تاقافي ديالك ?,ما هو مستواك الإنتخابي؟
+I want to change my clothes,بغيت نبدّل حوايجي,أريد أن أغير ملابسي
+i have a younger brother,عندي خويا سخر مني,لدي أخ أصغر
+I didn't find my socks,مالقيتش تقاشري,لم أجد جواربي
+No rush,غير بشوييّا,لا يوجد اندفاع
+the way we can talk about anything and everything is one of the best things about us,أحسّن حاجا فينا هييا كيفاش كاندويو بساراحا علا كولشي ?,الطريقة التي يمكننا أن نتحدث بها عن أي شيء وكل شيء هو واحد من أفضل الأشياء عنا
+well look at you,أودّي شوف هي راسك كيداير,أنظر إلى نفسك
+My sister is a docter,ختي طبيبا,أختى هى مُنْطَرَة
+I don't see any drawbacks to use the stairs,ماكانشوف تا موشكيل ف أنّاني نخدّم الدروج,لا أرى أي عيب في استخدام السلالم
+"Yes, there are going to be two of them!","أه, غادي إكونو جوج منهوم!",نعم، سيكون هناك اثنان منهم!
+Yes but the translation was wrong,أه والاكين الترجاما كانت غالطا,نعم لكن الترجمة كانت خاطئة
+Going up on that hill will give us the right visibility and the village will be lit up so we can spot him easily to go in the right direction.,إلا طلعنا ف هاد لهاضابا غادي تولي عندنا شوفا مزيانا أُ ل ڤيلاج أيكون مضووّي إدان غادي نشوفوه ب سوهولا باش نعرفو ل إتّيجاه لي أنمشيو فيه.,الصعود على ذلك التل سيعطينا الرؤية الصحيحة و القرية ستكون مضاءة حتى نتمكن من تحديد موقعه بسهولة
+comparable,مومكين إتقارن,الوظائف السابقة
+I'm going to the mosque,غانمشي لجّامع,أنا ذاهب إلى المسجد
+And it's getting a little cold.,أُ بدا كايبرد لحال شويا.,و هو يبرد قليلاً
+probably not,موحالش,من غير المحتمل
+i'll go stargazing,أنمشي نشوف نجوم,أنا سَأَذْهبُ نجماً
+really,بسّح,& try
+and give yourself an oral experience,أُتعتي لراساك تاجريبا شافاهيا,وامنح نفسك تجربة شفهية
+Don't sweat it!,ماتخمّمش,لا تَعْبِسْه ولا تَعْبِسْه!
+I won't be leaving you a very good review on Tripadvisor,ماغاديش نخلي ليك حتا شي تاعليق مازيان ف طريپادڤيسور,أنا لن أترك لك مراجعة جيدة جدا على Tradvisor
+"And the bartender's an idiot, so you could always hire him as a jester!","أُ سارباي هبيل, داكشي علاش إمكان ليك ديما تخدمو بحال شي موهرّيج!",والساقي أحمق، لذا يمكنك دائماً أن توظفه كمهرج!
+I took them to the mosque,الديتهوم ل الجامع,أخذتهم إلى المسجد
+"Oh go on then, we do deserve it I suppose, it's been such a hard day","أُه سير علّاه, كايبان ليا كانستاحقوها, كان ليوما سعيب",إذاً، نحن نستحقه أنا أفترض، لقد كان يوماً عصيباً جداً
+That would be very nice of you.,غادي إكون هادشي لوطف منّك.,سيكون هذا لطفاً منك
+H've no doubt at all,ماعنديش أدنا شكّ,لا شك على الإطلاق
+dates with milk,التمر بلحليب,التواريخ التي يكون فيها حليباً
+they can,فيهوم,يمكن أن
+Yes,أه,نعم نعم نعم
+Congratulations,مبروك عليك,التهانئ المباركة
+The socks stink,التقاشر الموسخين,النتن النتن
+day,ياوم,اليوم
+"absolutely, i need a break",داروري خاسّني نرتاح,أنا في حاجة إلى إستراحة
+the customer debated whether to buy now or wait for a reduction,لكليان ماعرفش واش يشري لرپودويت دابا ولا يتسنا سولد,ما إذا كان سيشتري الآن أو ينتظر تخفيضاً
+I don't want to tire,مابغيتش ناعيا,أنا لا أريد أن الإطارات
+They'd need to be very close together,خسّهوم إكونو قراب لبعضيياتهوم,يجب أن يكونوا قريبين جداً معاً
+Everyone knows,كولشي فراسو,كل شخص يعرف
+"Be careful, I'm only your psychiatrist!","حدي راسك, أنا غير طبيب نفساني ديالك!",كن حذراً، أنا طبيبك النفسي فقط!
+"Good evening, my friend",مسا لخير أ عشيري,مساء الخير يا صديقي
+I missed a lot of your classes cause it was nap time,تڭيّبت علا بزاف تلحيصاص ديالك حيت جاو فوقيتّ لقايلولا,فاتني الكثير من فصولك لأنه كان وقت الغفوة
+he smokes in the balcony,كايكمي فلبالكون,هو يُدخَّن في الشرفة
+Can I get you something to eat?,نجيب ليك شي حاجا التاكولها,هل أحضر لك شيئاً لتأكله؟
+do you enjoy watching football?,واش كيعجبك تفرج فكورا ?,هَلْ تَتمتّعُ بمُرَاقَبَة كرة القدم؟
+How nice to see you!,شحال زوين أنّاني نشوفك!,من اللطيف رؤيتك
+We have the pool for both of us,عندنا لا پيسسين لينا بجوج,لدينا المسبح لكلينا
+Let's say together with your difficulty,خالينا نڭولو بجوج معا صوعوبا ليعنداك,لنقول معاً مع صعوبة
+this handsoap is good,هاد الصابونا زوينا,هذا النادى النادى هو جيد
+it's a reflection of your mental state,هادشي نعيكاس ديال لحالا لعاقليا ديالك,إنه انعكاس لحالتك العقلية
+you're not a good person,نتا إنسان مامزيانش,أنت لست شخصاً جيداً
+But you never had problems with the old neighbours then?,والاكين ماعمّر كانو عندك ماشاكيل معا جيران لقدام ديكساع?,لكنك لم تواجه مشاكل مع الجيران القدامى حينها؟
+Get straight to the point,جيني ڭود,اذهب مباشرة إلى النقطة
+no I don't,لا,لا لا لا لا لا لا لا لا
+I am pretty stressed out right now,أنا مسترسّي شويا دابا,أنا متوتر جداً الآن
+"So, so, but much better than yesterday, thank you","هاكّا أُ هاكّا, والاكين حسان بزاف من لبارح, شوكران",لذا، لذا، لكن أفضل بكثير من الأمس شكراً لك
+is there any bread left?,واش باقي لخوبز,هل بقي أي خبز؟
+It's not too early for a cocktail is it?,ماشي بكري بزاف علا كوكتايل أولّا?,ليس من المبكر أن يكون هناك كوكتيل أليس كذلك؟
+We could make sangria.,نقدرو نديرو سانڭريا.,"يمكننا أن نصنع ""سانجريا"""
+I don't care about anyone,ماكانتسوّقش لحتّا واحد,أنا لا أهتم بأي أحد
+century,قارن,عــن عــن عــن عــن
+it's that way,هنا,من هذا الطريق
+I can do that easily,ناقدار نحاياد هادشي بزاربا,أستطيع أن أفعل ذلك بسهولة
+"And you know how much I like butter and cheese and rich, tasty foods","أُنتا كاتعرف شحال كانبغي زابدا أُ جبان أُ لماكلا لغانيّا, أُلّديدا",وأنت تعرف كم أحب الزبدة والجبن والغني والطعام اللذيذ
+Oh you took both?,أُه خديتيهوم بجوج?,هل أخذت كلاهما؟
+What time is it?,شحال ف الساعا?,كم الوقت الآن؟
+Perfect!,بلان!,الكمال!
+deal,تبزنيسا,اصف
+you have to wait,خاسّك تسنّا,يجب عليك أن تَنْتَظَرَ
+have you ever met a celebrity?,عمرك تلاقيتي شي واهد مشهور ?,هل قابلت شخصاً مشهوراً من قبل؟
+But when we got in the lift my boss started to tell me this story,"والاكين منين ركابنا لماسعاد, بدا راإس ديالي كايعاواد لييا ديك لقيصّا",لكن عندما وصلنا إلى المصعد بدأ رئيسي في إخباري هذه القصة
+he studies at Mohamed 5 University,كايقرا ف جاميعات موهامد لخاميس,دراسات في جامعة محمد ٥
+What do you think?,أش بالّيك?,ما رأيك؟
+He lost his money gambling,خسر فلوسو ف لقمر,لقد خسر ماله
+the goal came in the dying minutes of the match,لبيت جا فدقيقا تسّعين,الهدف جاء في الدقائق المحتضرة من المباراة
+yesterday,لبارح,- - - - - - - - - - - - - - - - -
+"Fatima, please let me worry about it, I want to rest.","فاطيما, عافاك خليني نفكّر فيه, باغي نرتاح.",(فاطمة)، أرجوكِ دعيني أقلق بشأن الأمر، أريد أن أرتاح.
+i'm convinced that ice cream can mend even the toughest days,أنا مقتانع لڭلاس إقدر إقاد حتا أسعاب نهارات,أنا مقتنع بأن الآيس كريم يمكن أن يصلح حتى أصعب الأيام
+this is delicious,هادشي بنين,هذا هو هذا هو لذيذ
+But nature just seems to keep following me everywhere!,والاكين كايبان ليا أنا تابيعا باقا تابعاني فڭاع لبلاياس!,لكن الطبيعة تستمر بملاحقتي في كل مكان
+can you discuss your relationship with your fellow teammates ?,تقدر تدوي لينا علا لعالاقا ديالك معا لعابا ديال فرقتك ?,هل تستطيع أن تناقش علاقتك بزملائك ؟
+Don't you have a chance to get a loan from a charity?,معندكش فورصا باش تاخود كريدي من شي موءساسا خايريا,أليس لديك فرصة للحصول على قرض من جمعية خيرية؟
+We can associate it with ice cream,إمكن نجمعوه معا لاڭلاس,يمكننا ربطه بآيس كريم
+Pick up your clothes,هزّ حوايجك,ألتقط ثيابك
+i'm convinced that pizza is the universal language of happiness,أنا مقتانع بلي ل پيزّا هيا لوخا لعالاميا ديال ساعادا,أنا مقتنع بأن البيتزا هي لغة السعادة العالمية
+"Yes, I am definitely new here but as you are a regular you know how expensive the cocktails are here","أه, أنا جديدا هنا طابعان, والاكين حينت نتا ديما كاتجي هنا غادي تكون عارف شحال غالي كوككتايلات هنا",نعم، أنا بالتأكيد جديد هنا لكن بما أنك منتظم أنت تعرف كم تكلفة الكوكتيل هنا
+Does he live in Fes?,واش كايعيش ف الفاس?,هل يعيش في (فيس)؟
+have you ever volunteered at a sports event?,ماعمرك ماشاركتي فشي حادات رييادي ?,هل سبق لك أن تطوعت في حدث رياضي؟
+monday,تنين,يوم الاثنين الاثنين
+Perhaps you could draw your dreams.,إمكن مومكين ترسم لأحلام ديالك.,ربما يمكنك رسم أحلامك
+Get some fresh air,خرج إضربك شويا تلبرد,الحصول على بعض الهواء النقي
+He has a big mouth,عندو فم كبير,لديه فم كبير
+"but tonight, you definitely are!","والاكين هاد الليلا, بتاءكيد",ولكن هذه الليلة، أنت بالتأكيد كذلك!
+beside you,حداك,من جانبك
+And 93 is an age beyond honor and you always have a good eye,أُ 93 هوا عمار فوق شاراف أُديما كاتكون عينك مازيانا,93 هو عصر أبعد من الشرف ولديك دائماً عين جيدة
+it's a good idea,فيكرا مزيانا,انها فكرة جيدة
+do you enjoy family gatherings?,واش كايعجبك لحال ملي كاتجمع لعاإلا ?,هل تتمتع بتجمعات عائلية؟
+remove a little bit,نقس سهوييا عافاك,احذف قليلاً
+and the sun was just beginning to set,و شمش يالّاه بدات كاتلع,« والشمس كانت قد بدأت تغرب ».
+What did you do last night?,شنو درتي لبارح بلّيل?,ماذا فعلت ليلة أمس؟
+I always bring too much,أنا ديما كانهز بزاف,دائماً ما أجلب الكثير
+I used to cry a lot,ولّفت أناني نبكي بزاف,اعتدت أن أبكي كثيراً
+future,موستاقبال,في المستقبل في المستقبل
+As soon as possible,ف أقراب واقت مومكين,في أقرب أقرب وقت ممكن
+He went to a spa,مشا ل حمّام,ذهب إلى منتج صحي
+You finally split up with your boyfriend?,تفارقتي أخيران معا ساحبك?,أخيراً إنفصلتِ عن خليلكِ؟
+"But, I'm not sure that's enough",والاكين مامتيقّنش أنّا هادشي كافي,لكن، لست متأكداً أن هذا يكفي
+"a ticket for the city, please",تيكي لمدينا عافاك?,تذكرة للمدينة، من فضلك
+I don't work today,ماكانخدمش ليوم,أنا لا أعمل اليوم
+"The clouds, from above, it's like a sea of cotton.","سحاب, من لفوق, بحال شي بحر ديال لقطن.",السحب، من الأعلى، تبدو كبحر من القطن.
+Europe is not a country,أروپّا ماشي بلاد,أوروبا ليست بلداً
+My friend is abscent today,ساحبي تغيّب ليوم,صديقي مُتَعَبَّد اليوم
+Mine was fine,ديالي كان مازيان,كان منغماً كان رفيعاً
+Really?,وايلي?,حقاً؟ حقاً؟
+lucky,عندو الزهر,محظوظ محظوظ
+I didn't like him at the beginning,ماكانش عزيز علييّا فلّوّل,لم أكن أحبه في البداية
+it's the same,بحال بحال,هو نفسه نفس
+I don't have time,ماعنديش لوقت,ليس لدي وقت
+"excuse me, is julien here?",واش جوليان هنا عافاك?,عذراً، هل (جوليان) هنا؟
+he's exploring a nearby forest,كيكتاشف واحد لخابا قريبا ليه,هو يستكشف غابة قريبة
+He got scared,راه شدّاتو لخلعا,حصل على الخوف
+flattery,تبلحيس,مُطر المُطر المُطر المُطر المُملى
+No milk chef,بلا حليب أ شف,لا يوجد حل للطب
+what happened to you?,شنو وقع ليك?,ماذا حدث لك؟
+The teaher didn't come today,ل أُستاد ماجاش ليوم,لم يأتي الميتر اليوم
+it was an adventure to remember,كانت موخامارا ناديا مانقدرش نساها,كانت مغامرة لتذكرها
+I bear the responsibility,كانتحمّل لمسأولييّا,أنا أتحمل المسؤولية
+are you a fan of comedy shows?,كيعجبوك لباراميج ديال دحك ?,هل أنت معجب بالعروض الكوميدية؟
+take your time,خود وقتك,خذ وقتك
+There is no problem,ماكاين موشكيل,لا توجد مشكلة
+I'm traveling to USA,أنا مصافر ل ميريكان,أسافر إلى الولايات المتحدة الأمريكية
+"You're still up, but I suggest you go to bed",راك مازال فاياق والاكين كانقتاراح عليك تمشي تنعاس,أنت ما زلت فوق، لكن أقترح عليك أن تذهب إلى السرير
+mockery,طنز,سخرية
+"i wish i could hit a ""pause"" button during life's chaotic moments",ماكرهتش كو كنت كانقدر ندير پوس لعالام فاش كيكون مرون,"أتمنى لو أستطيع أن أضغط على زر ""التوقف"" خلال لحظات الحياة"
+"The aquarium is awesome, I can't see the windows","لحاود ديال لحوت زوين, مايمكانش لييا نشوف شراجام",حوض السمك رائع، لا أستطيع رؤية النوافذ
+where it is,فيناهيا,حيث يكون
+give me to see,عطيني نشوف,من أجل أن أرى
+how does the education system prepare students for the future?,كيفاش كاتوجد لقرايا هنا تلامد لموستقبال ?,كيف يعد النظام التعليمي الطلاب للمستقبل؟
+I got this one,خديت هادا,حصلت على هذا واحد
+who knows?,شكون عرف?,من يعلم؟
+welcome,مرحبا,موضع ترحيب
+not sure,موحال,غير مُتأكّد من عدم تأكّد
+God is with me,اللاه معايا,"""الله معي"" ""الله معي"""
+be careful,ردّ لبال,أن يُتَكَبَر
+what sports do you consider underrated?,إنا رييادا كاتجيك مدلوما ?,ما هي الرياضة التي تعتبرها ناقصة؟
+I wake up at five a.m,كانفيق معا لخمسا دصّباح,أستيقظ في الخامسة صباحاً
+Leave me in peace,خاليني عليك,اتركني في سلام
+I trust you.,كانتيق فيك.,أنا أثق بكِ.
+He will take it,غادي ياخدو,هو سيأخذه
+I mix well,كانخلّط مزيان,أخلط جيداً
+We could invite our yoga group and the Glee Club,نقادرو نعايتو علا لماجموعا ديال يوڭا ديالنا أُ ڭلي كلوب,يمكننا دعوة مجموعتنا من اليوغا ونادي الغناء
+january,شهر واهد,المَنْي
+We can do something that your mother can do as well then,نقدرو نديرو شي حاجا كاتقدار لواليدا ديالك ديرها,يمكننا أن نفعل شيئاً تستطيع أمك القيام به أيضاً
+He must have been near his friend's house,غادي يكون قريب من دار ساحبو,لا بد أنه كان بالقرب من منزل صديقه
+he is poor,هووّا فاقير,« فقير فقير فقير » ففقر « فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير فقير
+Not so good.,ماشي مازيان بزاف.,ليس جيداً جداً
+Playing with me... you... you...,كاتلعب بيا... نتا... نتا...,تلعب معي... أنت... أنت... أنت...
+Did you know who you're talking to?,واش عارف معامن كاتهضار?,هل كنت تعرف مع من تتحدث؟
+"Oh, don't worry, it's not your fault!","أُه, ماشي موشكيل, ماشي لغالت ديالك!",، لا تقلق، انها ليست غلطتك!
+your turn,نوبتك,دوران
+And you?,أُ نتي?,وأنت؟
+is that ok?,هادشي مزيان?,هل هذا موافق؟
+I am going to school,أنا غادي للمضراصا,أنا ذاهب إلى المدرسة
+I admire him very much.,كايعجبني بزّاف.,أنا معجب به كثيراً جداً
+I'll get you your food,غادي نجيب ليك لماكلا ديالك,سأحضر لك طعامك
+but we do not want the clients to know we are stuck in the lift do we?,"والاكين مابغيناش لكليان يعرفو بيلا حنا واحلين ف سانسور, أولّا لا?",لكننا لا نريد للعملاء أن يعرفوا أننا عالقون في المصعد، أليس كذلك؟
+i play tennis,كانلعاب تينّيس,أي لعب لعب التنس
+anyway,كيمّاكان لحال,أي حال
+"please, do you have milk?",عافاك واش عندك لحليب?,هل لديك حليب؟
+But we often make a joke...,والاكين غاليبان تانديرو لموضحيكا...,لكنّنا في كثير من الأحيان نَجْعلُ a نكتة...
+Tomorrow I am going to see the doctor,غانمشي غدّا ندوز عند الطبيب,غداً سأذهب لرؤية الطبيب
+"Unfortunately, the moisture is playing tricks on me","لسوء لحاد, روتوبا كادير لقوالب معايا",لسوء الحظ، الرطوبة تلعب الحيل عليّ
+"remember, drink responsibly.","ردّ لبال, شرب أُ قيّس",تذكّرْ، تَشْربُ بشكل مسؤول.
+Do you think I should take a vacation?,تايبان ليك خسّ نشدّ عوطلا?,هل تعتقد أنني يجب أن أخذ إجازة؟
+Does it often snow in the winter here?,واش كايطيح تلج بزّاف ف شتوا هنا?,هل غالباً ما يتساقط الثلج في الشتاء هنا؟
+Let's go to dinner and chat more then,يالاه نمشيو لعشا أُندويو كتار من بعد.,دعنا نذهب إلى العشاء والدردشة أكثر ثم
+point of view,ويجهات ناضار,نقطة رأي
+how many children do you have?,سهحال من ولاد عاندك?,كم عدد الأطفال لديك؟
+Is this a safe area?,واش هاد لبلصا امينا?,هل هذه منطقة آمنة؟
+I got my laptop in my backpack,راه عندي پك ديالي ف شكارتي,حصلت على حاسوبي المحمول في حقيبتي
+I can't help you,مانقدرش نعاونك,لا أستطيع مساعدتك
+I've seen it,شفتها,لقد رأيته
+He does the laundry,كايصبّن,هو يَعمَلُ المغسلةَ
+He can speak three languages,كايقدر يهضر تلاتا د اللوغات,يستطيع التحدث بثلاث لغات
+I have a meeting,عندي جتيماع,عِنْدي a إجتماع
+Beer is a must for sailors,لبيرّا حاجة داروريا بنسبا لبحّارا,« بيرة » مُلْتَم على البحارين « مُلَحَّةٌ للبحارين ».
+yes it's a little bit further away,بعايد شوييا,نعم انها أبعد قليلاً بعيداً قليلاً عن
+he has,عندو,هو لديه
+the beach is empty,لبحر خاوي,الشاطــع الفارغ
+you will see the difference,غاتلاحض لفارق,سترى الفرق
+I know you looked at my cards when I was away.,فراسي شفتي ليا لكارطا ديالي فاش كنت خارج.,أعلم أنك نظرت إلى بطاقاتي عندما كنت بعيداً
+I forgot to pray,نسيت ماصلّيتش,#نسيت أن أصلي #
+he thought I didn't know what him and Martin were doing when they said they were playing basketball,كان كايسحابليك أنا ماعارفاش أش كان هوا أُ مارتين كايديرو ملي كايڭوليا بلي كايلاعبو ل باسكت,ظنّ أنّي لا أعرف ما كان يفعله هو و(مارتن) عندما قالوا أنّهم يلعبون كرة السلة
+I know the theory but anxiety is not always rational,كانعراف ناداريا والاكين لخاوف ماشي ديما عقلاني,أعرف النظرية لكن القلق ليس عقلانياً دائماً
+If everything goes as well this year as last year,إلا مشات ل أُمور مزيان هاد لعام بحال لعام ليفات,إذا سار كل شيء على ما يرام هذا العام كما في العام الماضي
+I decided to not go to Europe,قرّرت مانمشيش ل أروپّا,قررت ألا أذهب إلى أوروبا
+he brought me everything,جاب لييّا كولشي,أحضر لي كل شيء
+let us,يالّاه,لا يُسمح لنا
+I don't like this song,ماكاتعجبنيش هاد لأغنييا,أنا لا أحب هذه الأغنية
+Sorry,سامحنا,_BAR__BAR_ _BAR_ _BAR_ _BAR_ _BAR_
+Will you order it while I'm in the shower... I'll have my usual.,غادي تكومّانديها فاش نكون كاندووش... أنا بغيت داكشي لي موالفا كانّاخد.,هل ستطلبه بينما أنا في الحمام سآخذ المعتاد الخاص بي
+Give me a day,عطيني نهار واحد,أعطِني يوماً
+He goes to church on sundays,كايمشي لكانيسا نهار لحد,يذهب إلى الكنيسة في أيام الأحد
+My husband doesn't understand how stressful my job is,راجلي ماكايفهامش شحال كاتعيّي خدمتي,زوجي لا يفهم كم عملي مرهق
+Don't cry,ماتبكيش,لا تبكى لا تبكى
+I'll let you know,غادي نڭوليك,سأعلمك
+"i know, time flies got any vacation plans?","أه را لوقت كايتير, عندك شي بلان ديال سفر",أنا أعلم، الوقت الذبابة حصلت على أي خطط للإجازات؟
+You have a very nice car.,عندك طوموبيلا غزالا.,لديك سيارة جميلة جداً
+"There's plenty of activities, and the staff is very nice.","كاينين بزّاف ديال ل أنسهيطا, أُ الناسّ لي خدّامين هنا درييفين.",هناك الكثير من النشاطات و الموظفين لطفاء جداً
+"by recycling, being mindful of the ocean and finding new sources of energy","عان طاريق إعادا تادوير, أُ إدراك لموحيطاط أُ نلقاو ماصادير جديدا ديال طاقا",عن طريق إعادة التدوير، ومراعاة المحيطات وإيجاد مصادر طاقة جديدة
+Maybe they'll give us a drink!,كاندن إقدر إعتيونا شاراب!,ربما سيعطوننا شراباً!
+I've met some gold-diggers in my time there,تلاقيت دوك لي تيقلّبو علا دهب فلوقت لي دوزت تمّا,لقد قابلت بعض الحفارين الذهب في وقتي هناك
+My socks aren't here,التقاشر ماكاينينش هنا,منظري ليس هنا
+I have a lot of deadlines from other teachers,عندي بزاف ديال لماواعيد ت ل أساتيدا لخرين,لدي الكثير من المواعيد النهائية من معلمين آخرين
+Turn right,دور علا ليمن,يمين
+do not worry,كون هاني,لا يَقْلَقُ
+"I am ok, I find some of the other residents a bit annoying","بيخير هامدولّاه, جاوني بزّاف ديال سوكّان مراد",أنا على ما يرام، أجد بعض المقيمين الآخرين قليلاً من مزعجين
+I don't know their names.,ماكنعرفش سميتهوم.,لا أعرف أسماءهم
+Will you get us some drinks?,غادي تجيب لينا شي مشروبات?,هل ستحضر لنا بعض الشراب؟
+I am not lucky,ماعندي زهر,أنا لست محظوظاً
+Maybe next week,يمكان سيمانا جايا,رُبِّي في الأسبوع المقبل
+I know you're an English teacher,فراسي نتا أُستاد تل أنڭلايس,أعلم أنك مدرس إنجليزي
+this is not enough,هادشّي ماكافيش,هذا غير كافٍ
+I feel drowsy after lunch,كايجيني النعاس من بعد لغدا,أشعر بالضعف بعد الغداء
+I will do a master degree,غاندير ماستر,سأفعل درجة الماجستير
+they're planning a movie night,مبلانين يشوفو واحد لفيلم فليل,هم يُخطّطون لفيلم ليلي
+The secretary is ill today,سيكريتيرا مريضا ليوم,السكرتيرة مريضة اليوم
+with him,معاه,مَعهُ
+But I agree with you...,والاكين كانتافق معاك...,...لكنني أتفق معك
+Change your socks,بدّل تقاشرك,غيّر جواربك
+History is my favorite subject,التاريخ أحسن مادّا عندي,التاريخ هو موضوعي المفضل
+I knew nothing,ماعرفت والو,عَرفتُ بأنّني عَرفتُ لا شيء
+And ten points on the ability to work as a team,أُعاشرا ديال نوقات علا لقودرا علا لخادما كا فاريق,وعشر نقاط على القدرة على العمل كفريق
+I used to cry a lot,كنت كانبكي بزاف,اعتدت أن أبكي كثيراً
+i smelled the fragrance of garlic cooking,شميت ريحا لمعيقا ديال توما فتياب,شُمَتْ شَمْ شَمْرَ شَرْعَةَ طَبْخِ الكُسُ
+She's a university student,هييّا طاليبا جاميعييّا,إنها طالبة جامعية
+outside,علا برّا,خارج
+love yourself,بغي راسك,حب نفسك
+"Mine too, by the way.","ديالي تاهوا, بلموناسابا.",بالمناسبة، أنا أيضاً منغمي جداً.
+"Plus, my new neighbors are weird.",أُ زيد عليها جيراني الجداد فشكل,بالإضافة إلى أن جيراني الجدد غريبون
+"Good evening, miss",ماساء لخير أنيسا,سَيَسْرُ سَيُعْمَعَ سَمَاءً سَيُسْرَةً سَنَّةً سَنَّةً
+we are planning to move to the west coast of Brittany after all!,حنا كانخاطو باش نتاقلو لساحل لغاربي ديال بريتانيا من باعد كولشي!,نحن نخطط للانتقال إلى الساحل الغربي لبريتاني بعد كل شيء!
+that's not going to work for me,هادش ماخدامش ليا,هذا لن ينجح معي
+he cheats on me,كايخونّي,هو يُخَونُ عليّ
+I hope it settles soon as it keeps me awake sometimes,كانتمانا يستاقار هادشي قريب حيت كايخاليني فايق شي مرات,آمل أن يستقر قريباً عندما يبقيني مستيقظاً أحياناً
+Who is this?,شكون هادي?,من هذا؟
+can we sit over there,واش واخا نڭلسو تمّا,يمكننا أن نجلس هناك
+It's all very overwhelming,كولشي فايت لقياس بزاف,هو كُلّه جداً ساحق
+Now that's a good idea!,دابا هادي فيكرا مزيانا,الآن هذه فكرة جيدة!
+do not worry,سافي تهنّا,لا يَقْلَقُ
+Can you help me organise it?,واش إمكان ليك تعاوني فتانضيم ديالها?,هل يمكنك مساعدتي في تنظيمه؟
+Just relax.,غير رتاح.,فقط استرخي فقط
+I have a binder,عندي كلاسّور,عِنْدي a مُلْزَم
+pray for me,دعي معايا,# صل من أجلي # # # # # # من أجلي # # # # # # # من أجلي #
+"But, I don't think it's working right now.","والاكين, مكانضنش واش خدام دابا.",ولكن، لا أعتقد أنه يعمل الآن.
+I tried to hear you out,حاولت نسمع ليك,حاولت أن أسمعك
+close your eyes,سدّ عينيك,# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+I suggest you listen more and talk less,تانقتارح أنّاك تسمع كتر أُ تهدر قلّ,أقترح عليك أن تصغي أكثر وتتحدث أقل
+Um... sorry what was the question?,وم...سماح لييا أشنو كان سوأل ديالك?,ماذا كان السؤال؟
+I'm not sure I want to throw up rocks.,مامتءكّدش أنّاني باغي نرمي لحجر.,لست متأكداً من رغبتي في رمي الصخور
+Isn't that a bit weird?,واش هادشي ماشي غاريب شوييا?,أليس هذا غريباً قليلاً؟
+january,ياناير,المَنْي
+"Hello my dear, it's been a while!","سالام حبيبي, غبورات هادي!",مرحباً يا عزيزتي، لقد مرّ وقت طويل!
+They're nesting over there and it looks as if the babies will hatch out soon.,راهوم معشّشين هنا أُ بان ليا قريب يخرجو لفراخ ديالهوم من لبيض,إنهم يعشقون هناك ويبدو كما لو أن الأطفال سيخرجون قريباً
+our work paid off,خدمتنا ماداعتش لينا,العمل الذي ننجزه
+"Hahaha, I don't need seminars to teach me!","هاهاها, ماكانحتاجش ناداوات ليتعلّمني!",هاهاه، أنا لست بحاجة إلى حلقات دراسية لتعليمي!
+beside them,حداهوم,« جانبهم من جانبهم
+Why do you think I did this?,علاش كادن بلي درت هادشي?,لماذا تعتقد أنني فعلت هذا؟
+She wouldn't take any money from me,ماغاديش تاخاد حتا شي فلوس من عندي,لن تأخذ أي مال مني
+please fill out this form,عافاك عمّري هاد لستيمارا,هذا النوع من أنواع
+are you a fan of trying new foods or sticking to favorites?,نتا من نوع لي عزيز عليك تجرب ماكلا جديدا ولا كاتبقا لاسق علا دكشي لي كيعجبك ?,هل أنت معجب بتجربة الأطعمة الجديدة أم أنك تحب الأطعمة المفضلة؟
+So far so good,كولشي غادي مزيان هاد الساعا,حتى الآن
+do you know where i could find him?,واش عارفا فين ناقدار نالقاها?,هل تعرف أين يمكنني أن أجده؟
+this is an adventure,هادي موغامارا,هذه مغامرة
+"Beets are good, but it might give you a sweet taste.","لباربا زوينا, والاكين تقدر تعطيك واحد لماداق حلو",البنطال جيد، لكن قد يعطيك طعماً حلوّاً.
+january,يانايير,المَنْي
+Nonsense,ماعندو معنا,هراء
+it's been about a month now,غاتكون شي شهر هادا دابا,منذ حوالي شهر حتى الآن
+Some people don't know me,شي ناس ماكايعرفونيش,بعض الناس لا يعرفونني
+I've got enough time to choose my song then!,عاندي مايكفي من لواقت باش ناختار أُغنييا ديالي,لدي وقت كافي لأختار أغنيتي إذاً
+I hope there'll be enough room for dessert afterwards!,كانتمنا تكون باقيا بلاسا ل الديسير مورا هادشي,آمل أن تكون هناك غرفة كافية للحلوى بعد ذلك!
+Just round the corner,غير معا الدورا,فقط عند الزاوية
+he inherited a fortune,ورت تروا,« ثروة » ثروة « ثروة » ثروة
+good morning,لايسعد صاباح,سـيـاح سـيـاح سـيـاح سـيـاح سـأ
+And you?,أُ نتا?,وأنت؟
+"It's pretty safe, I'm sure","هادشي أامين, أنا متءكّد",إنها آمنة جداً، أنا متأكد
+He likes juice but he doesn't like milk,هووا عزيز عليه لعاصير والاكين ماكايحملش لحليب,يحب العصير لكنه لا يحب الحليب
+and it's a nice change from cooking at home,نيت تخيير زوين من تياب فدار,وهو تغيير لطيف من الطهي في المنزل
+I want cool water,بغيت ما بارد,أريد ماء بارد
+Chicken Tajine with potato and olives.,طاجين ديال بطاطا أُ الزيتون.,دجاج تاجين مع البطاطا والزيتون
+I believe it's been four hours since we walked on this path,كانضن دازت ربعا ديال سوايع أُحنا كانتمشاو ف هاد طريق,أعتقد أنها مرت أربع ساعات منذ أن مشينا على هذا الطريق
+I'm paying a fortune for the maintenance of these machines!,أنا كانخالاس تاروا باش نسلاح هاد لألات!,أنا أدفع ثروة من أجل صيانة هذه الآلات!
+Yes,أياه,نعم نعم نعم
+Go and sleep on your bed,سير نعس ف بلاصتك,اذهب ونام على سريرك
+I bought a coat,شريت كبّوط,لقد اشتريت معطفاً
+I don't want it messing up the new carpet!,مابغيتوش يخسّر ليا الزربيا الجديدا!,لا أريده أن يفسد السجادة الجديدة
+We will just have to go into the garden with two cigars and two glasses,غادي غير يخاسنا نمشيو لجاردا ب جوج ڭوارو أُ جوج كيسان,علينا فقط أن نذهب إلى الحديقة بسيجارين وكأسين
+my kids gave me a tablet,ولادي عطاوني تابلت,أطفالي أعطوني لوحاً
+Mrs.,شريفا,مـس مـس مـس حــســك مــن الــحــكــم فــي
+it's been a pleasure to see you,"ساعا ساعيدا ملي شافتاك""",لقد كان من دواعي سروري أن أراك
+Take a deep breath and you'll feel better,تنافاس مازيان أُ غادي تولّي بيخير,خذ نفساً عميقاً وستشعر بتحسن
+If you paid me more I would press more buttons for help,"كون خلّستيني كتار, كون ورّكت علا بزاف ديال لبوتونات باش إعاونوك",لو دفعت لي أكثر سأضغط المزيد من الأزرار للمساعدة
+it's up to you to define it.,نتا لي خسّك تعرّفو.,والأمر متروك لك لتعريفه.
+"No, no potatoes with a fish, depending on my taste","لا, لا بطاطا معا لحوت, حساب داوق ديالي",لا، لا توجد بطاسات مع سمكة، اعتماداً على ذوقي
+He had bare feet,كان حفيان,هو كَانَ عَثْثَثَثَثَثَثَثَثَثَثَثَثَثَثَثَ قدم ، كان قُرْأً
+Hello Miss could I talk to you for a few moments please?,أهالان أنيسا واش إمكان لييا ندوي معاك لشي لاحادات عافاك?,مرحباً يا آنسة هل يمكنني التحدث معك لبضع لحظات من فضلك؟
+They have special dietary requirements,عندهوم طالابات محدّدا ديال رڭيم,لديهم متطلبات غذائية خاصة
+so please don't send them late on Wednesday evening,داكشي علاش عافاك ماتسيفتهومش فواقت معاتال نهار لارباع,لذا رجاءً لا ترسلهم في وقت متأخر من يوم الأربعاء
+how are you paying,كيفاش غاتخلّص,كيف تدفع
+You want me to be James?,بيغيتيني نكون جامس?,تريدني أن أكون (جيمس)؟
+we would like to have...,بغينا...,نود أن يكون لدينا...
+between us,بيني وبينك,بيننا وبيننا
+Or a megaphone that could help us?,أُلا موكابير ديال ساوت اللي إقدار إعاونا?,أو مكبرات الصوت التي يمكن أن تساعدنا؟
+I have a motorbike,عندي موطور,لديّ دراجات
+I don't have any pictures with me,ماهازّ معايا التا تصويرا دابا,ليس لدي أي صور معي
+Massage?,ماسّاڭ?,-مُسْح؟
+So you want to stay here again?,إدان بيتي تبقا ڭالسّ هنا تاني?,إذاً تريد البقاء هنا مجدداً؟
+do you smoke?,واش كاتكمي?,هل تدخن؟
+I hope you are making the most of the bank holidays this week to change your ideas,كانتمانا تاستافاد ل أقصا حاد من لعوتا هاد سيمانا باش تبادال أفكارك,أتمنى أن تحصل على أكبر قدر من العطلات البنكية هذا الأسبوع لتغيير أفكارك
+Are you new to the neighborhood?,نتا جديد فهاد سيكتور?,هل أنت جديد على الحي؟
+yesterday,لبارح,- - - - - - - - - - - - - - - - -
+My mother is sick,ماما مريضا,أمّي مريضة
+this milk has expired,هاد لحليب خاسر,هذا الحليب قد انتهى صلاحيته
+my son didn't visit me,ولدي ماجاش عندي,لم يقم ابني بزيارتي
+I am pretty stressed out with work at the moment.,أنا ماتواتار بزاف فلخادما بزاف فهاد لواقت,أنا مرهقة جداً مع العمل في هذه اللحظة.
+what is your favorite season?,شنو لفاسّل لموفادال ديالك ?,ما هو موسمك المفضل؟
+How long has it been going on?,منيمتا أُ هادشي كايوقاع,منذ متى وهي مستمرة؟
+Well when he was on that island in Castaway he must have eaten meat!,واخا ملي كان فديك لجازيرا ف كاستاواي أيكون داروري كلا لحم!,حَسناً عندما هو كَانَ على تلك الجزيرةِ في Castaway هو يَجِبُ أَنْ كَانَ عِنْدَهُ أكلَ لحماً!
+is it raining?,واش كاينا شتا?,هل هي تمطر؟
+Do me a favor,دير فييّا خير,اسدي لي معروفاً
+don't be shy,ماتحشمش,لا يَكُونُ خجول
+"It'll do you good, you'll see","غادي دير لخير فراسك, دابا تشوف",انها سوف تفعل لك جيد، سوف ترى
+We should stop seeing each other,خصّنا مانبقاوش نتلاقاو,يجب أن نتوقف عن رؤية بعضنا البعض
+Is that all right?,واش هادشي مازيان?,هل هذا جيد؟
+that's too expensive,هادشي غالي بزّاف,هذا غالي جداً
+Good idea,فيكرا مزيانا,جيد - جيد - جيد - جيد - جيد - جيد -
+it is not hygienic in the kitchen,هوا راه ماشي سيحي فلكوزينا,هو لَيسَ صحياً صحياً في المطبخِ
+It's very nice of you,هادا لوطف منّك,هذا لطف كبير منك
+It is not long till it will start getting dark,ماغايدوزش بزاف ديال لواقت حتا إبدا إطيح دلام,لن يطول الأمر حتى يبدأ الظلام
+This is really exciting being lost like this!,هادشي موتير باش تخسار بحال هاكّا!,هذا أمر مثير حقاً أن تضيع هكذا!
+give him a reason to do it,عتيه ساباب باش يديرها,يعطيه سبباً لفعل ذلك
+Where is the toilet?,فين بيت لما?,أين المرحاض؟
+Where are you?,فينك?,أين أنت؟ أين أنت؟
+That's fine,ماكاين باس,هذا جيد جداً
+what's a song that helps you relax before bed?,أشناهييا لأوخنييا لي كاتخليك مرتاح هبل ماتكا فنموسيتك ?,ما هي الأغنية التي تساعدك على الإسترخاء قبل النوم؟
+it's enough,سافي باراكا,بما فيه الكفاية
+That's a good school,هاديك مدراسا مزيانا,هذه مدرسة جيدة
+He was badly burned,تحرق حرقا خايبا,كان محترقاً جداً
+"Hi, is this the first time you've been on a plane?","أهلان, واش هادي هييا لمارّا لاولا ليغادي تسافار بيها ف طايارا?",مرحبا، هل هذه أول مرة كنت على متن طائرة؟
+Where does it hurt?,فين كايضرّك?,أين يآذي؟
+Ah jazz musician,أه موسيقي ديال جازّ,الجاز
+Did you bring in any photographs?,واش جابتي شي تصاور?,هل أحضرت أي صور؟
+"Thank you, I tripped!","شوكران ليك, راه تعاكالت!",شكراً لك، لقد تعثرت!
+i tend to keep to myself,كانبغي نحتافاض براسي,أَنْ أَنْظُر لنفسي
+I hope you know how to do that on your own,كانتمانا تعراف دير داكشي براسّاك,أَتمنّى بأنّك تَعْرفُ كَيفَ تَعمَلُ ذلك لوحدك
+I sued him,رفعت عليه دعوا,أنا أقاضيه
+"You can taste it, but I'm warning you, it's terrible","إمكان ليك دوقو, والاكين كانحدراك, راه خايب",يُمْكِنُك أَنْ تَذْره، لَكنِّي أُحذّرُك، هو فظيعُ
+Are you parents encouraging?,واش واليديك كايشجّعوك?,هل يشجعك الوالدون ؟
+satisfactory,قاضي لغاراد,المبلغ الصافي
+gastric,ديال لماعدا,- - - - - - - - - -
+"I can give you a comic book, I've brought a comic book.","نقدر نعتيك كتاب ديال أرّوسوم, جبت معايا كتاب ديال أرّوسوم",يمكنني أن أعطيك كتاباً هزلياً لقد أحضرت كتاباً هزلياً
+"But you know me, I'm demanding on the kitchen!","والاكين راك عارفني, كانتشرّط بزّاف فل ماكلا!",لكنّك تعرفني، أنا أطالب بالمطبخ!
+a big problem,موشكيل كبير,مشكلة كبيرة
+write slowly,كتب بشكوييّا,كتابة
+first year,أوّل عام,السنة الأولى
+I'd like to buy a phone card please.,بغيت نشري واهد لا كارت ديال تيليفون عافاك.,أود أن أشتري بطاقة هاتف من فضلك
+noisy,فيه الصداع,صائج
+I don't know how to drive,ماكانعرفش نصوڭ,لا أعرف كيف أقود
+Yes the swans can be quite aggressive.,"وايه, لوز كايكونو قباح شي مرّات",نعم يمكن أن تكون البجعات عدوانية تماماً
+because of you,بسبابك,بسببك
+What if it doesn't work?,إوا أُ إلا مانجحاتش?,ماذا لو لم تنجح؟
+I recommened going to doctor,كانقتارح تمشي ل الطبيب,أَعُودُتُ الذِهاب إلى الطبيبِ
+i bought new clothes,شريت حوياج جاداد,لقد اشتريت ملابس جديدة
+they're very busy,راهوم مشغولين,هم مشغولون جداً
+"i need to see the nurse, please",خاسني نشوف لفرمليي عافاك,أنا بحاجة لرؤية الممرضة، من فضلك
+I dont like him,ماكانحملوش,أنا لا أحبّه
+"Modest and proud of it, obviously.","متواداع أُ كانفتاخر بيها, بكول ووضوح",من الواضح أنّه متحفظ ومفتخر به.
+Great.,يا سالام.,عظيم. عظيم.
+I was thinking of something a bit more exciting,كنت كانفاكار فشي حاجا أكتار إتارا,كنت أفكر في شيء أكثر إثارة
+do you ever think about how we're living in the future?,ماعمرك ماتخيلتي كيفاش خانعيشو فلموستاقبال,هل فكرت يوماً كيف نعيش في المستقبل؟
+I have a call with the Rabat office in less than 15 minutes.,عندي موكالاما معا لبيرو ف ربات ف قلّ من 15 دقيقا.,لدي مكالمة مع مكتب الرباط في أقل من 15 دقيقة.
+How does wearing glasses play a role in these brutal acts?,كيفاش تلباس نضاضر كايلعاب داور فهاد لأعمال لواحشيا?,كيف يلعب ارتداء النظارات دوراً في هذه الأعمال الوحشية؟
+cut the tomatoes,قطّع ماطيشا,قطع الط :
+he is known,هووّا معروف,« إلى هو هو معلوم هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو كل كل هو هو هو هو هو هو هو هو هو كل كل هو هو هو هو هو هو هو كل كل هو هو هو هو هو هو هو كل كل هو هو هو هو كل كل هو هو هو هو هو كل كل هو هو هو هو هو كل كل هو هو هو هو هو هو هو هو كل كل هو هو هو هو هو هو هو هو كل كل هو هو هو هو هو هو هو كل هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو هو
+What are you thinking I should be able to climb twenty floors because I m so fit?,أش بانليك واش أنا خاسني نكون قادر نتلاع عشرين تابقا حيت أنا صحيح?,ما الذي تعتقد أنه يجب أن أكون قادراً على تسلق عشرين طابقاً لأنني مناسب جداً؟
+Where are you from?,منين نتا?,من أين أنت؟
+here she is,هاهيا,ها هي هنا
+And would you like ice in it?,أُ واش بغيتي تلج فيه?,وهل تريد ثلجاً فيه؟
+take your time,خود واقتاك,خذ وقتك
+This could be very interesting.,هادشي مومكين إكون موتير.,هذا يمكن أن يكون مثير جدا للاهتمام.
+What's she doing to you?,أش كادير ليك?,ماذا تفعل بك؟
+I'll pay for dinner,لعشا علا حسابي,سأدفع ثمن العشاء
+meaningful,عاندو ماعنا,معممم
+Here is the menu,هادي هييا لقاإما,هنا هو قائمة
+"Yes, it is.","أيه, كاينا.",نعم، هو كذلك.
+today you can show me how to do nothing but sit by the pool the whole day,ليوما غاتورّيني كيفاش مادّير التا حاجة منغير أنّاك تڭلس حدا لا پيسسين النهار كامل,اليوم يمكنك أن تريني كيف لا أفعل شيئاً سوى الجلوس بجانب المسبح طوال اليوم
+Let's try going back the way we came,يالّاه نحاولو نرجعو منين جينا,دعونا نحاول العودة الى الطريق الذي جئنا به
+what did you eat for dinner?,باش تعشيتي?,ماذا أكلت على العشاء؟

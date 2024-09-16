@@ -162,19 +162,22 @@ if __name__ == "__main__":
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
         model_name='facebook/nllb-200-distilled-600M',
-        src_lang='ary_Arab',
-        tgt_lang='eng_Latn'
+        src_lang='eng_Latn',
+        tgt_lang='ary_Arab'
     )
 
-    dataset_path = '../data/sentences_nllb.csv'
-    prepared_datasets = utils.load_backtranslation_data(dataset_path, '../data/back_translated_sentences.csv')
+    dataset_path = '../data/sentences_nllb_reversed.csv'
+    prepared_datasets = utils.load_and_prepare_data(dataset_path)
+    print(prepared_datasets['test']['src'])
+    print('tgt')
+    print(prepared_datasets['test']['tgt'])
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'],
                                                 '../results/model_nllb/outputs/predictions_pre.csv')
     print(pre_tune_results)
     print("Fine-tuning the model")
     evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'])
-    plot_training_loss(evaluator.trainer)
+    # plot_training_loss(evaluator.trainer)
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
                                                     '../results/model_nllb/outputs/predictions_epoch2.csv')
