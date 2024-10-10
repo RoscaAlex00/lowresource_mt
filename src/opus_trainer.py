@@ -71,8 +71,8 @@ class ModelEvaluator:
         avg_meteor = sum(meteor_scores) / len(meteor_scores)
 
         chrf_score = corpus_chrf(predicted_sentences, tgt_sentences).score
-        print(predicted_sentences)
-        print(tgt_sentences)
+        #print(predicted_sentences)
+        #print(tgt_sentences)
         return {
             'BLEU': bleu_score,
             'METEOR': avg_meteor,
@@ -116,12 +116,16 @@ if __name__ == "__main__":
     # os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
-        model_name='Helsinki-NLP/opus-mt-en-ar',
+        model_name='Helsinki-NLP/opus-mt-ar-en',
     )
 
-    dataset_path = '../data/sentences_nllb_reversed.csv'
+    dataset_path = '../data/sentences_nllb.csv'
     # Load regular data
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
+    eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.en',
+                                          '../data/AraBench/bible.dev.mgr.0.ma.ar')
+    eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.en',
+                                          '../data/AraBench/madar.dev.mgr.0.ma.ar')
     # Load regular + back_translated data
     # prepared_datasets = utils.load_and_prepare_data(dataset_path, '../data/back_translated_sentences.csv')
 
@@ -136,7 +140,15 @@ if __name__ == "__main__":
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'],
                                                 '../results/model_opus/outputs/predictions_pre.csv')
+    pre_tune_bible = evaluator.evaluate_model(eval_bible,
+                                              '../results/model_opus/outputs/predictions_pre_bible.csv')
+    pre_tune_madar = evaluator.evaluate_model(eval_madar,
+                                              '../results/model_opus/outputs/predictions_pre_madar.csv')
     print(pre_tune_results)
+    print('BIBLE:')
+    print(pre_tune_bible)
+    print('MADAR:')
+    print(pre_tune_madar)
     print("Fine-tuning the model")
     evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'])
 
@@ -144,3 +156,11 @@ if __name__ == "__main__":
     after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
                                                     '../results/model_opus/outputs/predictions_epoch5.csv')
     print(after_tuning_results)
+    print('BIBLE:')
+    after_tune_bible = evaluator.evaluate_model(eval_bible,
+                                                '../results/model_opus/outputs/predictions_after_bible.csv')
+    print(after_tune_bible)
+    print('MADAR')
+    after_tune_madar = evaluator.evaluate_model(eval_madar,
+                                                '../results/model_opus/outputs/predictions_after_madar.csv')
+    print(after_tune_madar)
