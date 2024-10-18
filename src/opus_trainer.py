@@ -79,29 +79,32 @@ class ModelEvaluator:
             'chrF': chrf_score
         }
 
-    def fine_tune_model(self, train_set, test_set, output_dir='../results/model_opus/checkpoints'):
+    def fine_tune_model(self, train_set, validation_set, output_dir='../results/model_opus/checkpoints'):
         tokenized_train = train_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
-        tokenized_test = test_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
+        tokenized_validation = validation_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
         data_collator = DataCollatorForSeq2Seq(self.tokenizer, model=self.model)
 
         training_args = Seq2SeqTrainingArguments(
             output_dir=output_dir,
             evaluation_strategy="steps",
             eval_steps=500,
-            learning_rate=2e-6,
+            save_strategy="steps",
+            learning_rate=1e-6,
             per_device_train_batch_size=16,
             per_device_eval_batch_size=16,
             weight_decay=0.01,
             save_total_limit=0,
             num_train_epochs=5,
-            predict_with_generate=True
+            predict_with_generate=True,
+            load_best_model_at_end=True,  # Load the best model based on validation loss
+            metric_for_best_model="eval_loss"  # Metric to determine the best model
         )
 
         trainer = Seq2SeqTrainer(
             model=self.model,
             args=training_args,
             train_dataset=tokenized_train,
-            eval_dataset=tokenized_test,
+            eval_dataset=tokenized_validation,
             data_collator=data_collator,
             tokenizer=self.tokenizer
         )
@@ -119,7 +122,7 @@ if __name__ == "__main__":
         model_name='Helsinki-NLP/opus-mt-ar-en',
     )
 
-    dataset_path = '../data/sentences_nllb.csv'
+    dataset_path = '../data/sentences_new.csv'
     # Load regular data
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
     eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.en',
@@ -150,7 +153,7 @@ if __name__ == "__main__":
     print('MADAR:')
     print(pre_tune_madar)
     print("Fine-tuning the model")
-    evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'])
+    evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['validation'])
 
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],

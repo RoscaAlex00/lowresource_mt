@@ -9,13 +9,14 @@ tokenizer:
 
 trainer:
   batch_size: 16  # Batch size for training
-  num_epochs: 3  # Number of epochs to train for
+  num_epochs: 5  # Number of epochs to train for
   warmup_steps: 500  # Warmup steps for learning rate scheduler
   gradient_accumulation_steps: 1  # Gradient accumulation steps
   fp16: true  # Enable mixed precision training (if you have a compatible GPU)
   save_model: true  # Whether to save the model after training
   predict: true  # Whether to predict on the test set
   eval: true  # Whether to evaluate on validation set
+  learning_rate: 7e-5
 
 generate:
   max_length: 128  # Maximum length for generated sequences
@@ -25,8 +26,3 @@ generate:
   no_repeat_ngram_size: 3  # Prevent repetitions of n-grams
 
 seed: 42  # Random seed for reproducibility
-
-data:
-  train:
-  validation:
-  test:

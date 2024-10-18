@@ -2,9 +2,11 @@ import csv
 import json
 import os
 import matplotlib.pyplot as plt
+import gc
 
 from datasets import load_dataset, DatasetDict, concatenate_datasets
 from nltk import word_tokenize
+import torch
 from transformers import (
     AutoTokenizer,
     AutoModelForSeq2SeqLM,
@@ -124,36 +126,38 @@ class ModelEvaluator:
             'chrF': chrf_score
         }
 
-    def fine_tune_model(self, train_set, test_set, output_dir='../results/model_nllb/checkpoints'):
+    def fine_tune_model(self, train_set, test_set, validation_set, output_dir='../results/model_nllb/checkpoints'):
         tokenized_train = train_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
-        tokenized_test = test_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
+        tokenized_validation = validation_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
+
         data_collator = DataCollatorForSeq2Seq(self.tokenizer, model=self.model)
 
         training_args = Seq2SeqTrainingArguments(
             output_dir=output_dir,
             evaluation_strategy="steps",
             eval_steps=500,
-            learning_rate=2e-5,
-            per_device_train_batch_size=8,
-            per_device_eval_batch_size=8,
-            weight_decay=0.01,
+            save_strategy="steps",
             save_total_limit=3,
-            num_train_epochs=2,
-            predict_with_generate=True
+            learning_rate=1e-5,
+            per_device_train_batch_size=4,
+            per_device_eval_batch_size=4,
+            weight_decay=0.01,
+            num_train_epochs=3,
+            predict_with_generate=True,
+            load_best_model_at_end=True,  # Load the best model based on validation loss
+            metric_for_best_model="eval_loss"  # Metric to determine the best model
         )
 
         self.trainer = Seq2SeqTrainer(
             model=self.model,
             args=training_args,
             train_dataset=tokenized_train,
-            eval_dataset=tokenized_test,
+            eval_dataset=tokenized_validation,  # Use validation set for evaluation
             data_collator=data_collator,
             tokenizer=self.tokenizer
         )
 
         self.trainer.train()
-        # self.model.save_pretrained(output_dir)
-        # self.tokenizer.save_pretrained(output_dir)
 
 
 # Example usage
@@ -166,7 +170,7 @@ if __name__ == "__main__":
         tgt_lang='eng_Latn'
     )
 
-    dataset_path = '../data/sentences_nllb.csv'
+    dataset_path = '../data/sentences_new.csv'
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
     eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.en',
                                           '../data/AraBench/bible.dev.mgr.0.ma.ar')
@@ -179,16 +183,19 @@ if __name__ == "__main__":
                                                 '../results/model_nllb/outputs/predictions_pre.csv')
 
     pre_tune_bible = evaluator.evaluate_model(eval_bible,
-                                              '../results/model_opus/outputs/predictions_pre_bible.csv')
+                                               '../results/model_opus/outputs/predictions_pre_bible.csv')
     pre_tune_madar = evaluator.evaluate_model(eval_madar,
-                                              '../results/model_opus/outputs/predictions_pre_madar.csv')
+                                               '../results/model_opus/outputs/predictions_pre_madar.csv')
     print(pre_tune_results)
-    print('BIBLE:')
-    print(pre_tune_bible)
-    print('MADAR:')
-    print(pre_tune_madar)
+    # print('BIBLE:')
+    # print(pre_tune_bible)
+    # print('MADAR:')
+    # print(pre_tune_madar)
+
+    torch.cuda.empty_cache()
+    gc.collect()
     print("Fine-tuning the model")
-    evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'])
+    evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'], prepared_datasets['validation'])
     # plot_training_loss(evaluator.trainer)
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
