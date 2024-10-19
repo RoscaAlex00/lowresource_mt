@@ -1,0 +1,527 @@
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/bin/python /home/I6212825/lowresource_mt_project/lowresource_mt/src/encoder_decoder.py
+[2024-10-18 21:03:18,183][__main__][INFO] - model:
+  name: SI2M-Lab/DarijaBERT
+  decoder_name: Helsinki-NLP/opus-mt-en
+  max_length: 128
+tokenizer:
+  encoder_max_length: 128
+  decoder_max_length: 128
+trainer:
+  batch_size: 16
+  num_epochs: 5
+  warmup_steps: 500
+  gradient_accumulation_steps: 1
+  fp16: true
+  save_model: true
+  predict: true
+  eval: true
+  learning_rate: 8.0e-05
+generate:
+  max_length: 128
+  min_length: 5
+  num_beams: 5
+  early_stopping: true
+  no_repeat_ngram_size: 3
+seed: 42
+
+DatasetDict({
+    train: Dataset({
+        features: ['tgt', 'src'],
+        num_rows: 36295
+    })
+    test: Dataset({
+        features: ['tgt', 'src'],
+        num_rows: 6807
+    })
+    validation: Dataset({
+        features: ['tgt', 'src'],
+        num_rows: 2269
+    })
+})
+The `xla_device` argument has been deprecated in v4.4.0 of Transformers. It is ignored and you can safely remove it from your `config.json` file.
+The `xla_device` argument has been deprecated in v4.4.0 of Transformers. It is ignored and you can safely remove it from your `config.json` file.
+Some weights of BertModel were not initialized from the model checkpoint at SI2M-Lab/DarijaBERT and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Map: 100%|██████████| 36295/36295 [00:13<00:00, 2660.16 examples/s]
+Map: 100%|██████████| 2269/2269 [00:00<00:00, 2673.06 examples/s]
+Map: 100%|██████████| 6807/6807 [00:02<00:00, 2537.93 examples/s]
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/accelerate/accelerator.py:436: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead:
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+[2024-10-18 21:03:45,074][accelerate.utils.other][WARNING] - Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Map: 100%|██████████| 600/600 [00:00<00:00, 1363.40 examples/s]
+Map: 100%|██████████| 5500/5500 [00:02<00:00, 2391.53 examples/s]
+[2024-10-18 21:03:51,588][__main__][INFO] - Evaluating model on test set before training...
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/generation/utils.py:1197: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use and modify the model generation configuration (see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )
+  warnings.warn(
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+100%|██████████| 213/213 [26:25<00:00,  7.44s/it]
+[2024-10-18 21:30:25,802][__main__][INFO] - Initial test set performance: {'test_loss': 10.455907821655273, 'test_bleu': 0.007674642687499331, 'test_meteor': 0.0287756278024878, 'test_chrF': 5.046284998093064, 'test_runtime': 1594.2099, 'test_samples_per_second': 4.27, 'test_steps_per_second': 0.134, 'model_name': 'SI2M-Lab/DarijaBERT'}
+[2024-10-18 21:30:25,802][__main__][INFO] - Evaluating on MADAR dataset:
+100%|██████████| 172/172 [21:08<00:00,  7.37s/it]
+[2024-10-18 21:51:41,292][__main__][INFO] - Initial MADAR performance: {'test_loss': 9.768630027770996, 'test_bleu': 0.010642405344890825, 'test_meteor': 0.04381072716639127, 'test_chrF': 6.899868383428127, 'test_runtime': 1275.4868, 'test_samples_per_second': 4.312, 'test_steps_per_second': 0.135, 'model_name': 'SI2M-Lab/DarijaBERT'}
+[2024-10-18 21:51:41,292][__main__][INFO] - Evaluating on BIBLE dataset:
+100%|██████████| 19/19 [02:14<00:00,  7.10s/it]
+[2024-10-18 21:54:03,628][__main__][INFO] - Initial BIBLE performance: {'test_loss': 9.302565574645996, 'test_bleu': 0.052261505887491254, 'test_meteor': 0.06966235477768719, 'test_chrF': 12.480794493650006, 'test_runtime': 142.3341, 'test_samples_per_second': 4.215, 'test_steps_per_second': 0.133, 'model_name': 'SI2M-Lab/DarijaBERT'}
+  9%|▉         | 500/5675 [04:11<43:11,  2.00it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+Removed shared tensor {'decoder.lm_head.weight'} while saving. This should be OK, but check by verifying that you don't receive any warning while reloading
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 18%|█▊        | 1000/5675 [08:25<39:01,  2.00it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 20%|██        | 1135/5675 [09:36<32:49,  2.31it/s]{'loss': 3.0606, 'grad_norm': 898275.0, 'learning_rate': 7.018357487922707e-05, 'epoch': 1.0}
+
+  0%|          | 0/71 [00:00<?, ?it/s]
+  3%|▎         | 2/71 [00:01<00:49,  1.41it/s]
+  4%|▍         | 3/71 [00:02<01:06,  1.03it/s]
+  6%|▌         | 4/71 [00:03<01:10,  1.05s/it]
+  7%|▋         | 5/71 [00:05<01:23,  1.27s/it]
+  8%|▊         | 6/71 [00:06<01:20,  1.24s/it]
+ 10%|▉         | 7/71 [00:07<01:18,  1.22s/it]
+ 11%|█▏        | 8/71 [00:09<01:15,  1.21s/it]
+ 13%|█▎        | 9/71 [00:10<01:19,  1.28s/it]
+ 14%|█▍        | 10/71 [00:11<01:13,  1.21s/it]
+ 15%|█▌        | 11/71 [00:12<01:12,  1.21s/it]
+ 17%|█▋        | 12/71 [00:14<01:18,  1.33s/it]
+ 18%|█▊        | 13/71 [00:15<01:18,  1.36s/it]
+ 20%|█▉        | 14/71 [00:17<01:13,  1.29s/it]
+ 21%|██        | 15/71 [00:18<01:11,  1.28s/it]
+ 23%|██▎       | 16/71 [00:19<01:08,  1.25s/it]
+ 24%|██▍       | 17/71 [00:21<01:18,  1.46s/it]
+ 25%|██▌       | 18/71 [00:22<01:12,  1.36s/it]
+ 27%|██▋       | 19/71 [00:23<01:06,  1.29s/it]
+ 28%|██▊       | 20/71 [00:24<01:03,  1.25s/it]
+ 30%|██▉       | 21/71 [00:26<01:05,  1.30s/it]
+ 31%|███       | 22/71 [00:27<01:04,  1.31s/it]
+ 32%|███▏      | 23/71 [00:29<01:04,  1.35s/it]
+ 34%|███▍      | 24/71 [00:30<01:08,  1.45s/it]
+ 35%|███▌      | 25/71 [00:32<01:04,  1.40s/it]
+ 37%|███▋      | 26/71 [00:33<01:03,  1.42s/it]
+ 38%|███▊      | 27/71 [00:34<01:00,  1.38s/it]
+ 39%|███▉      | 28/71 [00:35<00:56,  1.31s/it]
+ 41%|████      | 29/71 [00:37<00:57,  1.37s/it]
+ 42%|████▏     | 30/71 [00:39<01:00,  1.48s/it]
+ 44%|████▎     | 31/71 [00:40<00:55,  1.39s/it]
+ 45%|████▌     | 32/71 [00:41<00:53,  1.38s/it]
+ 46%|████▋     | 33/71 [00:43<00:52,  1.37s/it]
+ 48%|████▊     | 34/71 [00:44<00:50,  1.38s/it]
+ 49%|████▉     | 35/71 [00:45<00:47,  1.32s/it]
+ 51%|█████     | 36/71 [00:47<00:50,  1.43s/it]
+ 52%|█████▏    | 37/71 [00:48<00:45,  1.35s/it]
+ 54%|█████▎    | 38/71 [00:49<00:42,  1.28s/it]
+ 55%|█████▍    | 39/71 [00:50<00:39,  1.23s/it]
+ 56%|█████▋    | 40/71 [00:51<00:36,  1.19s/it]
+ 58%|█████▊    | 41/71 [00:53<00:38,  1.30s/it]
+ 59%|█████▉    | 42/71 [00:54<00:36,  1.26s/it]
+ 61%|██████    | 43/71 [00:55<00:34,  1.22s/it]
+ 62%|██████▏   | 44/71 [00:57<00:36,  1.33s/it]
+ 63%|██████▎   | 45/71 [00:59<00:38,  1.49s/it]
+ 65%|██████▍   | 46/71 [01:00<00:35,  1.42s/it]
+ 66%|██████▌   | 47/71 [01:01<00:34,  1.43s/it]
+ 68%|██████▊   | 48/71 [01:02<00:31,  1.36s/it]
+ 69%|██████▉   | 49/71 [01:03<00:27,  1.25s/it]
+ 70%|███████   | 50/71 [01:05<00:27,  1.29s/it]
+ 72%|███████▏  | 51/71 [01:06<00:26,  1.30s/it]
+ 73%|███████▎  | 52/71 [01:08<00:25,  1.32s/it]
+ 75%|███████▍  | 53/71 [01:09<00:23,  1.31s/it]
+ 76%|███████▌  | 54/71 [01:10<00:20,  1.23s/it]
+ 77%|███████▋  | 55/71 [01:12<00:22,  1.39s/it]
+ 79%|███████▉  | 56/71 [01:13<00:20,  1.39s/it]
+ 80%|████████  | 57/71 [01:14<00:19,  1.38s/it]
+ 82%|████████▏ | 58/71 [01:16<00:18,  1.40s/it]
+ 83%|████████▎ | 59/71 [01:17<00:16,  1.37s/it]
+ 85%|████████▍ | 60/71 [01:18<00:13,  1.27s/it]
+ 86%|████████▌ | 61/71 [01:20<00:13,  1.38s/it]
+ 87%|████████▋ | 62/71 [01:21<00:11,  1.30s/it]
+ 89%|████████▊ | 63/71 [01:22<00:09,  1.24s/it]
+ 90%|█████████ | 64/71 [01:23<00:09,  1.30s/it]
+ 92%|█████████▏| 65/71 [01:25<00:07,  1.23s/it]
+ 93%|█████████▎| 66/71 [01:26<00:06,  1.24s/it]
+ 94%|█████████▍| 67/71 [01:27<00:04,  1.22s/it]
+ 96%|█████████▌| 68/71 [01:28<00:03,  1.19s/it]
+ 97%|█████████▋| 69/71 [01:29<00:02,  1.24s/it]
+ 99%|█████████▊| 70/71 [01:31<00:01,  1.27s/it]
+
+{'eval_loss': 1.8768607378005981, 'eval_bleu': 17.1831506425316, 'eval_meteor': 0.3651753911902739, 'eval_chrF': 31.391728980000117, 'eval_runtime': 99.0432, 'eval_samples_per_second': 22.909, 'eval_steps_per_second': 0.717, 'epoch': 1.0}
+ 20%|██        | 1135/5675 [11:16<32:49,  2.31it/s]
+100%|██████████| 71/71 [01:37<00:00,  1.24s/it]
+ 26%|██▋       | 1500/5675 [14:19<34:48,  2.00it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 35%|███▌      | 2000/5675 [18:33<30:42,  1.99it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 40%|████      | 2270/5675 [20:52<24:32,  2.31it/s]{'loss': 1.6916, 'grad_norm': 841189.375, 'learning_rate': 5.2637681159420295e-05, 'epoch': 2.0}
+
+  0%|          | 0/71 [00:00<?, ?it/s]
+  3%|▎         | 2/71 [00:01<00:51,  1.34it/s]
+  4%|▍         | 3/71 [00:02<00:58,  1.16it/s]
+  6%|▌         | 4/71 [00:03<01:12,  1.08s/it]
+  7%|▋         | 5/71 [00:05<01:24,  1.28s/it]
+  8%|▊         | 6/71 [00:06<01:23,  1.29s/it]
+ 10%|▉         | 7/71 [00:08<01:22,  1.29s/it]
+ 11%|█▏        | 8/71 [00:09<01:18,  1.25s/it]
+ 13%|█▎        | 9/71 [00:10<01:23,  1.35s/it]
+ 14%|█▍        | 10/71 [00:12<01:16,  1.26s/it]
+ 15%|█▌        | 11/71 [00:13<01:15,  1.26s/it]
+ 17%|█▋        | 12/71 [00:14<01:18,  1.34s/it]
+ 18%|█▊        | 13/71 [00:16<01:15,  1.31s/it]
+ 20%|█▉        | 14/71 [00:17<01:08,  1.20s/it]
+ 21%|██        | 15/71 [00:18<01:06,  1.18s/it]
+ 23%|██▎       | 16/71 [00:19<01:01,  1.13s/it]
+ 24%|██▍       | 17/71 [00:20<01:06,  1.23s/it]
+ 25%|██▌       | 18/71 [00:21<01:04,  1.22s/it]
+ 27%|██▋       | 19/71 [00:22<01:00,  1.16s/it]
+ 28%|██▊       | 20/71 [00:23<00:59,  1.16s/it]
+ 30%|██▉       | 21/71 [00:25<01:05,  1.31s/it]
+ 31%|███       | 22/71 [00:27<01:06,  1.35s/it]
+ 32%|███▏      | 23/71 [00:28<01:03,  1.32s/it]
+ 34%|███▍      | 24/71 [00:29<01:05,  1.39s/it]
+ 35%|███▌      | 25/71 [00:31<01:01,  1.33s/it]
+ 37%|███▋      | 26/71 [00:32<00:57,  1.28s/it]
+ 38%|███▊      | 27/71 [00:33<00:54,  1.24s/it]
+ 39%|███▉      | 28/71 [00:34<00:50,  1.18s/it]
+ 41%|████      | 29/71 [00:35<00:50,  1.19s/it]
+ 42%|████▏     | 30/71 [00:37<00:55,  1.37s/it]
+ 44%|████▎     | 31/71 [00:38<00:52,  1.31s/it]
+ 45%|████▌     | 32/71 [00:40<00:53,  1.38s/it]
+ 46%|████▋     | 33/71 [00:41<00:50,  1.33s/it]
+ 48%|████▊     | 34/71 [00:42<00:49,  1.33s/it]
+ 49%|████▉     | 35/71 [00:43<00:45,  1.27s/it]
+ 51%|█████     | 36/71 [00:45<00:47,  1.36s/it]
+ 52%|█████▏    | 37/71 [00:46<00:44,  1.32s/it]
+ 54%|█████▎    | 38/71 [00:47<00:42,  1.28s/it]
+ 55%|█████▍    | 39/71 [00:48<00:39,  1.23s/it]
+ 56%|█████▋    | 40/71 [00:50<00:38,  1.25s/it]
+ 58%|█████▊    | 41/71 [00:51<00:40,  1.36s/it]
+ 59%|█████▉    | 42/71 [00:52<00:36,  1.27s/it]
+ 61%|██████    | 43/71 [00:53<00:34,  1.22s/it]
+ 62%|██████▏   | 44/71 [00:55<00:36,  1.34s/it]
+ 63%|██████▎   | 45/71 [00:57<00:37,  1.44s/it]
+ 65%|██████▍   | 46/71 [00:58<00:32,  1.32s/it]
+ 66%|██████▌   | 47/71 [00:59<00:31,  1.31s/it]
+ 68%|██████▊   | 48/71 [01:00<00:29,  1.26s/it]
+ 69%|██████▉   | 49/71 [01:01<00:27,  1.25s/it]
+ 70%|███████   | 50/71 [01:03<00:25,  1.22s/it]
+ 72%|███████▏  | 51/71 [01:04<00:24,  1.24s/it]
+ 73%|███████▎  | 52/71 [01:05<00:23,  1.23s/it]
+ 75%|███████▍  | 53/71 [01:06<00:21,  1.19s/it]
+ 76%|███████▌  | 54/71 [01:07<00:19,  1.14s/it]
+ 77%|███████▋  | 55/71 [01:09<00:20,  1.28s/it]
+ 79%|███████▉  | 56/71 [01:10<00:19,  1.29s/it]
+ 80%|████████  | 57/71 [01:12<00:18,  1.32s/it]
+ 82%|████████▏ | 58/71 [01:13<00:16,  1.29s/it]
+ 83%|████████▎ | 59/71 [01:14<00:14,  1.21s/it]
+ 85%|████████▍ | 60/71 [01:15<00:13,  1.19s/it]
+ 86%|████████▌ | 61/71 [01:16<00:12,  1.29s/it]
+ 87%|████████▋ | 62/71 [01:18<00:11,  1.24s/it]
+ 89%|████████▊ | 63/71 [01:19<00:10,  1.31s/it]
+ 90%|█████████ | 64/71 [01:20<00:09,  1.32s/it]
+ 92%|█████████▏| 65/71 [01:22<00:07,  1.27s/it]
+ 93%|█████████▎| 66/71 [01:23<00:06,  1.29s/it]
+ 94%|█████████▍| 67/71 [01:24<00:05,  1.31s/it]
+ 96%|█████████▌| 68/71 [01:25<00:03,  1.26s/it]
+ 97%|█████████▋| 69/71 [01:26<00:02,  1.22s/it]
+ 99%|█████████▊| 70/71 [01:28<00:01,  1.22s/it]
+
+{'eval_loss': 1.5584979057312012, 'eval_bleu': 21.994550757764852, 'eval_meteor': 0.42768078330046844, 'eval_chrF': 37.8552440998706, 'eval_runtime': 96.2305, 'eval_samples_per_second': 23.579, 'eval_steps_per_second': 0.738, 'epoch': 2.0}
+ 40%|████      | 2270/5675 [22:29<24:32,  2.31it/s]
+100%|██████████| 71/71 [01:35<00:00,  1.24s/it]
+ 44%|████▍     | 2500/5675 [24:24<26:30,  2.00it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 53%|█████▎    | 3000/5675 [28:40<22:18,  2.00it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 60%|██████    | 3405/5675 [32:07<16:23,  2.31it/s]{'loss': 1.2805, 'grad_norm': 985749.125, 'learning_rate': 3.5091787439613535e-05, 'epoch': 3.0}
+
+  0%|          | 0/71 [00:00<?, ?it/s]
+  3%|▎         | 2/71 [00:01<00:52,  1.32it/s]
+  4%|▍         | 3/71 [00:02<01:08,  1.00s/it]
+  6%|▌         | 4/71 [00:03<01:09,  1.04s/it]
+  7%|▋         | 5/71 [00:05<01:24,  1.28s/it]
+  8%|▊         | 6/71 [00:06<01:22,  1.27s/it]
+ 10%|▉         | 7/71 [00:08<01:22,  1.30s/it]
+ 11%|█▏        | 8/71 [00:09<01:22,  1.31s/it]
+ 13%|█▎        | 9/71 [00:11<01:26,  1.40s/it]
+ 14%|█▍        | 10/71 [00:12<01:22,  1.35s/it]
+ 15%|█▌        | 11/71 [00:13<01:22,  1.38s/it]
+ 17%|█▋        | 12/71 [00:15<01:30,  1.53s/it]
+ 18%|█▊        | 13/71 [00:17<01:30,  1.55s/it]
+ 20%|█▉        | 14/71 [00:18<01:20,  1.42s/it]
+ 21%|██        | 15/71 [00:19<01:13,  1.31s/it]
+ 23%|██▎       | 16/71 [00:20<01:07,  1.23s/it]
+ 24%|██▍       | 17/71 [00:21<01:07,  1.26s/it]
+ 25%|██▌       | 18/71 [00:23<01:07,  1.27s/it]
+ 27%|██▋       | 19/71 [00:24<01:00,  1.17s/it]
+ 28%|██▊       | 20/71 [00:25<01:00,  1.19s/it]
+ 30%|██▉       | 21/71 [00:26<01:04,  1.29s/it]
+ 31%|███       | 22/71 [00:28<01:10,  1.43s/it]
+ 32%|███▏      | 23/71 [00:29<01:05,  1.37s/it]
+ 34%|███▍      | 24/71 [00:31<01:04,  1.37s/it]
+ 35%|███▌      | 25/71 [00:32<01:02,  1.36s/it]
+ 37%|███▋      | 26/71 [00:34<01:02,  1.40s/it]
+ 38%|███▊      | 27/71 [00:35<00:58,  1.33s/it]
+ 39%|███▉      | 28/71 [00:36<00:52,  1.23s/it]
+ 41%|████      | 29/71 [00:37<00:52,  1.24s/it]
+ 42%|████▏     | 30/71 [00:38<00:52,  1.28s/it]
+ 44%|████▎     | 31/71 [00:40<00:52,  1.30s/it]
+ 45%|████▌     | 32/71 [00:41<00:53,  1.37s/it]
+ 46%|████▋     | 33/71 [00:43<00:53,  1.40s/it]
+ 48%|████▊     | 34/71 [00:44<00:49,  1.34s/it]
+ 49%|████▉     | 35/71 [00:45<00:48,  1.36s/it]
+ 51%|█████     | 36/71 [00:47<00:46,  1.34s/it]
+ 52%|█████▏    | 37/71 [00:48<00:46,  1.35s/it]
+ 54%|█████▎    | 38/71 [00:49<00:41,  1.27s/it]
+ 55%|█████▍    | 39/71 [00:50<00:39,  1.24s/it]
+ 56%|█████▋    | 40/71 [00:52<00:39,  1.28s/it]
+ 58%|█████▊    | 41/71 [00:53<00:40,  1.36s/it]
+ 59%|█████▉    | 42/71 [00:54<00:37,  1.28s/it]
+ 61%|██████    | 43/71 [00:55<00:33,  1.21s/it]
+ 62%|██████▏   | 44/71 [00:57<00:34,  1.26s/it]
+ 63%|██████▎   | 45/71 [00:59<00:38,  1.48s/it]
+ 65%|██████▍   | 46/71 [01:00<00:35,  1.43s/it]
+ 66%|██████▌   | 47/71 [01:01<00:33,  1.39s/it]
+ 68%|██████▊   | 48/71 [01:02<00:30,  1.31s/it]
+ 69%|██████▉   | 49/71 [01:03<00:26,  1.21s/it]
+ 70%|███████   | 50/71 [01:05<00:25,  1.20s/it]
+ 72%|███████▏  | 51/71 [01:06<00:25,  1.26s/it]
+ 73%|███████▎  | 52/71 [01:07<00:24,  1.31s/it]
+ 75%|███████▍  | 53/71 [01:09<00:26,  1.47s/it]
+ 76%|███████▌  | 54/71 [01:10<00:23,  1.37s/it]
+ 77%|███████▋  | 55/71 [01:12<00:22,  1.38s/it]
+ 79%|███████▉  | 56/71 [01:13<00:20,  1.36s/it]
+ 80%|████████  | 57/71 [01:14<00:18,  1.35s/it]
+ 82%|████████▏ | 58/71 [01:16<00:16,  1.27s/it]
+ 83%|████████▎ | 59/71 [01:17<00:14,  1.22s/it]
+ 85%|████████▍ | 60/71 [01:18<00:13,  1.21s/it]
+ 86%|████████▌ | 61/71 [01:19<00:12,  1.26s/it]
+ 87%|████████▋ | 62/71 [01:20<00:11,  1.24s/it]
+ 89%|████████▊ | 63/71 [01:22<00:10,  1.27s/it]
+ 90%|█████████ | 64/71 [01:23<00:08,  1.25s/it]
+ 92%|█████████▏| 65/71 [01:24<00:07,  1.21s/it]
+ 93%|█████████▎| 66/71 [01:25<00:06,  1.26s/it]
+ 94%|█████████▍| 67/71 [01:27<00:05,  1.31s/it]
+ 96%|█████████▌| 68/71 [01:28<00:03,  1.24s/it]
+ 97%|█████████▋| 69/71 [01:29<00:02,  1.22s/it]
+ 99%|█████████▊| 70/71 [01:30<00:01,  1.22s/it]
+
+{'eval_loss': 1.4585298299789429, 'eval_bleu': 24.626818766634795, 'eval_meteor': 0.46635920459068914, 'eval_chrF': 41.350125268496924, 'eval_runtime': 99.1417, 'eval_samples_per_second': 22.886, 'eval_steps_per_second': 0.716, 'epoch': 3.0}
+ 60%|██████    | 3405/5675 [33:46<16:23,  2.31it/s]
+100%|██████████| 71/71 [01:37<00:00,  1.26s/it]
+ 62%|██████▏   | 3500/5675 [34:33<18:10,  1.99it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 70%|███████   | 4000/5675 [38:49<14:02,  1.99it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 79%|███████▉  | 4500/5675 [43:04<09:48,  2.00it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 80%|████████  | 4540/5675 [43:27<08:14,  2.30it/s]{'loss': 0.9935, 'grad_norm': 599906.4375, 'learning_rate': 1.7545893719806767e-05, 'epoch': 4.0}
+
+  0%|          | 0/71 [00:00<?, ?it/s]
+  3%|▎         | 2/71 [00:01<00:51,  1.35it/s]
+  4%|▍         | 3/71 [00:02<01:08,  1.01s/it]
+  6%|▌         | 4/71 [00:03<01:10,  1.05s/it]
+  7%|▋         | 5/71 [00:05<01:24,  1.27s/it]
+  8%|▊         | 6/71 [00:07<01:28,  1.36s/it]
+ 10%|▉         | 7/71 [00:08<01:26,  1.35s/it]
+ 11%|█▏        | 8/71 [00:10<01:28,  1.41s/it]
+ 13%|█▎        | 9/71 [00:11<01:30,  1.46s/it]
+ 14%|█▍        | 10/71 [00:12<01:21,  1.34s/it]
+ 15%|█▌        | 11/71 [00:13<01:18,  1.31s/it]
+ 17%|█▋        | 12/71 [00:15<01:28,  1.50s/it]
+ 18%|█▊        | 13/71 [00:17<01:23,  1.44s/it]
+ 20%|█▉        | 14/71 [00:18<01:19,  1.39s/it]
+ 21%|██        | 15/71 [00:19<01:13,  1.31s/it]
+ 23%|██▎       | 16/71 [00:20<01:08,  1.25s/it]
+ 24%|██▍       | 17/71 [00:22<01:09,  1.28s/it]
+ 25%|██▌       | 18/71 [00:23<01:09,  1.31s/it]
+ 27%|██▋       | 19/71 [00:24<01:02,  1.20s/it]
+ 28%|██▊       | 20/71 [00:25<01:01,  1.20s/it]
+ 30%|██▉       | 21/71 [00:26<01:01,  1.22s/it]
+ 31%|███       | 22/71 [00:28<01:06,  1.36s/it]
+ 32%|███▏      | 23/71 [00:30<01:08,  1.42s/it]
+ 34%|███▍      | 24/71 [00:31<01:05,  1.40s/it]
+ 35%|███▌      | 25/71 [00:32<01:04,  1.40s/it]
+ 37%|███▋      | 26/71 [00:34<01:01,  1.36s/it]
+ 38%|███▊      | 27/71 [00:35<00:57,  1.32s/it]
+ 39%|███▉      | 28/71 [00:36<00:54,  1.26s/it]
+ 41%|████      | 29/71 [00:37<00:51,  1.23s/it]
+ 42%|████▏     | 30/71 [00:39<00:53,  1.30s/it]
+ 44%|████▎     | 31/71 [00:40<00:52,  1.30s/it]
+ 45%|████▌     | 32/71 [00:41<00:53,  1.38s/it]
+ 46%|████▋     | 33/71 [00:43<00:50,  1.33s/it]
+ 48%|████▊     | 34/71 [00:44<00:49,  1.34s/it]
+ 49%|████▉     | 35/71 [00:45<00:44,  1.24s/it]
+ 51%|█████     | 36/71 [00:46<00:43,  1.25s/it]
+ 52%|█████▏    | 37/71 [00:48<00:43,  1.27s/it]
+ 54%|█████▎    | 38/71 [00:49<00:41,  1.27s/it]
+ 55%|█████▍    | 39/71 [00:50<00:40,  1.27s/it]
+ 56%|█████▋    | 40/71 [00:51<00:39,  1.27s/it]
+ 58%|█████▊    | 41/71 [00:53<00:41,  1.40s/it]
+ 59%|█████▉    | 42/71 [00:54<00:37,  1.30s/it]
+ 61%|██████    | 43/71 [00:55<00:34,  1.23s/it]
+ 62%|██████▏   | 44/71 [00:57<00:34,  1.28s/it]
+ 63%|██████▎   | 45/71 [00:59<00:38,  1.49s/it]
+ 65%|██████▍   | 46/71 [01:00<00:35,  1.43s/it]
+ 66%|██████▌   | 47/71 [01:01<00:33,  1.40s/it]
+ 68%|██████▊   | 48/71 [01:02<00:30,  1.33s/it]
+ 69%|██████▉   | 49/71 [01:03<00:27,  1.23s/it]
+ 70%|███████   | 50/71 [01:05<00:25,  1.21s/it]
+ 72%|███████▏  | 51/71 [01:06<00:25,  1.26s/it]
+ 73%|███████▎  | 52/71 [01:07<00:24,  1.26s/it]
+ 75%|███████▍  | 53/71 [01:09<00:25,  1.42s/it]
+ 76%|███████▌  | 54/71 [01:10<00:22,  1.34s/it]
+ 77%|███████▋  | 55/71 [01:12<00:22,  1.39s/it]
+ 79%|███████▉  | 56/71 [01:13<00:20,  1.36s/it]
+ 80%|████████  | 57/71 [01:14<00:18,  1.34s/it]
+ 82%|████████▏ | 58/71 [01:15<00:16,  1.28s/it]
+ 83%|████████▎ | 59/71 [01:17<00:14,  1.23s/it]
+ 85%|████████▍ | 60/71 [01:18<00:13,  1.19s/it]
+ 86%|████████▌ | 61/71 [01:19<00:12,  1.29s/it]
+ 87%|████████▋ | 62/71 [01:20<00:11,  1.25s/it]
+ 89%|████████▊ | 63/71 [01:22<00:10,  1.26s/it]
+ 90%|█████████ | 64/71 [01:23<00:08,  1.25s/it]
+ 92%|█████████▏| 65/71 [01:24<00:07,  1.20s/it]
+ 93%|█████████▎| 66/71 [01:25<00:06,  1.22s/it]
+ 94%|█████████▍| 67/71 [01:27<00:05,  1.37s/it]
+ 96%|█████████▌| 68/71 [01:28<00:03,  1.29s/it]
+ 97%|█████████▋| 69/71 [01:29<00:02,  1.25s/it]
+ 99%|█████████▊| 70/71 [01:30<00:01,  1.23s/it]
+
+ 80%|████████  | 4540/5675 [45:06<08:14,  2.30it/s]
+100%|██████████| 71/71 [01:37<00:00,  1.26s/it]
+                                               {'eval_loss': 1.4461760520935059, 'eval_bleu': 25.70213225831893, 'eval_meteor': 0.47374165162890386, 'eval_chrF': 42.45884442691912, 'eval_runtime': 98.7258, 'eval_samples_per_second': 22.983, 'eval_steps_per_second': 0.719, 'epoch': 4.0}
+ 88%|████████▊ | 5000/5675 [48:58<05:38,  1.99it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 97%|█████████▋| 5500/5675 [53:13<01:27,  2.00it/s]Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/transformers/models/encoder_decoder/modeling_encoder_decoder.py:636: FutureWarning: Version v4.12.0 introduces a better way to train encoder-decoder models by computing the loss inside the encoder-decoder framework rather than in the decoder itself. You may observe training discrepancies if fine-tuning a model trained with versions anterior to 4.12.0. The decoder_input_ids are now created based on the labels, no need to pass them yourself anymore.
+  warnings.warn(DEPRECATION_WARNING, FutureWarning)
+/home/I6212825/lowresource_mt_project/lowresource_mt/venv/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+100%|██████████| 5675/5675 [54:45<00:00,  2.31it/s]{'loss': 0.7899, 'grad_norm': 556143.8125, 'learning_rate': 0.0, 'epoch': 5.0}
+
+  0%|          | 0/71 [00:00<?, ?it/s]
+  3%|▎         | 2/71 [00:01<00:45,  1.51it/s]
+  4%|▍         | 3/71 [00:02<01:01,  1.11it/s]
+  6%|▌         | 4/71 [00:03<01:03,  1.05it/s]
+  7%|▋         | 5/71 [00:05<01:19,  1.20s/it]
+  8%|▊         | 6/71 [00:06<01:20,  1.25s/it]
+ 10%|▉         | 7/71 [00:07<01:21,  1.27s/it]
+ 11%|█▏        | 8/71 [00:09<01:26,  1.37s/it]
+ 13%|█▎        | 9/71 [00:11<01:27,  1.42s/it]
+ 14%|█▍        | 10/71 [00:12<01:22,  1.35s/it]
+ 15%|█▌        | 11/71 [00:13<01:20,  1.34s/it]
+ 17%|█▋        | 12/71 [00:15<01:35,  1.61s/it]
+ 18%|█▊        | 13/71 [00:17<01:29,  1.54s/it]
+ 20%|█▉        | 14/71 [00:18<01:20,  1.41s/it]
+ 21%|██        | 15/71 [00:19<01:12,  1.30s/it]
+ 23%|██▎       | 16/71 [00:20<01:08,  1.25s/it]
+ 24%|██▍       | 17/71 [00:21<01:09,  1.28s/it]
+ 25%|██▌       | 18/71 [00:23<01:09,  1.31s/it]
+ 27%|██▋       | 19/71 [00:24<01:02,  1.20s/it]
+ 28%|██▊       | 20/71 [00:25<01:01,  1.21s/it]
+ 30%|██▉       | 21/71 [00:26<01:01,  1.22s/it]
+ 31%|███       | 22/71 [00:28<01:03,  1.30s/it]
+ 32%|███▏      | 23/71 [00:29<01:02,  1.30s/it]
+ 34%|███▍      | 24/71 [00:30<01:01,  1.32s/it]
+ 35%|███▌      | 25/71 [00:32<01:02,  1.36s/it]
+ 37%|███▋      | 26/71 [00:33<01:03,  1.41s/it]
+ 38%|███▊      | 27/71 [00:35<01:00,  1.36s/it]
+ 39%|███▉      | 28/71 [00:36<00:56,  1.31s/it]
+ 41%|████      | 29/71 [00:37<00:52,  1.25s/it]
+ 42%|████▏     | 30/71 [00:38<00:56,  1.38s/it]
+ 44%|████▎     | 31/71 [00:40<00:54,  1.35s/it]
+ 45%|████▌     | 32/71 [00:41<00:55,  1.42s/it]
+ 46%|████▋     | 33/71 [00:43<00:55,  1.45s/it]
+ 48%|████▊     | 34/71 [00:44<00:52,  1.42s/it]
+ 49%|████▉     | 35/71 [00:45<00:48,  1.35s/it]
+ 51%|█████     | 36/71 [00:47<00:45,  1.30s/it]
+ 52%|█████▏    | 37/71 [00:48<00:45,  1.33s/it]
+ 54%|█████▎    | 38/71 [00:49<00:43,  1.31s/it]
+ 55%|█████▍    | 39/71 [00:50<00:40,  1.28s/it]
+ 56%|█████▋    | 40/71 [00:52<00:40,  1.31s/it]
+ 58%|█████▊    | 41/71 [00:53<00:41,  1.38s/it]
+ 59%|█████▉    | 42/71 [00:54<00:37,  1.28s/it]
+ 61%|██████    | 43/71 [00:56<00:34,  1.23s/it]
+ 62%|██████▏   | 44/71 [00:57<00:36,  1.34s/it]
+ 63%|██████▎   | 45/71 [00:59<00:37,  1.44s/it]
+ 65%|██████▍   | 46/71 [01:00<00:34,  1.40s/it]
+ 66%|██████▌   | 47/71 [01:01<00:32,  1.37s/it]
+ 68%|██████▊   | 48/71 [01:03<00:30,  1.30s/it]
+ 69%|██████▉   | 49/71 [01:04<00:26,  1.22s/it]
+ 70%|███████   | 50/71 [01:05<00:25,  1.22s/it]
+ 72%|███████▏  | 51/71 [01:06<00:25,  1.27s/it]
+ 73%|███████▎  | 52/71 [01:07<00:24,  1.27s/it]
+ 75%|███████▍  | 53/71 [01:09<00:25,  1.42s/it]
+ 76%|███████▌  | 54/71 [01:10<00:22,  1.33s/it]
+ 77%|███████▋  | 55/71 [01:12<00:22,  1.41s/it]
+ 79%|███████▉  | 56/71 [01:13<00:21,  1.41s/it]
+ 80%|████████  | 57/71 [01:15<00:19,  1.41s/it]
+ 82%|████████▏ | 58/71 [01:16<00:18,  1.43s/it]
+ 83%|████████▎ | 59/71 [01:17<00:16,  1.35s/it]
+ 85%|████████▍ | 60/71 [01:19<00:14,  1.29s/it]
+ 86%|████████▌ | 61/71 [01:20<00:13,  1.34s/it]
+ 87%|████████▋ | 62/71 [01:21<00:11,  1.28s/it]
+ 89%|████████▊ | 63/71 [01:23<00:10,  1.32s/it]
+ 90%|█████████ | 64/71 [01:24<00:08,  1.26s/it]
+ 92%|█████████▏| 65/71 [01:25<00:07,  1.21s/it]
+ 93%|█████████▎| 66/71 [01:26<00:06,  1.24s/it]
+ 94%|█████████▍| 67/71 [01:27<00:05,  1.27s/it]
+ 96%|█████████▌| 68/71 [01:29<00:03,  1.21s/it]
+ 97%|█████████▋| 69/71 [01:30<00:02,  1.20s/it]
+ 99%|█████████▊| 70/71 [01:31<00:01,  1.25s/it]
+
+{'eval_loss': 1.4737595319747925, 'eval_bleu': 26.103884767865814, 'eval_meteor': 0.47832732872928047, 'eval_chrF': 42.970341715596795, 'eval_runtime': 99.4375, 'eval_samples_per_second': 22.818, 'eval_steps_per_second': 0.714, 'epoch': 5.0}
+{'train_runtime': 3384.587, 'train_samples_per_second': 53.618, 'train_steps_per_second': 1.677, 'train_loss': 1.5632260763697687, 'epoch': 5.0}
+100%|██████████| 5675/5675 [56:24<00:00,  2.31it/s]
+100%|██████████| 71/71 [01:38<00:00,  1.31s/it]
+100%|██████████| 5675/5675 [56:24<00:00,  1.68it/s]
+100%|██████████| 213/213 [04:52<00:00,  1.37s/it]
+[2024-10-18 22:55:22,352][__main__][INFO] - Final test set performance: {'test_loss': 1.4507282972335815, 'test_bleu': 26.504561418234733, 'test_meteor': 0.4853344082060157, 'test_chrF': 43.56583639768102, 'test_runtime': 293.7088, 'test_samples_per_second': 23.176, 'test_steps_per_second': 0.725, 'model_name': 'SI2M-Lab/DarijaBERT'}
+[2024-10-18 22:55:22,352][__main__][INFO] - Evaluating on MADAR dataset:
+100%|██████████| 172/172 [05:18<00:00,  1.85s/it]
+[2024-10-18 23:00:43,108][__main__][INFO] - Final MADAR performance: {'test_loss': 2.1241066455841064, 'test_bleu': 16.008898077551116, 'test_meteor': 0.4697765385760206, 'test_chrF': 33.33479088418792, 'test_runtime': 320.7536, 'test_samples_per_second': 17.147, 'test_steps_per_second': 0.536, 'model_name': 'SI2M-Lab/DarijaBERT'}
+[2024-10-18 23:00:43,108][__main__][INFO] - Evaluating on BIBLE dataset:
+100%|██████████| 19/19 [00:54<00:00,  2.85s/it]
+Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+[2024-10-18 23:01:39,971][__main__][INFO] - Final BIBLE performance: {'test_loss': 3.7831690311431885, 'test_bleu': 1.6478796560919031, 'test_meteor': 0.17383747627578813, 'test_chrF': 18.126090400683513, 'test_runtime': 56.8603, 'test_samples_per_second': 10.552, 'test_steps_per_second': 0.334, 'model_name': 'SI2M-Lab/DarijaBERT'}

@@ -123,19 +123,19 @@ def main(cfg: DictConfig):
         compute_metrics=compute_metrics
     )
 
-    # Evaluate the model on the test set before training
-    logger.info("Evaluating model on test set before training...")
-    initial_metrics = trainer.predict(tokenized_test_dataset).metrics
-    initial_metrics['model_name'] = cfg.model.name
-    logger.info(f"Initial test set performance: {initial_metrics}")
-
     eval_bible = load_arabench_data(Path(get_original_cwd()) / '../data/AraBench/bible.dev.mgr.0.ma.en',
                                     Path(get_original_cwd()) / '../data/AraBench/bible.dev.mgr.0.ma.ar')
     eval_madar = load_arabench_data(Path(get_original_cwd()) / '../data/AraBench/madar.dev.mgr.0.ma.en',
                                     Path(get_original_cwd()) / '../data/AraBench/madar.dev.mgr.0.ma.ar')
 
-    eval_bible = eval_bible.map(preprocess_function, bathced=True, remove_columns=['src', 'tgt'])
+    eval_bible = eval_bible.map(preprocess_function, batched=True, remove_columns=['src', 'tgt'])
     eval_madar = eval_madar.map(preprocess_function, batched=True, remove_columns=['src', 'tgt'])
+
+    # Evaluate the model on the test set before training
+    logger.info("Evaluating model on test set before training...")
+    initial_metrics = trainer.predict(tokenized_test_dataset).metrics
+    initial_metrics['model_name'] = cfg.model.name
+    logger.info(f"Initial test set performance: {initial_metrics}")
 
     logger.info("Evaluating on MADAR dataset:")
     initial_madar_metrics = trainer.predict(eval_madar).metrics
