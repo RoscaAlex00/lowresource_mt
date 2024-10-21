@@ -1,16 +1,16 @@
 import os
 import csv
-from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 
-class ModelEvaluator:
+class Translator:
     def __init__(self, model_name, src_lang, tgt_lang):
         self.model_name = model_name
         self.src_lang = src_lang
         self.tgt_lang = tgt_lang
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, src_lang=src_lang, tgt_lang=tgt_lang)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+
 
     def translate_sentences(self, sentences, source_lang, target_lang):
         self.model.to('cuda')
@@ -24,39 +24,37 @@ class ModelEvaluator:
             translated_sentences.append(translated_sentence)
         return translated_sentences
 
-    def load_and_prepare_data(self, file_path):
-        raw_datasets = load_dataset('csv', data_files=file_path)
-        return raw_datasets
-
 
 if __name__ == "__main__":
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
-    evaluator = ModelEvaluator(
+
+    # Initialize back-translation (English back to Moroccan Arabic)
+    back_translator = Translator(
         model_name='facebook/nllb-200-3.3B',
         src_lang='eng_Latn',
         tgt_lang='ary_Arab'
     )
 
-    # Load dataset
-    dataset_path = '../data/translated_sentences.csv'
-    datasets = evaluator.load_and_prepare_data(dataset_path)
+    # Load the previously translated English sentences
+    input_file = '../data/forward_translations.csv'
+    original_sentences = []
+    translated_english = []
+    with open(input_file, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            original_sentences.append(row['Original Moroccan Arabic'])
+            translated_english.append(row['Translated English'])
 
-    untranslated_sentences = [row['translated_eng'] for row in datasets['train']]
-    original_arabic = [row['darija_ar'] for row in datasets['train']]
-    print(len(untranslated_sentences))
+    # Back-translate English to Moroccan Arabic
+    back_translations = back_translator.translate_sentences(translated_english, source_lang='eng_Latn',
+                                                                  target_lang='ary_Arab')
 
-    # Forward Translation: Moroccan Arabic to English
-    back_translations = evaluator.translate_sentences(untranslated_sentences, source_lang='eng_Latn',
-                                                      target_lang='ary_Arab')
+    # Save the back-translations along with the original sentences
+    output_file = '../data/back_translations_new.csv'
+    with open(output_file, 'w+', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Original Moroccan Arabic', 'Translated English', 'Back Translated Moroccan Arabic'])
+        for original, english, back_translated in zip(original_sentences, translated_english, back_translations):
+            writer.writerow([original, english, back_translated])
 
-    # Optionally, save these back translations to a new CSV or integrate into the dataset
-    with open('../data/back_translated_sentences.csv', 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['Original Arabic', 'Translated English', 'Back Translation']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-        for original, english_translation, back_translated in zip(original_arabic, untranslated_sentences,
-                                                                  back_translations):
-            writer.writerow({'Original Arabic': original, 'Translated English': english_translation,
-                             'Back Translation': back_translated})
-
-    print("Back translation completed and saved.")
+    print(f"Back translation completed and saved to {output_file}.")

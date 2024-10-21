@@ -56,18 +56,8 @@ def merge_datasets(base_dataset, extra_dataset):
     return base_dataset
 
 
-def load_backtranslation_data(original_file_path, additional_file_path):
-    original_datasets = load_dataset('csv', data_files=original_file_path)
+def load_backtranslation_data(additional_file_path, train_dataset):
     additional_datasets = load_dataset('csv', data_files=additional_file_path)
-    print(additional_datasets['train'][0])
-
-    # Remove unnecessary columns
-    original_datasets = original_datasets.remove_columns('darija')
-
-    # Split the original dataset
-    split_datasets = original_datasets['train'].train_test_split(test_size=0.1, seed=552)
-    train_dataset = split_datasets['train']
-    test_dataset = split_datasets['test']
 
     # Concatenate the additional data to the training dataset
     additional_train_dataset = additional_datasets['train']
@@ -76,10 +66,9 @@ def load_backtranslation_data(original_file_path, additional_file_path):
     # Filter out examples without source or target from train and test sets
     combined_train_dataset = combined_train_dataset.filter(
         lambda example: example['src'] is not None and example['tgt'] is not None)
-    test_dataset = test_dataset.filter(lambda example: example['src'] is not None and example['tgt'] is not None)
 
-    print(f"Train set: {len(combined_train_dataset)}, Test set: {len(test_dataset)}")
-    return {'train': combined_train_dataset, 'test': test_dataset}
+    print(f"Train set: {len(combined_train_dataset)}")
+    return combined_train_dataset
 
 
 def print_gpu_memory():

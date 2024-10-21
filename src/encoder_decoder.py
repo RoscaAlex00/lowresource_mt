@@ -11,7 +11,7 @@ import hydra
 from hydra.utils import get_original_cwd
 from omegaconf import DictConfig, OmegaConf
 import logging
-from utils import load_and_prepare_data, load_arabench_data
+from utils import load_and_prepare_data, load_arabench_data, load_backtranslation_data
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +28,10 @@ def main(cfg: DictConfig):
     # Load your dataset
     full_path = Path(get_original_cwd()) / '../data/sentences_new.csv'
     dataset = load_and_prepare_data(str(full_path))
+
+    # BACK-TRANSLATION DATA LOAD
+    full_path_bt = Path(get_original_cwd()) / '../data/back_translations_new.csv'
+    dataset['train'] = load_backtranslation_data(str(full_path_bt), dataset['train'])
 
     # Load DarijaBERT tokenizer and MarianMT tokenizer for English
     tokenizer_src = BertTokenizer.from_pretrained("SI2M-Lab/DarijaBERT")

@@ -525,3 +525,11 @@ Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_s
 Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
 Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
 [2024-10-18 23:01:39,971][__main__][INFO] - Final BIBLE performance: {'test_loss': 3.7831690311431885, 'test_bleu': 1.6478796560919031, 'test_meteor': 0.17383747627578813, 'test_chrF': 18.126090400683513, 'test_runtime': 56.8603, 'test_samples_per_second': 10.552, 'test_steps_per_second': 0.334, 'model_name': 'SI2M-Lab/DarijaBERT'}
+
+[2024-10-21 16:47:15,195][__main__][INFO] - Final test set performance: {'test_loss': 1.3896957635879517, 'test_bleu': 27.30367428155486, 'test_meteor': 0.4959029116038907, 'test_chrF': 45.05849040394378, 'test_runtime': 292.7492, 'test_samples_per_second': 23.252, 'test_steps_per_second': 0.728, 'model_name': 'SI2M-Lab/DarijaBERT'}
+[2024-10-21 16:47:15,195][__main__][INFO] - Evaluating on MADAR dataset:
+100%|██████████| 172/172 [05:26<00:00,  1.90s/it]
+[2024-10-21 16:52:44,019][__main__][INFO] - Final MADAR performance: {'test_loss': 1.7624096870422363, 'test_bleu': 22.512713983520662, 'test_meteor': 0.5295023302542375, 'test_chrF': 39.778366783665966, 'test_runtime': 328.8214, 'test_samples_per_second': 16.726, 'test_steps_per_second': 0.523, 'model_name': 'SI2M-Lab/DarijaBERT'}
+[2024-10-21 16:52:44,019][__main__][INFO] - Evaluating on BIBLE dataset:
+100%|██████████| 19/19 [01:00<00:00,  3.17s/it]
+[2024-10-21 16:53:46,943][__main__][INFO] - Final BIBLE performance: {'test_loss': 3.4071831703186035, 'test_bleu': 4.026424434294708, 'test_meteor': 0.24520560174816458, 'test_chrF': 23.66009331666617, 'test_runtime': 62.9217, 'test_samples_per_second': 9.536, 'test_steps_per_second': 0.302, 'model_name': 'SI2M-Lab/DarijaBERT'}

@@ -125,6 +125,7 @@ if __name__ == "__main__":
     dataset_path = '../data/sentences_new.csv'
     # Load regular data
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
+    prepared_datasets['train'] = utils.load_backtranslation_data('../data/back_translations_new.csv', prepared_datasets['train'])
     eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.en',
                                           '../data/AraBench/bible.dev.mgr.0.ma.ar')
     eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.en',

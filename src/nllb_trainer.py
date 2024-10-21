@@ -187,10 +187,10 @@ if __name__ == "__main__":
     pre_tune_madar = evaluator.evaluate_model(eval_madar,
                                                '../results/model_opus/outputs/predictions_pre_madar.csv')
     print(pre_tune_results)
-    # print('BIBLE:')
-    # print(pre_tune_bible)
-    # print('MADAR:')
-    # print(pre_tune_madar)
+    print('BIBLE:')
+    print(pre_tune_bible)
+    print('MADAR:')
+    print(pre_tune_madar)
 
     torch.cuda.empty_cache()
     gc.collect()
