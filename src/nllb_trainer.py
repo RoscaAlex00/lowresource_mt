@@ -166,31 +166,31 @@ if __name__ == "__main__":
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
         model_name='facebook/nllb-200-distilled-600M',
-        src_lang='ary_Arab',
-        tgt_lang='eng_Latn'
+        src_lang='eng_Latn',
+        tgt_lang='ary_Arab'
     )
 
-    dataset_path = '../data/sentences_new.csv'
+    dataset_path = '../data/sentences_new_reversed.csv'
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
     eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.en',
                                           '../data/AraBench/bible.dev.mgr.0.ma.ar')
     eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.en',
                                           '../data/AraBench/madar.dev.mgr.0.ma.ar')
-    # print(prepared_datasets['test']['src'])
-    # print(prepared_datasets['test']['tgt'])
+    print(prepared_datasets['test']['src'])
+    print(prepared_datasets['test']['tgt'])
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'],
-                                                '../results/model_nllb/outputs/predictions_pre.csv')
+                                                '../results/model_nllb/outputs/predictions_pre_english.csv')
 
-    pre_tune_bible = evaluator.evaluate_model(eval_bible,
-                                               '../results/model_opus/outputs/predictions_pre_bible.csv')
-    pre_tune_madar = evaluator.evaluate_model(eval_madar,
-                                               '../results/model_opus/outputs/predictions_pre_madar.csv')
+    # pre_tune_bible = evaluator.evaluate_model(eval_bible,
+    #                                            '../results/model_opus/outputs/predictions_pre_bible.csv')
+    # pre_tune_madar = evaluator.evaluate_model(eval_madar,
+    #                                            '../results/model_opus/outputs/predictions_pre_madar.csv')
     print(pre_tune_results)
-    print('BIBLE:')
-    print(pre_tune_bible)
-    print('MADAR:')
-    print(pre_tune_madar)
+    # print('BIBLE:')
+    # print(pre_tune_bible)
+    # print('MADAR:')
+    # print(pre_tune_madar)
 
     torch.cuda.empty_cache()
     gc.collect()
@@ -199,17 +199,17 @@ if __name__ == "__main__":
     # plot_training_loss(evaluator.trainer)
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
-                                                    '../results/model_nllb/outputs/predictions_epoch2.csv')
+                                                    '../results/model_nllb/outputs/predictions_epoch2_english.csv')
     print(after_tuning_results)
 
-    print('BIBLE:')
-    after_tune_bible = evaluator.evaluate_model(eval_bible,
-                                                '../results/model_opus/outputs/predictions_after_bible.csv')
-    print(after_tune_bible)
-    print('MADAR')
-    after_tune_madar = evaluator.evaluate_model(eval_madar,
-                                                '../results/model_opus/outputs/predictions_after_madar.csv')
-    print(after_tune_madar)
+    # print('BIBLE:')
+    # after_tune_bible = evaluator.evaluate_model(eval_bible,
+    #                                             '../results/model_opus/outputs/predictions_after_bible.csv')
+    # print(after_tune_bible)
+    # print('MADAR')
+    # after_tune_madar = evaluator.evaluate_model(eval_madar,
+    #                                             '../results/model_opus/outputs/predictions_after_madar.csv')
+    # print(after_tune_madar)
 
     # translation_output_file = '../data/translated_sentences.csv'
     # evaluator.translate_and_save(prepared_datasets, translation_output_file)
