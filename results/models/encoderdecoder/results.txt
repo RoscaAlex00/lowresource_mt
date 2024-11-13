@@ -533,3 +533,15 @@ Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_s
 [2024-10-21 16:52:44,019][__main__][INFO] - Evaluating on BIBLE dataset:
 100%|██████████| 19/19 [01:00<00:00,  3.17s/it]
 [2024-10-21 16:53:46,943][__main__][INFO] - Final BIBLE performance: {'test_loss': 3.4071831703186035, 'test_bleu': 4.026424434294708, 'test_meteor': 0.24520560174816458, 'test_chrF': 23.66009331666617, 'test_runtime': 62.9217, 'test_samples_per_second': 9.536, 'test_steps_per_second': 0.302, 'model_name': 'SI2M-Lab/DarijaBERT'}
+
+
+paraphrase:
+[2024-10-29 18:15:23,129][__main__][INFO] - Final test set performance: {'test_loss': 1.8361600637435913, 'test_bleu': 21.21586322463881, 'test_meteor': 0.48157821033886977, 'test_chrF': 43.24279814452314, 'test_runtime': 294.5032, 'test_samples_per_second': 23.114, 'test_steps_per_second': 0.723, 'model_name': 'SI2M-Lab/DarijaBERT'}
+[2024-10-29 18:15:23,129][__main__][INFO] - Evaluating on MADAR dataset:
+100%|██████████| 172/172 [04:58<00:00,  1.74s/it]
+[2024-10-29 18:20:23,852][__main__][INFO] - Final MADAR performance: {'test_loss': 2.517406702041626, 'test_bleu': 15.799751463580195, 'test_meteor': 0.4612100957579083, 'test_chrF': 33.13366406027053, 'test_runtime': 300.7194, 'test_samples_per_second': 18.289, 'test_steps_per_second': 0.572, 'model_name': 'SI2M-Lab/DarijaBERT'}
+[2024-10-29 18:20:23,852][__main__][INFO] - Evaluating on BIBLE dataset:
+100%|██████████| 19/19 [00:49<00:00,  2.59s/it]
+Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
+Non-default generation parameters: {'max_length': 128, 'min_length': 5, 'early_stopping': True, 'num_beams': 5, 'no_repeat_ngram_size': 3}
+[2024-10-29 18:21:15,336][__main__][INFO] - Final BIBLE performance: {'test_loss': 4.650437355041504, 'test_bleu': 1.5698774992661513, 'test_meteor': 0.16588237397890068, 'test_chrF': 18.19151955682821, 'test_runtime': 51.4813, 'test_samples_per_second': 11.655, 'test_steps_per_second': 0.369, 'model_name': 'SI2M-Lab/DarijaBERT'}

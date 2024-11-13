@@ -35,6 +35,17 @@ class ModelEvaluator:
         model_inputs["labels"] = labels["input_ids"]
         return model_inputs
 
+    def translate_sentences(self, sentences):
+        self.model.to('cuda')
+        translated_sentences = []
+        for sentence in sentences:
+            inputs = self.tokenizer(sentence, return_tensors="pt", max_length=128, truncation=True).to('cuda')
+            translated_tokens = self.model.generate(**inputs,
+                                                    max_length=128)
+            translated_sentence = self.tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
+            translated_sentences.append(translated_sentence)
+        return translated_sentences
+
     def evaluate_model(self, dataset, output_file):
         src_sentences = dataset['src']
         tgt_sentences = dataset['tgt']
@@ -71,8 +82,8 @@ class ModelEvaluator:
         avg_meteor = sum(meteor_scores) / len(meteor_scores)
 
         chrf_score = corpus_chrf(predicted_sentences, tgt_sentences).score
-        #print(predicted_sentences)
-        #print(tgt_sentences)
+        # print(predicted_sentences)
+        # print(tgt_sentences)
         return {
             'BLEU': bleu_score,
             'METEOR': avg_meteor,
@@ -94,7 +105,7 @@ class ModelEvaluator:
             per_device_eval_batch_size=16,
             weight_decay=0.01,
             save_total_limit=0,
-            num_train_epochs=5,
+            num_train_epochs=10,
             predict_with_generate=True,
             load_best_model_at_end=True,  # Load the best model based on validation loss
             metric_for_best_model="eval_loss"  # Metric to determine the best model
@@ -110,6 +121,7 @@ class ModelEvaluator:
         )
 
         trainer.train()
+
         # self.model.save_pretrained(output_dir)
         # self.tokenizer.save_pretrained(output_dir)
 
@@ -126,13 +138,15 @@ if __name__ == "__main__":
     # Load regular data
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
 
-    eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.en',
-                                          '../data/AraBench/bible.dev.mgr.0.ma.ar')
-    eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.en',
-                                          '../data/AraBench/madar.dev.mgr.0.ma.ar')
-    # Load regular + back_translated data
-    # prepared_datasets = utils.load_and_prepare_data(dataset_path, '../data/back_translated_sentences.csv')
-
+    eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.ar',
+                                          '../data/AraBench/bible.dev.mgr.0.ma.en')
+    eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.ar',
+                                          '../data/AraBench/madar.dev.mgr.0.ma.en')
+    # Load regular + back_translated data vb
+    prepared_datasets['train'] = utils.load_backtranslation_data('../data/paraphrased_target_data.csv',
+                                                                   prepared_datasets['train'])
+    # print(len(prepared_datasets['train']))
+    # print(prepared_datasets['train']['tgt'])
     # Load regular + AraBench data
     # regular_data = utils.load_and_prepare_data(dataset_path)
     # bible_en_path = '../data/AraBench/madar.dev.mgr.0.ma.en'
@@ -144,27 +158,50 @@ if __name__ == "__main__":
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'],
                                                 '../results/model_opus/outputs/predictions_pre_eng.csv')
-    # pre_tune_bible = evaluator.evaluate_model(eval_bible,
-    #                                           '../results/model_opus/outputs/predictions_pre_bible.csv')
-    # pre_tune_madar = evaluator.evaluate_model(eval_madar,
-    #                                           '../results/model_opus/outputs/predictions_pre_madar.csv')
+    pre_tune_bible = evaluator.evaluate_model(eval_bible,
+                                              '../results/model_opus/outputs/predictions_pre_bible.csv')
+    pre_tune_madar = evaluator.evaluate_model(eval_madar,
+                                              '../results/model_opus/outputs/predictions_pre_madar.csv')
     print(pre_tune_results)
-    # print('BIBLE:')
-    # print(pre_tune_bible)
-    # print('MADAR:')
-    # print(pre_tune_madar)
+    print('BIBLE:')
+    print(pre_tune_bible)
+    print('MADAR:')
+    print(pre_tune_madar)
     print("Fine-tuning the model")
     evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['validation'])
 
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
-                                                    '../results/model_opus/outputs/predictions_epoch5_eng.csv')
+                                                    '../results/model_opus/outputs/predictions_epoch5.csv')
     print(after_tuning_results)
     print('BIBLE:')
     after_tune_bible = evaluator.evaluate_model(eval_bible,
-                                                '../results/model_opus/outputs/predictions_after_bible_eng.csv')
-    # print(after_tune_bible)
-    # print('MADAR')
-    # after_tune_madar = evaluator.evaluate_model(eval_madar,
-    #                                             '../results/model_opus/outputs/predictions_after_madar.csv')
-    # print(after_tune_madar)
+                                                '../results/model_opus/outputs/predictions_after_bible.csv')
+    print(after_tune_bible)
+    print('MADAR')
+    after_tune_madar = evaluator.evaluate_model(eval_madar,
+                                                '../results/model_opus/outputs/predictions_after_madar.csv')
+    print(after_tune_madar)
+
+    # Load the previously translated English sentences
+    # input_file = '../data/forward_translations_opus_en_ar.csv'
+    # original_sentences = []
+    # translated_english = []
+    # with open(input_file, newline='', encoding='utf-8') as csvfile:
+    #     reader = csv.DictReader(csvfile)
+    #     for row in reader:
+    #         original_sentences.append(row['Original English'])
+    #         translated_english.append(row['Translated AR'])
+    #
+    # # Back-translate English to Moroccan Arabic
+    # back_translations = evaluator.translate_sentences(translated_english)
+    #
+    # # Save the back-translations along with the original sentences
+    # output_file = '../data/back_translations_opus_en_ar.csv'
+    # with open(output_file, 'w+', newline='', encoding='utf-8') as csvfile:
+    #     writer = csv.writer(csvfile)
+    #     writer.writerow(['Original English', 'Translated AR', 'Back Translated English'])
+    #     for original, english, back_translated in zip(original_sentences, translated_english, back_translations):
+    #         writer.writerow([original, english, back_translated])
+    #
+    # print(f"Back translation completed and saved to {output_file}.")

@@ -61,6 +61,8 @@ def load_backtranslation_data(additional_file_path, train_dataset):
 
     # Concatenate the additional data to the training dataset
     additional_train_dataset = additional_datasets['train']
+    print('additional src:')
+    print(additional_train_dataset['src'])
     combined_train_dataset = concatenate_datasets([train_dataset, additional_train_dataset])
 
     # Filter out examples without source or target from train and test sets

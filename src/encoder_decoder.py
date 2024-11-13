@@ -30,7 +30,7 @@ def main(cfg: DictConfig):
     dataset = load_and_prepare_data(str(full_path))
 
     # BACK-TRANSLATION DATA LOAD
-    full_path_bt = Path(get_original_cwd()) / '../data/back_translations_new.csv'
+    full_path_bt = Path(get_original_cwd()) / '../data/paraphrased_target_data.csv'
     dataset['train'] = load_backtranslation_data(str(full_path_bt), dataset['train'])
 
     # Load DarijaBERT tokenizer and MarianMT tokenizer for English

@@ -9,7 +9,7 @@ tokenizer:
 
 trainer:
   batch_size: 16  # Batch size for training
-  num_epochs: 5  # Number of epochs to train for
+  num_epochs: 7  # Number of epochs to train for
   warmup_steps: 500  # Warmup steps for learning rate scheduler
   gradient_accumulation_steps: 1  # Gradient accumulation steps
   fp16: true  # Enable mixed precision training (if you have a compatible GPU)
