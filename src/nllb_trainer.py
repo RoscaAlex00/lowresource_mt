@@ -15,7 +15,8 @@ from transformers import (
     DataCollatorForSeq2Seq
 )
 import numpy as np
-from sacrebleu import corpus_bleu, corpus_chrf
+from evaluate import load
+from sacrebleu import corpus_bleu, corpus_chrf, BLEU, CHRF
 from nltk.translate.meteor_score import single_meteor_score, meteor_score
 import nltk
 
@@ -138,6 +139,66 @@ class ModelEvaluator:
             'chrF': chrf_score
         }
 
+    def evaluate_model_new(self, dataset, output_file):
+        src_sentences = dataset['src']
+        tgt_sentences = dataset['tgt']
+
+        # Initialize metrics
+        bleu = BLEU()
+        chrf = CHRF()
+        comet_metric = load("comet")
+
+        predicted_sentences = []
+
+        with open(output_file, 'w+', newline='', encoding='utf-8') as csvfile:
+            fieldnames = ['Original', 'Original Translation', 'Translated Sentence']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+
+            for src, tgt in zip(src_sentences, tgt_sentences):
+                inputs = self.tokenizer(src, return_tensors="pt", max_length=128, truncation=True).to('cuda')
+                model = self.model.to('cuda')
+                translated_tokens = model.generate(**inputs,
+                                                   max_length=128)
+                translated_sentence = self.tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
+                predicted_sentences.append(translated_sentence)
+
+                # Write to CSV
+                writer.writerow(
+                    {'Original': src, 'Original Translation': tgt, 'Translated Sentence': translated_sentence})
+
+        # Calculate BLEU
+        tgt_sentences_nested = [[sentence] for sentence in tgt_sentences]
+        bleu_score = bleu.corpus_score(predicted_sentences, tgt_sentences_nested).score
+
+        # Calculate METEOR
+        predicted_tokens = [word_tokenize(sent) for sent in predicted_sentences]
+        tgt_tokens = [word_tokenize(sent) for sent in tgt_sentences]
+        meteor_scores = [meteor_score([tgt], pred) for tgt, pred in zip(tgt_tokens, predicted_tokens)]
+        avg_meteor = sum(meteor_scores) / len(meteor_scores)
+
+        # Calculate chrF
+        chrf_score = chrf.corpus_score(predicted_sentences, tgt_sentences_nested).score
+
+        # Calculate COMET
+        comet_inputs = {
+            "sources": src_sentences,
+            "predictions": predicted_sentences,
+            "references": tgt_sentences
+        }
+
+        # Compute COMET scores
+        comet_scores = comet_metric.compute(**comet_inputs)
+        # print(comet_scores)
+        avg_comet = comet_scores["mean_score"]
+
+        return {
+            'BLEU': bleu_score,
+            'METEOR': avg_meteor,
+            'chrF': chrf_score,
+            'COMET': avg_comet
+        }
+
     def fine_tune_model(self, train_set, test_set, validation_set, output_dir='../results/model_nllb/checkpoints'):
         tokenized_train = train_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
         tokenized_validation = validation_set.map(self.tokenize_function, batched=True, remove_columns=['src', 'tgt'])
@@ -184,7 +245,7 @@ if __name__ == "__main__":
 
     dataset_path = '../data/sentences_new_reversed.csv'
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
-    # prepared_datasets['train'] = utils.load_backtranslation_data('../data/paraphrased_target_data.csv', prepared_datasets['train'])
+    prepared_datasets['train'] = utils.load_backtranslation_data('../data/paraphrased_target_data.csv', prepared_datasets['train'])
     eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.ar',
                                           '../data/AraBench/bible.dev.mgr.0.ma.en')
     eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.ar',
@@ -192,13 +253,13 @@ if __name__ == "__main__":
     # print(prepared_datasets['train']['src'])
     # print(prepared_datasets['test']['tgt'])
     print("Evaluating model before fine-tuning...")
-    pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'],
-                                                '../results/model_nllb/outputs/predictions_para_english.csv')
+    pre_tune_results = evaluator.evaluate_model_new(prepared_datasets['test'],
+                                                    '../results/model_nllb/outputs/predictions_en_ar.csv')
 
-    pre_tune_bible = evaluator.evaluate_model(eval_bible,
-                                               '../results/model_opus/outputs/predictions_para_bible_en.csv')
-    pre_tune_madar = evaluator.evaluate_model(eval_madar,
-                                               '../results/model_opus/outputs/predictions_para_madar_en.csv')
+    pre_tune_bible = evaluator.evaluate_model_new(eval_bible,
+                                                  '../results/model_nllb/outputs/predictions_en_ar_bible.csv')
+    pre_tune_madar = evaluator.evaluate_model_new(eval_madar,
+                                                  '../results/model_nllb/outputs/predictions_en_ar_madar.csv')
     print(pre_tune_results)
     print('BIBLE:')
     print(pre_tune_bible)
@@ -211,17 +272,17 @@ if __name__ == "__main__":
     evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'], prepared_datasets['validation'])
     # plot_training_loss(evaluator.trainer)
     print("Evaluation after the fine-tuning...")
-    after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
-                                                    '../results/model_nllb/outputs/predictions_epoch2_english.csv')
+    after_tuning_results = evaluator.evaluate_model_new(prepared_datasets['test'],
+                                                        '../results/model_nllb/outputs/predictions_en_ar_finetune.csv')
     print(after_tuning_results)
 
     print('BIBLE:')
-    after_tune_bible = evaluator.evaluate_model(eval_bible,
-                                                '../results/model_opus/outputs/predictions_after_bible_en_para.csv')
+    after_tune_bible = evaluator.evaluate_model_new(eval_bible,
+                                                    '../results/model_nllb/outputs/predictions_en_ar_finetune_bible.csv')
     print(after_tune_bible)
     print('MADAR')
-    after_tune_madar = evaluator.evaluate_model(eval_madar,
-                                                '../results/model_opus/outputs/predictions_after_madar_en_para.csv')
+    after_tune_madar = evaluator.evaluate_model_new(eval_madar,
+                                                    '../results/model_nllb/outputs/predictions_en_ar_finetune_madar.csv')
     print(after_tune_madar)
 
     # translation_output_file = '../data/translated_sentences_en_ar.csv'
@@ -242,7 +303,6 @@ if __name__ == "__main__":
     #         writer.writerow([original, translation])
     #
     # print(f"Forward translation completed and saved to {output_file}.")
-
 
     # Load the previously translated English sentences
     # input_file = '../data/forward_translations_nllb.csv'
