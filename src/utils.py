@@ -8,9 +8,9 @@ def load_and_prepare_data(file_path):
 
     # 80/15/5 split
     raw_datasets = raw_datasets['train'].train_test_split(test_size=0.2,
-                                                          seed=55)  # First split 20% off for test+validation
+                                                          seed=46316)  # First split 20% off for test+validation
     test_valid_split = raw_datasets['test'].train_test_split(test_size=0.25,
-                                                             seed=55)  # Split 20% into 15% test, 5% validation
+                                                             seed=46316)  # Split 20% into 15% test, 5% validation
 
     raw_datasets['train'] = raw_datasets['train']
     raw_datasets['test'] = test_valid_split['train']  # Test set (15%)

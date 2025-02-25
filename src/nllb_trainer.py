@@ -149,7 +149,6 @@ class ModelEvaluator:
         comet_metric = load("comet")
 
         predicted_sentences = []
-
         with open(output_file, 'w+', newline='', encoding='utf-8') as csvfile:
             fieldnames = ['Original', 'Original Translation', 'Translated Sentence']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -159,10 +158,10 @@ class ModelEvaluator:
                 inputs = self.tokenizer(src, return_tensors="pt", max_length=128, truncation=True).to('cuda')
                 model = self.model.to('cuda')
                 translated_tokens = model.generate(**inputs,
+                                                   forced_bos_token_id=self.tokenizer.convert_tokens_to_ids(self.tgt_lang),
                                                    max_length=128)
                 translated_sentence = self.tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
                 predicted_sentences.append(translated_sentence)
-
                 # Write to CSV
                 writer.writerow(
                     {'Original': src, 'Original Translation': tgt, 'Translated Sentence': translated_sentence})
@@ -235,7 +234,7 @@ class ModelEvaluator:
 
 # Example usage
 if __name__ == "__main__":
-    # os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
         model_name='facebook/nllb-200-distilled-600M',
@@ -254,12 +253,12 @@ if __name__ == "__main__":
     # print(prepared_datasets['test']['tgt'])
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model_new(prepared_datasets['test'],
-                                                    '../results/model_nllb/outputs/predictions_en_ar.csv')
+                                                    '../results/model_nllb/outputs/predictions_en_ar_para.csv')
 
     pre_tune_bible = evaluator.evaluate_model_new(eval_bible,
-                                                  '../results/model_nllb/outputs/predictions_en_ar_bible.csv')
+                                                  '../results/model_nllb/outputs/predictions_en_ar_bible_para.csv')
     pre_tune_madar = evaluator.evaluate_model_new(eval_madar,
-                                                  '../results/model_nllb/outputs/predictions_en_ar_madar.csv')
+                                                  '../results/model_nllb/outputs/predictions_en_ar_madar_para.csv')
     print(pre_tune_results)
     print('BIBLE:')
     print(pre_tune_bible)
@@ -273,16 +272,16 @@ if __name__ == "__main__":
     # plot_training_loss(evaluator.trainer)
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model_new(prepared_datasets['test'],
-                                                        '../results/model_nllb/outputs/predictions_en_ar_finetune.csv')
+                                                        '../results/model_nllb/outputs/predictions_en_ar_finetune_para.csv')
     print(after_tuning_results)
 
     print('BIBLE:')
     after_tune_bible = evaluator.evaluate_model_new(eval_bible,
-                                                    '../results/model_nllb/outputs/predictions_en_ar_finetune_bible.csv')
+                                                    '../results/model_nllb/outputs/predictions_en_ar_finetune_bible_para.csv')
     print(after_tune_bible)
     print('MADAR')
     after_tune_madar = evaluator.evaluate_model_new(eval_madar,
-                                                    '../results/model_nllb/outputs/predictions_en_ar_finetune_madar.csv')
+                                                    '../results/model_nllb/outputs/predictions_en_ar_finetune_madar_para.csv')
     print(after_tune_madar)
 
     # translation_output_file = '../data/translated_sentences_en_ar.csv'

@@ -2,7 +2,9 @@ import csv
 import json
 import os
 
+import torch
 from datasets import load_dataset, DatasetDict, concatenate_datasets, Dataset
+from evaluate import load
 from nltk import word_tokenize
 from transformers import (
     AutoTokenizer,
@@ -12,7 +14,7 @@ from transformers import (
     DataCollatorForSeq2Seq
 )
 import numpy as np
-from sacrebleu import corpus_bleu, corpus_chrf
+from sacrebleu import corpus_bleu, corpus_chrf, BLEU, CHRF
 from nltk.translate.meteor_score import single_meteor_score, meteor_score
 import nltk
 
@@ -46,9 +48,15 @@ class ModelEvaluator:
             translated_sentences.append(translated_sentence)
         return translated_sentences
 
-    def evaluate_model(self, dataset, output_file):
+    def evaluate_model_new(self, dataset, output_file):
         src_sentences = dataset['src']
         tgt_sentences = dataset['tgt']
+        self.model.to('cuda')
+
+        # Initialize metrics
+        bleu = BLEU()
+        chrf = CHRF()
+        comet_metric = load("comet")
 
         predicted_sentences = []
 
@@ -59,7 +67,61 @@ class ModelEvaluator:
 
             for src, tgt in zip(src_sentences, tgt_sentences):
                 inputs = self.tokenizer(src, return_tensors="pt", max_length=128, truncation=True).to('cuda')
-                model = self.model.to('cuda')
+                translated_tokens = self.model.generate(**inputs,
+                                                        max_length=128)
+                translated_sentence = self.tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
+                predicted_sentences.append(translated_sentence)
+
+                # Write to CSV
+                writer.writerow(
+                    {'Original': src, 'Original Translation': tgt, 'Translated Sentence': translated_sentence})
+
+        # Calculate BLEU
+        tgt_sentences_nested = [[sentence] for sentence in tgt_sentences]
+        bleu_score = bleu.corpus_score(predicted_sentences, tgt_sentences_nested).score
+
+        # Calculate METEOR
+        predicted_tokens = [word_tokenize(sent) for sent in predicted_sentences]
+        tgt_tokens = [word_tokenize(sent) for sent in tgt_sentences]
+        meteor_scores = [meteor_score([tgt], pred) for tgt, pred in zip(tgt_tokens, predicted_tokens)]
+        avg_meteor = sum(meteor_scores) / len(meteor_scores)
+
+        # Calculate chrF
+        chrf_score = chrf.corpus_score(predicted_sentences, tgt_sentences_nested).score
+
+        # Calculate COMET
+        comet_inputs = {
+            "sources": src_sentences,
+            "predictions": predicted_sentences,
+            "references": tgt_sentences
+        }
+
+        # Compute COMET scores
+        comet_scores = comet_metric.compute(**comet_inputs)
+        # print(comet_scores)
+        avg_comet = comet_scores["mean_score"]
+
+        return {
+            'BLEU': bleu_score,
+            'METEOR': avg_meteor,
+            'chrF': chrf_score,
+            'COMET': avg_comet
+        }
+
+    def evaluate_model(self, dataset, output_file):
+        src_sentences = dataset['src']
+        tgt_sentences = dataset['tgt']
+
+        predicted_sentences = []
+        i = 0
+        model = self.model.to('cuda')
+        with open(output_file, 'w+', newline='', encoding='utf-8') as csvfile:
+            fieldnames = ['Original', 'Original Translation', 'Translated Sentence']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            i = 0
+            for src, tgt in zip(src_sentences, tgt_sentences):
+                inputs = self.tokenizer(src, return_tensors="pt", max_length=128, truncation=True).to('cuda')
                 translated_tokens = model.generate(**inputs,
                                                    max_length=128)
                 translated_sentence = self.tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
@@ -68,6 +130,8 @@ class ModelEvaluator:
                 # Write to CSV
                 writer.writerow(
                     {'Original': src, 'Original Translation': tgt, 'Translated Sentence': translated_sentence})
+                i += 1
+                print(i)
 
         # Calculate BLEU
         tgt_sentences = [[sentence] for sentence in dataset['tgt']]
@@ -105,7 +169,7 @@ class ModelEvaluator:
             per_device_eval_batch_size=16,
             weight_decay=0.01,
             save_total_limit=0,
-            num_train_epochs=10,
+            num_train_epochs=3,
             predict_with_generate=True,
             load_best_model_at_end=True,  # Load the best model based on validation loss
             metric_for_best_model="eval_loss"  # Metric to determine the best model
@@ -128,12 +192,12 @@ class ModelEvaluator:
 
 # Example usage
 if __name__ == "__main__":
-    # os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
         model_name='Helsinki-NLP/opus-mt-en-ar',
     )
-
+    # torch.set_float32_matmul_precision('medium')
     dataset_path = '../data/sentences_new_reversed.csv'
     # Load regular data
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
@@ -143,8 +207,7 @@ if __name__ == "__main__":
     eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.ar',
                                           '../data/AraBench/madar.dev.mgr.0.ma.en')
     # Load regular + back_translated data vb
-    prepared_datasets['train'] = utils.load_backtranslation_data('../data/paraphrased_target_data.csv',
-                                                                   prepared_datasets['train'])
+    prepared_datasets['train'] = utils.load_backtranslation_data('../data/paraphrased_target_data.csv', prepared_datasets['train'])
     # print(len(prepared_datasets['train']))
     # print(prepared_datasets['train']['tgt'])
     # Load regular + AraBench data
@@ -156,12 +219,14 @@ if __name__ == "__main__":
     #
     # prepared_datasets = utils.merge_datasets(regular_data, bible_data)
     print("Evaluating model before fine-tuning...")
-    pre_tune_results = evaluator.evaluate_model(prepared_datasets['test'],
-                                                '../results/model_opus/outputs/predictions_pre_eng.csv')
-    pre_tune_bible = evaluator.evaluate_model(eval_bible,
-                                              '../results/model_opus/outputs/predictions_pre_bible.csv')
-    pre_tune_madar = evaluator.evaluate_model(eval_madar,
-                                              '../results/model_opus/outputs/predictions_pre_madar.csv')
+    pre_tune_results = evaluator.evaluate_model_new(prepared_datasets['test'],
+                                                    '../results/model_opus/outputs/predictions_en_ar_para.csv')
+    # print(pre_tune_results)
+
+    pre_tune_bible = evaluator.evaluate_model_new(eval_bible,
+                                                  '../results/model_opus/outputs/predictions_en_ar_para_bible.csv')
+    pre_tune_madar = evaluator.evaluate_model_new(eval_madar,
+                                                  '../results/model_opus/outputs/predictions_en_ar_para_madar.csv')
     print(pre_tune_results)
     print('BIBLE:')
     print(pre_tune_bible)
@@ -171,16 +236,16 @@ if __name__ == "__main__":
     evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['validation'])
 
     print("Evaluation after the fine-tuning...")
-    after_tuning_results = evaluator.evaluate_model(prepared_datasets['test'],
-                                                    '../results/model_opus/outputs/predictions_epoch5.csv')
+    after_tuning_results = evaluator.evaluate_model_new(prepared_datasets['test'],
+                                                        '../results/model_opus/outputs/predictions_en_ar_para_finetuned.csv')
     print(after_tuning_results)
     print('BIBLE:')
-    after_tune_bible = evaluator.evaluate_model(eval_bible,
-                                                '../results/model_opus/outputs/predictions_after_bible.csv')
+    after_tune_bible = evaluator.evaluate_model_new(eval_bible,
+                                                    '../results/model_opus/outputs/predictions_en_ar_para_finetuned_bible.csv')
     print(after_tune_bible)
     print('MADAR')
-    after_tune_madar = evaluator.evaluate_model(eval_madar,
-                                                '../results/model_opus/outputs/predictions_after_madar.csv')
+    after_tune_madar = evaluator.evaluate_model_new(eval_madar,
+                                                    '../results/model_opus/outputs/predictions_en_ar_para_finetuned_madar.csv')
     print(after_tune_madar)
 
     # Load the previously translated English sentences
