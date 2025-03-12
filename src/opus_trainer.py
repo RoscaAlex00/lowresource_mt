@@ -169,7 +169,7 @@ class ModelEvaluator:
             per_device_eval_batch_size=16,
             weight_decay=0.01,
             save_total_limit=0,
-            num_train_epochs=3,
+            num_train_epochs=5,
             predict_with_generate=True,
             load_best_model_at_end=True,  # Load the best model based on validation loss
             metric_for_best_model="eval_loss"  # Metric to determine the best model
@@ -192,22 +192,22 @@ class ModelEvaluator:
 
 # Example usage
 if __name__ == "__main__":
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
-        model_name='Helsinki-NLP/opus-mt-en-ar',
+        model_name='Helsinki-NLP/opus-mt-ar-en',
     )
     # torch.set_float32_matmul_precision('medium')
-    dataset_path = '../data/sentences_new_reversed.csv'
+    dataset_path = '../data/sentences_new.csv'
     # Load regular data
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
 
-    eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.ar',
-                                          '../data/AraBench/bible.dev.mgr.0.ma.en')
-    eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.ar',
-                                          '../data/AraBench/madar.dev.mgr.0.ma.en')
+    eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.en',
+                                          '../data/AraBench/bible.dev.mgr.0.ma.ar')
+    eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.en',
+                                          '../data/AraBench/madar.dev.mgr.0.ma.ar')
     # Load regular + back_translated data vb
-    prepared_datasets['train'] = utils.load_backtranslation_data('../data/paraphrased_target_data.csv', prepared_datasets['train'])
+    prepared_datasets['train'] = utils.load_backtranslation_data('../data/bt_en_ar_opus.csv', prepared_datasets['train'])
     # print(len(prepared_datasets['train']))
     # print(prepared_datasets['train']['tgt'])
     # Load regular + AraBench data
@@ -220,13 +220,13 @@ if __name__ == "__main__":
     # prepared_datasets = utils.merge_datasets(regular_data, bible_data)
     print("Evaluating model before fine-tuning...")
     pre_tune_results = evaluator.evaluate_model_new(prepared_datasets['test'],
-                                                    '../results/model_opus/outputs/predictions_en_ar_para.csv')
+                                                    '../results/model_opus/outputs/predictions_ar_en_bt.csv')
     # print(pre_tune_results)
 
     pre_tune_bible = evaluator.evaluate_model_new(eval_bible,
-                                                  '../results/model_opus/outputs/predictions_en_ar_para_bible.csv')
+                                                  '../results/model_opus/outputs/predictions_ar_en_bt_bible.csv')
     pre_tune_madar = evaluator.evaluate_model_new(eval_madar,
-                                                  '../results/model_opus/outputs/predictions_en_ar_para_madar.csv')
+                                                  '../results/model_opus/outputs/predictions_ar_en_bt_madar.csv')
     print(pre_tune_results)
     print('BIBLE:')
     print(pre_tune_bible)
@@ -237,16 +237,23 @@ if __name__ == "__main__":
 
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model_new(prepared_datasets['test'],
-                                                        '../results/model_opus/outputs/predictions_en_ar_para_finetuned.csv')
+                                                        '../results/model_opus/outputs/predictions_ar_en_bt_finetuned.csv')
     print(after_tuning_results)
     print('BIBLE:')
     after_tune_bible = evaluator.evaluate_model_new(eval_bible,
-                                                    '../results/model_opus/outputs/predictions_en_ar_para_finetuned_bible.csv')
+                                                    '../results/model_opus/outputs/predictions_ar_en_bt_finetuned_bible.csv')
     print(after_tune_bible)
     print('MADAR')
     after_tune_madar = evaluator.evaluate_model_new(eval_madar,
-                                                    '../results/model_opus/outputs/predictions_en_ar_para_finetuned_madar.csv')
+                                                    '../results/model_opus/outputs/predictions_ar_en_bt_finetuned_madar.csv')
     print(after_tune_madar)
+
+    # original_sentences = [row['src'] for row in prepared_datasets['train']]
+    # translated_sentences = evaluator.translate_sentences(original_sentences)
+
+    # Save translated sentences to a file for back-translation
+
+
 
     # Load the previously translated English sentences
     # input_file = '../data/forward_translations_opus_en_ar.csv'

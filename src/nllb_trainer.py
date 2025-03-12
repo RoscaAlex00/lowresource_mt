@@ -57,7 +57,7 @@ class ModelEvaluator:
         model_inputs["labels"] = labels["input_ids"]
         return model_inputs
 
-    def translate_and_save(self, dataset, output_file):
+    def translate_and_save(self, dataset, output_file, ):
         src_sentences = dataset['train']['src'] + dataset['test']['src']  # Adjust the column name if necessary
         translations = []
 
@@ -82,13 +82,13 @@ class ModelEvaluator:
 
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    def translate_sentences(self, sentences, source_lang, target_lang):
+    def translate_sentences(self, sentences):
         self.model.to('cuda')
         translated_sentences = []
         for sentence in sentences:
             inputs = self.tokenizer(sentence, return_tensors="pt", max_length=128, truncation=True).to('cuda')
             translated_tokens = self.model.generate(**inputs,
-                                                    forced_bos_token_id=self.tokenizer.lang_code_to_id[target_lang],
+                                                    forced_bos_token_id=self.tokenizer.convert_tokens_to_ids(self.tgt_lang),
                                                     max_length=128)
             translated_sentence = self.tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
             translated_sentences.append(translated_sentence)
@@ -207,7 +207,8 @@ class ModelEvaluator:
         training_args = Seq2SeqTrainingArguments(
             output_dir=output_dir,
             evaluation_strategy="steps",
-            eval_steps=500,
+            eval_steps=2000,
+            save_steps=2000,
             save_strategy="steps",
             save_total_limit=3,
             learning_rate=1e-5,
@@ -234,74 +235,73 @@ class ModelEvaluator:
 
 # Example usage
 if __name__ == "__main__":
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
         model_name='facebook/nllb-200-distilled-600M',
-        src_lang='eng_Latn',
-        tgt_lang='ary_Arab'
+        src_lang='ary_Arab',
+        tgt_lang='eng_Latn'
     )
 
-    dataset_path = '../data/sentences_new_reversed.csv'
+    dataset_path = '../data/sentences_new.csv'
     prepared_datasets = utils.load_and_prepare_data(dataset_path)
-    prepared_datasets['train'] = utils.load_backtranslation_data('../data/paraphrased_target_data.csv', prepared_datasets['train'])
-    eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.ar',
-                                          '../data/AraBench/bible.dev.mgr.0.ma.en')
-    eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.ar',
-                                          '../data/AraBench/madar.dev.mgr.0.ma.en')
+    # prepared_datasets['train'] = utils.load_backtranslation_data('../data/bt_ar_en_nllb.csv', prepared_datasets['train'])
+    eval_bible = utils.load_arabench_data('../data/AraBench/bible.dev.mgr.0.ma.en',
+                                          '../data/AraBench/bible.dev.mgr.0.ma.ar')
+    eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.en',
+                                          '../data/AraBench/madar.dev.mgr.0.ma.ar')
     # print(prepared_datasets['train']['src'])
     # print(prepared_datasets['test']['tgt'])
     print("Evaluating model before fine-tuning...")
-    pre_tune_results = evaluator.evaluate_model_new(prepared_datasets['test'],
-                                                    '../results/model_nllb/outputs/predictions_en_ar_para.csv')
-
-    pre_tune_bible = evaluator.evaluate_model_new(eval_bible,
-                                                  '../results/model_nllb/outputs/predictions_en_ar_bible_para.csv')
-    pre_tune_madar = evaluator.evaluate_model_new(eval_madar,
-                                                  '../results/model_nllb/outputs/predictions_en_ar_madar_para.csv')
-    print(pre_tune_results)
-    print('BIBLE:')
-    print(pre_tune_bible)
-    print('MADAR:')
-    print(pre_tune_madar)
+    # pre_tune_results = evaluator.evaluate_model_new(prepared_datasets['test'],
+    #                                                 '../results/model_nllb/outputs/predictions_ar_en_bt.csv')
+    #
+    # pre_tune_bible = evaluator.evaluate_model_new(eval_bible,
+    #                                               '../results/model_nllb/outputs/predictions_ar_en_bt_bible.csv')
+    # pre_tune_madar = evaluator.evaluate_model_new(eval_madar,
+    #                                               '../results/model_nllb/outputs/predictions_ar_en_bt_madar.csv')
+    # print(pre_tune_results)
+    # print('BIBLE:')
+    # print(pre_tune_bible)
+    # print('MADAR:')
+    # print(pre_tune_madar)
 
     torch.cuda.empty_cache()
     gc.collect()
     print("Fine-tuning the model")
     evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['test'], prepared_datasets['validation'])
     # plot_training_loss(evaluator.trainer)
-    print("Evaluation after the fine-tuning...")
-    after_tuning_results = evaluator.evaluate_model_new(prepared_datasets['test'],
-                                                        '../results/model_nllb/outputs/predictions_en_ar_finetune_para.csv')
-    print(after_tuning_results)
+    # print("Evaluation after the fine-tuning...")
+    # after_tuning_results = evaluator.evaluate_model_new(prepared_datasets['test'],
+    #                                                     '../results/model_nllb/outputs/predictions_en_ar_bt_finetune.csv')
+    # print(after_tuning_results)
+    #
+    # print('BIBLE:')
+    # after_tune_bible = evaluator.evaluate_model_new(eval_bible,
+    #                                                 '../results/model_nllb/outputs/predictions_en_ar_bt_finetune_bible.csv')
+    # print(after_tune_bible)
+    # print('MADAR')
+    # after_tune_madar = evaluator.evaluate_model_new(eval_madar,
+    #                                                 '../results/model_nllb/outputs/predictions_en_ar_bt_finetune_madar.csv')
+    # print(after_tune_madar)
 
-    print('BIBLE:')
-    after_tune_bible = evaluator.evaluate_model_new(eval_bible,
-                                                    '../results/model_nllb/outputs/predictions_en_ar_finetune_bible_para.csv')
-    print(after_tune_bible)
-    print('MADAR')
-    after_tune_madar = evaluator.evaluate_model_new(eval_madar,
-                                                    '../results/model_nllb/outputs/predictions_en_ar_finetune_madar_para.csv')
-    print(after_tune_madar)
-
-    # translation_output_file = '../data/translated_sentences_en_ar.csv'
-    # evaluator.translate_and_save(prepared_datasets, translation_output_file)
-    # print("Translations completed and saved.")
+    translation_output_file = '../data/translated_sentences_en_ar.csv'
+    evaluator.translate_and_save(prepared_datasets, translation_output_file)
+    print("Translations completed and saved.")
 
     # Forward translate Moroccan Arabic to English
-    # original_sentences = [row['src'] for row in prepared_datasets['train']]
-    # translated_sentences = evaluator.translate_sentences(original_sentences, source_lang='eng_Latn',
-    #                                                               target_lang='ary_Arab')
+    original_sentences = [row['src'] for row in prepared_datasets['train']]
+    translated_sentences = evaluator.translate_sentences(original_sentences)
 
     # Save translated sentences to a file for back-translation
-    # output_file = '../data/forward_translations_nllb.csv'
-    # with open(output_file, 'w+', newline='', encoding='utf-8') as csvfile:
-    #     writer = csv.writer(csvfile)
-    #     writer.writerow(['Original Eng', 'Translated AR'])
-    #     for original, translation in zip(original_sentences, translated_sentences):
-    #         writer.writerow([original, translation])
-    #
-    # print(f"Forward translation completed and saved to {output_file}.")
+    output_file = '../data/bt_ar_en_nllb.csv'
+    with open(output_file, 'w+', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Original AR', 'Translated ENG'])
+        for original, translation in zip(original_sentences, translated_sentences):
+            writer.writerow([original, translation])
+
+    print(f"Forward translation completed and saved to {output_file}.")
 
     # Load the previously translated English sentences
     # input_file = '../data/forward_translations_nllb.csv'

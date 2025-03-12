@@ -65,6 +65,6 @@ def compute_metrics(csv_file):
 
 
 if __name__ == "__main__":
-    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
-    file_path = "../results/model_opus/outputs/predictions_en_ar_para_finetuned.csv"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    file_path = "../results/model_nllb/outputs/predictions_ar_en_finetune.csv"
     compute_metrics(file_path)
