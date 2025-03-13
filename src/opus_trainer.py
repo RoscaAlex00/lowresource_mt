@@ -11,7 +11,8 @@ from transformers import (
     AutoModelForSeq2SeqLM,
     Seq2SeqTrainingArguments,
     Seq2SeqTrainer,
-    DataCollatorForSeq2Seq
+    DataCollatorForSeq2Seq,
+    AutoConfig
 )
 import numpy as np
 from sacrebleu import corpus_bleu, corpus_chrf, BLEU, CHRF
@@ -28,6 +29,8 @@ class ModelEvaluator:
     def __init__(self, model_name):
         self.model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        # self.config = AutoConfig.from_pretrained('Helsinki-NLP/opus-mt-ar-en') # random weights
+        # self.model = AutoModelForSeq2SeqLM.from_config(self.config) # random weights
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
     def tokenize_function(self, examples):
@@ -192,7 +195,7 @@ class ModelEvaluator:
 
 # Example usage
 if __name__ == "__main__":
-    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     evaluator = ModelEvaluator(
         model_name='Helsinki-NLP/opus-mt-ar-en',
@@ -207,7 +210,7 @@ if __name__ == "__main__":
     eval_madar = utils.load_arabench_data('../data/AraBench/madar.dev.mgr.0.ma.en',
                                           '../data/AraBench/madar.dev.mgr.0.ma.ar')
     # Load regular + back_translated data vb
-    prepared_datasets['train'] = utils.load_backtranslation_data('../data/bt_en_ar_opus.csv', prepared_datasets['train'])
+    # prepared_datasets['train'] = utils.load_backtranslation_data('../data/bt_en_ar_opus.csv', prepared_datasets['train'])
     # print(len(prepared_datasets['train']))
     # print(prepared_datasets['train']['tgt'])
     # Load regular + AraBench data
@@ -219,33 +222,33 @@ if __name__ == "__main__":
     #
     # prepared_datasets = utils.merge_datasets(regular_data, bible_data)
     print("Evaluating model before fine-tuning...")
-    pre_tune_results = evaluator.evaluate_model_new(prepared_datasets['test'],
-                                                    '../results/model_opus/outputs/predictions_ar_en_bt.csv')
+    # pre_tune_results = evaluator.evaluate_model_new(prepared_datasets['test'],
+    #                                                 '../results/model_opus/outputs/predictions_ar_en_bt.csv')
+    # # print(pre_tune_results)
+    #
+    # pre_tune_bible = evaluator.evaluate_model_new(eval_bible,
+    #                                               '../results/model_opus/outputs/predictions_ar_en_bt_bible.csv')
+    # pre_tune_madar = evaluator.evaluate_model_new(eval_madar,
+    #                                               '../results/model_opus/outputs/predictions_ar_en_bt_madar.csv')
     # print(pre_tune_results)
-
-    pre_tune_bible = evaluator.evaluate_model_new(eval_bible,
-                                                  '../results/model_opus/outputs/predictions_ar_en_bt_bible.csv')
-    pre_tune_madar = evaluator.evaluate_model_new(eval_madar,
-                                                  '../results/model_opus/outputs/predictions_ar_en_bt_madar.csv')
-    print(pre_tune_results)
-    print('BIBLE:')
-    print(pre_tune_bible)
-    print('MADAR:')
-    print(pre_tune_madar)
+    # print('BIBLE:')
+    # print(pre_tune_bible)
+    # print('MADAR:')
+    # print(pre_tune_madar)
     print("Fine-tuning the model")
     evaluator.fine_tune_model(prepared_datasets['train'], prepared_datasets['validation'])
 
     print("Evaluation after the fine-tuning...")
     after_tuning_results = evaluator.evaluate_model_new(prepared_datasets['test'],
-                                                        '../results/model_opus/outputs/predictions_ar_en_bt_finetuned.csv')
+                                                        '../results/model_opus/outputs/predictions_ar_en_finetuned_random.csv')
     print(after_tuning_results)
     print('BIBLE:')
     after_tune_bible = evaluator.evaluate_model_new(eval_bible,
-                                                    '../results/model_opus/outputs/predictions_ar_en_bt_finetuned_bible.csv')
+                                                    '../results/model_opus/outputs/predictions_ar_en_finetuned_bible_random.csv')
     print(after_tune_bible)
     print('MADAR')
     after_tune_madar = evaluator.evaluate_model_new(eval_madar,
-                                                    '../results/model_opus/outputs/predictions_ar_en_bt_finetuned_madar.csv')
+                                                    '../results/model_opus/outputs/predictions_ar_en_finetuned_madar_random.csv')
     print(after_tune_madar)
 
     # original_sentences = [row['src'] for row in prepared_datasets['train']]

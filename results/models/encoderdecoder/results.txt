@@ -1,17 +1,89 @@
 
 START:
 
-Initial test set performance: {'test_loss': 10.451478958129883, 'test_model_preparation_time': 0.0062, 'test_bleu': 0.004513937653076435, 'test_meteor': 0.028534005570535793, 'test_chrF': 5.064086034878922, 'test_runtime': 5230.3106, 'test_samples_per_second': 1.301, 'test_steps_per_second': 0.081, 'model_name': 'SI2M-Lab/DarijaBERT', 'comet': 0.28008099417534055}
-Initial MADAR performance: {'test_loss': 9.76882553100586, 'test_model_preparation_time': 0.0062, 'test_bleu': 0.010954276634422975, 'test_meteor': 0.043775313865996, 'test_chrF': 6.8881599652287715, 'test_runtime': 4246.0706, 'test_samples_per_second': 1.295, 'test_steps_per_second': 0.081, 'model_name': 'SI2M-Lab/DarijaBERT', 'comet': 0.27469086576320906}
-Initial BIBLE performance: {'test_loss': 9.30392074584961, 'test_model_preparation_time': 0.0062, 'test_bleu': 0.04948542615995205, 'test_meteor': 0.06904129197138256, 'test_chrF': 12.382572041666759, 'test_runtime': 457.4126, 'test_samples_per_second': 1.312, 'test_steps_per_second': 0.083, 'model_name': 'SI2M-Lab/DarijaBERT', 'comet': 0.2635975843667984}
+Initial test set performance:
+BLEU Score (evaluate): 0.0
+SacreBLEU Score (evaluate): 0.004513937653076435
+METEOR Score (evaluate): 0.028534005570535828
+chrF Score (evaluate): 5.064102920557652
+COMET Score (evaluate): 0.2800809909805141
+BLEU score: 0.00
+CHRF score: 5.06
 
+Initial MADAR performance:
+BLEU Score (evaluate): 0.0
+SacreBLEU Score (evaluate): 0.010954276634422975
+METEOR Score (evaluate): 0.04377531386599624
+chrF Score (evaluate): 6.8881599652287715
+COMET Score (evaluate): 0.2746908608973026
+BLEU score: 0.01
+CHRF score: 6.89
+
+Initial BIBLE performance:
+BLEU Score (evaluate): 0.0
+SacreBLEU Score (evaluate): 0.04948542615995205
+METEOR Score (evaluate): 0.06904129197138253
+chrF Score (evaluate): 12.382572041666759
+COMET Score (evaluate): 0.26359759117166204
+BLEU score: 0.05
+CHRF score: 12.38
 
 FINE-TUNED:
-{'test_loss': 1.6316112279891968, 'test_model_preparation_time': 0.0062, 'test_bleu': 26.777710264811766, 'test_meteor': 0.4855120607046243, 'test_chrF': 44.23855479209423, 'test_runtime': 801.635, 'test_samples_per_second': 8.489, 'test_steps_per_second': 0.531, 'model_name': 'SI2M-Lab/DarijaBERT', 'comet': 0.7015423832528299}
-Final MADAR performance: {'test_loss': 2.3722376823425293, 'test_model_preparation_time': 0.0062, 'test_bleu': 15.53251688899006, 'test_meteor': 0.4650965442475456, 'test_chrF': 33.288628262642256, 'test_runtime': 903.0559, 'test_samples_per_second': 6.09, 'test_steps_per_second': 0.381, 'model_name': 'SI2M-Lab/DarijaBERT', 'comet': 0.6400423780246215}
-Final BIBLE performance: {'test_loss': 4.35815954208374, 'test_model_preparation_time': 0.0062, 'test_bleu': 1.935204742543745, 'test_meteor': 0.1798123326526842, 'test_chrF': 19.522729287763006, 'test_runtime': 176.8166, 'test_samples_per_second': 3.393, 'test_steps_per_second': 0.215, 'model_name': 'SI2M-Lab/DarijaBERT', 'comet': 0.4418588277200858}
+Final test set performance:
+BLEU Score (evaluate): 0.2677771026481176
+SacreBLEU Score (evaluate): 26.777710264811766
+METEOR Score (evaluate): 0.4855120607046268
+chrF Score (evaluate): 44.23910917952738
+COMET Score (evaluate): 0.7015423619466875
+BLEU score: 26.78
+CHRF score: 44.24
+
+Final MADAR performance:
+BLEU Score (evaluate): 0.15532516888990064
+SacreBLEU Score (evaluate): 15.53251688899006
+METEOR Score (evaluate): 0.4650965442475449
+chrF Score (evaluate): 33.288628262642256
+COMET Score (evaluate): 0.6400423576615073
+BLEU score: 15.53
+CHRF score: 33.29
+
+Final BIBLE performance:
+BLEU Score (evaluate): 0.01935204742543745
+SacreBLEU Score (evaluate): 1.935204742543745
+METEOR Score (evaluate): 0.1798123326526841
+chrF Score (evaluate): 19.522729287763006
+COMET Score (evaluate): 0.4418588253359
+BLEU score: 1.94
+CHRF score: 19.52
 
 PARAPHRASE:
-Final test set performance: {'test_loss': 1.8808444738388062, 'test_model_preparation_time': 0.005,  'test_bleu': 20.53829964061382, 'test_meteor': 0.47665946548595256, 'test_chrF': 42.775593982406804, 'test_runtime': 829.7595, 'test_samples_per_second': 8.201, 'test_steps_per_second': 0.513, 'model_name': 'SI2M-Lab/DarijaBERT', 'comet': 0.6872107738085655}
-Final MADAR performance: {'test_loss': 2.5964248180389404, 'test_model_preparation_time': 0.005, 'test_bleu': 15.872777727778637, 'test_meteor': 0.4578499296757838, 'test_chrF': 32.94895427537094, 'test_runtime': 874.377, 'test_samples_per_second': 6.29, 'test_steps_per_second': 0.393, 'model_name': 'SI2M-Lab/DarijaBERT', 'comet': 0.6399192218482495}
-Final BIBLE performance: {'test_loss': 4.843112468719482, 'test_model_preparation_time': 0.005, 'test_bleu': 1.4608575305260034, 'test_meteor': 0.15869938038235357, 'test_chrF': 17.01459233081371, 'test_runtime': 147.8571, 'test_samples_per_second': 4.058, 'test_steps_per_second': 0.257, 'model_name': 'SI2M-Lab/DarijaBERT', 'comet': 0.4319158365825812}
+
+Final test set performance:
+
+BLEU Score (evaluate): 0.2053829964061381
+SacreBLEU Score (evaluate): 20.53829964061382
+METEOR Score (evaluate): 0.47665946548595284
+chrF Score (evaluate): 42.776122564005455
+COMET Score (evaluate): 0.6872107485258605
+BLEU score: 20.54
+CHRF score: 42.78
+
+Final MADAR performance:
+
+BLEU Score (evaluate): 0.15872777727778636
+SacreBLEU Score (evaluate): 15.872777727778637
+METEOR Score (evaluate): 0.45784992967578175
+chrF Score (evaluate): 32.94895427537094
+COMET Score (evaluate): 0.6399191972559148
+BLEU score: 15.87
+CHRF score: 32.95
+
+Final BIBLE performance:
+
+BLEU Score (evaluate): 0.014608575305260035
+SacreBLEU Score (evaluate): 1.4608575305260034
+METEOR Score (evaluate): 0.15869938038235337
+chrF Score (evaluate): 17.01459233081371
+COMET Score (evaluate): 0.4319158397614956
+BLEU score: 1.46
+CHRF score: 17.01

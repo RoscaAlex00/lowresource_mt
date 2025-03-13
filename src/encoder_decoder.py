@@ -35,7 +35,7 @@ def main(cfg: DictConfig):
     dataset = load_and_prepare_data(str(full_path))
 
     # BACK-TRANSLATION DATA LOAD (if needed)
-    full_path_bt = Path(get_original_cwd()) / '../data/paraphrased_target_data.csv'
+    full_path_bt = Path(get_original_cwd()) / '../data/bt_en_ar_nllb.csv'
     dataset['train'] = load_backtranslation_data(str(full_path_bt), dataset['train'])
 
     # Load DarijaBERT tokenizer and MarianMT tokenizer for English
@@ -163,66 +163,66 @@ def main(cfg: DictConfig):
     # Evaluate BEFORE training
     # -------------------------------------------
     # Test set evaluation
-    logger.info("Evaluating model on test set before training...")
-    initial_test_output = trainer.predict(tokenized_test_dataset)
-    initial_test_metrics = initial_test_output.metrics
-    initial_test_metrics['model_name'] = cfg.model.name
-
-    # Compute COMET
-    decoded_test_preds = tokenizer_tgt.batch_decode(initial_test_output.predictions, skip_special_tokens=True)
-    decoded_test_labels = tokenizer_tgt.batch_decode(initial_test_output.label_ids, skip_special_tokens=True)
-    comet_inputs_test = {
-        "sources": dataset['test']['src'],
-        "predictions": decoded_test_preds,
-        "references": decoded_test_labels
-    }
-    comet_scores_test = comet_metric.compute(**comet_inputs_test)
-    initial_test_metrics['comet'] = comet_scores_test["mean_score"]
-    logger.info(f"Initial test set performance: {initial_test_metrics}")
-
-    output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/initial_predictions_test_para.csv'
-    write_predictions_to_csv(trainer, tokenized_test_dataset, str(output_file_path),
-                             dataset['test']['src'], dataset['test']['tgt'])
-
-    # MADAR evaluation
-    logger.info("Evaluating on MADAR dataset...")
-    initial_madar_output = trainer.predict(eval_madar)
-    initial_madar_metrics = initial_madar_output.metrics
-    initial_madar_metrics['model_name'] = cfg.model.name
-    decoded_madar_preds = tokenizer_tgt.batch_decode(initial_madar_output.predictions, skip_special_tokens=True)
-    decoded_madar_labels = tokenizer_tgt.batch_decode(initial_madar_output.label_ids, skip_special_tokens=True)
-    comet_inputs_madar = {
-        "sources": orig_eval_madar['src'],
-        "predictions": decoded_madar_preds,
-        "references": decoded_madar_labels
-    }
-    comet_scores_madar = comet_metric.compute(**comet_inputs_madar)
-    initial_madar_metrics['comet'] = comet_scores_madar["mean_score"]
-    logger.info(f"Initial MADAR performance: {initial_madar_metrics}")
-
-    output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/initial_predictions_madar_para.csv'
-    write_predictions_to_csv(trainer, eval_madar, str(output_file_path),
-                             orig_eval_madar['src'], orig_eval_madar['tgt'])
-
-    # BIBLE evaluation
-    logger.info("Evaluating on BIBLE dataset...")
-    initial_bible_output = trainer.predict(eval_bible)
-    initial_bible_metrics = initial_bible_output.metrics
-    initial_bible_metrics['model_name'] = cfg.model.name
-    decoded_bible_preds = tokenizer_tgt.batch_decode(initial_bible_output.predictions, skip_special_tokens=True)
-    decoded_bible_labels = tokenizer_tgt.batch_decode(initial_bible_output.label_ids, skip_special_tokens=True)
-    comet_inputs_bible = {
-        "sources": orig_eval_bible['src'],
-        "predictions": decoded_bible_preds,
-        "references": decoded_bible_labels
-    }
-    comet_scores_bible = comet_metric.compute(**comet_inputs_bible)
-    initial_bible_metrics['comet'] = comet_scores_bible["mean_score"]
-    logger.info(f"Initial BIBLE performance: {initial_bible_metrics}")
-
-    output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/initial_predictions_bible_para.csv'
-    write_predictions_to_csv(trainer, eval_bible, str(output_file_path),
-                             orig_eval_bible['src'], orig_eval_bible['tgt'])
+    # logger.info("Evaluating model on test set before training...")
+    # initial_test_output = trainer.predict(tokenized_test_dataset)
+    # initial_test_metrics = initial_test_output.metrics
+    # initial_test_metrics['model_name'] = cfg.model.name
+    #
+    # # Compute COMET
+    # decoded_test_preds = tokenizer_tgt.batch_decode(initial_test_output.predictions, skip_special_tokens=True)
+    # decoded_test_labels = tokenizer_tgt.batch_decode(initial_test_output.label_ids, skip_special_tokens=True)
+    # comet_inputs_test = {
+    #     "sources": dataset['test']['src'],
+    #     "predictions": decoded_test_preds,
+    #     "references": decoded_test_labels
+    # }
+    # comet_scores_test = comet_metric.compute(**comet_inputs_test)
+    # initial_test_metrics['comet'] = comet_scores_test["mean_score"]
+    # logger.info(f"Initial test set performance: {initial_test_metrics}")
+    #
+    # output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/initial_predictions_test_bt.csv'
+    # write_predictions_to_csv(trainer, tokenized_test_dataset, str(output_file_path),
+    #                          dataset['test']['src'], dataset['test']['tgt'])
+    #
+    # # MADAR evaluation
+    # logger.info("Evaluating on MADAR dataset...")
+    # initial_madar_output = trainer.predict(eval_madar)
+    # initial_madar_metrics = initial_madar_output.metrics
+    # initial_madar_metrics['model_name'] = cfg.model.name
+    # decoded_madar_preds = tokenizer_tgt.batch_decode(initial_madar_output.predictions, skip_special_tokens=True)
+    # decoded_madar_labels = tokenizer_tgt.batch_decode(initial_madar_output.label_ids, skip_special_tokens=True)
+    # comet_inputs_madar = {
+    #     "sources": orig_eval_madar['src'],
+    #     "predictions": decoded_madar_preds,
+    #     "references": decoded_madar_labels
+    # }
+    # comet_scores_madar = comet_metric.compute(**comet_inputs_madar)
+    # initial_madar_metrics['comet'] = comet_scores_madar["mean_score"]
+    # logger.info(f"Initial MADAR performance: {initial_madar_metrics}")
+    #
+    # output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/initial_predictions_madar_bt.csv'
+    # write_predictions_to_csv(trainer, eval_madar, str(output_file_path),
+    #                          orig_eval_madar['src'], orig_eval_madar['tgt'])
+    #
+    # # BIBLE evaluation
+    # logger.info("Evaluating on BIBLE dataset...")
+    # initial_bible_output = trainer.predict(eval_bible)
+    # initial_bible_metrics = initial_bible_output.metrics
+    # initial_bible_metrics['model_name'] = cfg.model.name
+    # decoded_bible_preds = tokenizer_tgt.batch_decode(initial_bible_output.predictions, skip_special_tokens=True)
+    # decoded_bible_labels = tokenizer_tgt.batch_decode(initial_bible_output.label_ids, skip_special_tokens=True)
+    # comet_inputs_bible = {
+    #     "sources": orig_eval_bible['src'],
+    #     "predictions": decoded_bible_preds,
+    #     "references": decoded_bible_labels
+    # }
+    # comet_scores_bible = comet_metric.compute(**comet_inputs_bible)
+    # initial_bible_metrics['comet'] = comet_scores_bible["mean_score"]
+    # logger.info(f"Initial BIBLE performance: {initial_bible_metrics}")
+    #
+    # output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/initial_predictions_bible_bt.csv'
+    # write_predictions_to_csv(trainer, eval_bible, str(output_file_path),
+    #                          orig_eval_bible['src'], orig_eval_bible['tgt'])
 
     # -------------------------------------------
     # Train the model
@@ -247,7 +247,7 @@ def main(cfg: DictConfig):
         final_test_metrics['comet'] = comet_scores_final_test["mean_score"]
         logger.info(f"Final test set performance: {final_test_metrics}")
 
-        output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/final_predictions_test_para.csv'
+        output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/final_predictions_test_bt.csv'
         write_predictions_to_csv(trainer, tokenized_test_dataset, str(output_file_path),
                                  dataset['test']['src'], dataset['test']['tgt'])
 
@@ -267,7 +267,7 @@ def main(cfg: DictConfig):
         final_madar_metrics['comet'] = comet_scores_final_madar["mean_score"]
         logger.info(f"Final MADAR performance: {final_madar_metrics}")
 
-        output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/final_predictions_madar_para.csv'
+        output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/final_predictions_madar_bt.csv'
         write_predictions_to_csv(trainer, eval_madar, str(output_file_path),
                                  orig_eval_madar['src'], orig_eval_madar['tgt'])
 
@@ -287,7 +287,7 @@ def main(cfg: DictConfig):
         final_bible_metrics['comet'] = comet_scores_final_bible["mean_score"]
         logger.info(f"Final BIBLE performance: {final_bible_metrics}")
 
-        output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/final_predictions_bible_para.csv'
+        output_file_path = Path(get_original_cwd()) / '../results/models/encoderdecoder/final_predictions_bible_bt.csv'
         write_predictions_to_csv(trainer, eval_bible, str(output_file_path),
                                  orig_eval_bible['src'], orig_eval_bible['tgt'])
 
